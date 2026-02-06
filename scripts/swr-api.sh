@@ -3,13 +3,12 @@ set -eo pipefail
 
 # 获取 IAM Token
 # 返回: token 字符串 (通过 stdout)
-# 环境变量: IAM_ENDPOINT, IAM_USERNAME, IAM_PASSWORD, IAM_DOMAIN, PROJECT_NAME
+# 环境变量: IAM_ENDPOINT, IAM_USERNAME, IAM_PASSWORD, IAM_DOMAIN
 get_iam_token() {
     : "${IAM_ENDPOINT:?IAM_ENDPOINT 环境变量未设置}"
     : "${IAM_USERNAME:?IAM_USERNAME 环境变量未设置}"
     : "${IAM_PASSWORD:?IAM_PASSWORD 环境变量未设置}"
     : "${IAM_DOMAIN:?IAM_DOMAIN 环境变量未设置}"
-    : "${PROJECT_NAME:?PROJECT_NAME 环境变量未设置}"
 
     local token_body=$(cat <<EOF
 {
@@ -25,8 +24,8 @@ get_iam_token() {
             }
         },
         "scope": {
-            "project": {
-                "name": "$PROJECT_NAME"
+             "domain": {
+                "name": "$IAM_DOMAIN"
             }
         }
     }
@@ -34,16 +33,20 @@ get_iam_token() {
 EOF
 )
 
-    local response
-    # 使用 curl -w 获取 X-Subject-Token header 和 HTTP 状态码
-    response=$(curl -sS -w "\n%{http_code}\n%{header_x_subject_token}" \
+    local header_file=$(mktemp)
+    local body_file=$(mktemp)
+    
+    # 使用 -D 将响应头保存到文件
+    curl -sS -D "$header_file" -o "$body_file" -w "%{http_code}" \
         -X POST "https://${IAM_ENDPOINT}/v3/auth/tokens" \
         -H "Content-Type: application/json" \
-        -d "$token_body")
-
-    local http_code=$(echo "$response" | tail -n2 | head -n1)
-    local token=$(echo "$response" | tail -n1)
-    local body=$(echo "$response" | head -n -2)
+        -d "$token_body" > /tmp/http_code.txt 2>&1
+    
+    local http_code=$(cat /tmp/http_code.txt)
+    local token=$(grep -i "^x-subject-token:" "$header_file" | awk '{print $2}' | tr -d '\r')
+    local body=$(cat "$body_file")
+    
+    rm -f "$header_file" "$body_file" /tmp/http_code.txt
 
     if [ "$http_code" = "201" ] && [ -n "$token" ]; then
         echo "$token"
