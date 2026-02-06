@@ -251,35 +251,22 @@
         // 获取数据
         async function fetchData() {
             try {
-                // 尝试从多个路径加载数据
-                const paths = [
-                    '../data/mapping.json',
-                    './data/mapping.json',
-                    '/data/mapping.json',
-                    'https://raw.githubusercontent.com/shanyou/image-sync/main/data/mapping.json'
-                ];
+                // 在 GitHub Pages 环境下，使用相对路径
+                const response = await fetch('./data/mapping.json');
                 
-                let response = null;
-                let lastError = null;
-                
-                for (const path of paths) {
-                    try {
-                        response = await fetch(path);
-                        if (response.ok) break;
-                    } catch (e) {
-                        lastError = e;
-                    }
-                }
-                
-                if (!response || !response.ok) {
-                    throw new Error('无法加载 mapping.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
                 }
                 
                 const data = await response.json();
+                console.log('Loaded data:', data); // 调试信息
+                
                 allData = Object.entries(data.mappings || {}).map(([key, value]) => ({
                     key,
                     ...value
                 }));
+                
+                console.log('Parsed data:', allData); // 调试信息
                 
                 document.getElementById('last-updated').textContent = formatDate(data.lastUpdated);
                 
