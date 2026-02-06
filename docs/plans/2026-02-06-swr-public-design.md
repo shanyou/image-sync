@@ -35,7 +35,6 @@ data/
 | `IAM_USERNAME` | IAM 用户名 | 是 |
 | `IAM_PASSWORD` | IAM 用户密码 | 是 |
 | `IAM_DOMAIN` | IAM 用户所属账号名 | 是 |
-| `PROJECT_NAME` | 项目名称（如 cn-north-1） | 是 |
 | `TARGET_REGISTRY` | Docker 镜像仓库地址 | 已有 |
 | `REGISTRY_USERNAME` | Docker 登录用户名 | 已有 |
 | `REGISTRY_PASSWORD` | Docker 登录密码 | 已有 |
@@ -169,13 +168,12 @@ set -eo pipefail
 
 # 获取 IAM Token
 # 返回: token 字符串
-# 环境变量: IAM_ENDPOINT, IAM_USERNAME, IAM_PASSWORD, IAM_DOMAIN, PROJECT_NAME
+# 环境变量: IAM_ENDPOINT, IAM_USERNAME, IAM_PASSWORD, IAM_DOMAIN
 get_iam_token() {
     : "${IAM_ENDPOINT:?IAM_ENDPOINT 环境变量未设置}"
     : "${IAM_USERNAME:?IAM_USERNAME 环境变量未设置}"
     : "${IAM_PASSWORD:?IAM_PASSWORD 环境变量未设置}"
     : "${IAM_DOMAIN:?IAM_DOMAIN 环境变量未设置}"
-    : "${PROJECT_NAME:?PROJECT_NAME 环境变量未设置}"
 
     local token_body=$(cat <<EOF
 {
@@ -191,8 +189,8 @@ get_iam_token() {
             }
         },
         "scope": {
-            "project": {
-                "name": "$PROJECT_NAME"
+            "domain": {
+                "name": "$IAM_DOMAIN"
             }
         }
     }
