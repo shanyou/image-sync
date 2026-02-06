@@ -51,7 +51,6 @@ sync_image() {
     echo "正在同步: $source_image -> $target_image"
 
     if skopeo copy \
-        --src-creds docker:docker \
         --dest-creds "${REGISTRY_USERNAME}:${REGISTRY_PASSWORD}" \
         "docker://${source_image}" \
         "docker://${target_image}"; then
