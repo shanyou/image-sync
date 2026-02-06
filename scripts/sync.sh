@@ -2,6 +2,7 @@
 set -eo pipefail
 
 source ./scripts/utils.sh
+source ./scripts/swr-api.sh
 
 # 配置
 INPUT_FILE="data/images.txt"
@@ -25,6 +26,7 @@ add_mapping() {
     local source="$1"
     local target="$2"
     local status="$3"
+    local error_msg="${4:-}"
 
     local timestamp=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
 
@@ -33,11 +35,13 @@ add_mapping() {
            --arg tgt "$target" \
            --arg time "$timestamp" \
            --arg st "$status" \
+           --arg err "$error_msg" \
            '.lastUpdated = $time | .mappings[$src] = {
                "source": $src,
                "target": $tgt,
                "syncedAt": $time,
-               "status": $st
+               "status": $st,
+               "error_msg": $err
            }' "$MAPPING_FILE" > "${MAPPING_FILE}.tmp" \
            && mv "${MAPPING_FILE}.tmp" "$MAPPING_FILE"
     fi
@@ -54,11 +58,38 @@ sync_image() {
         --dest-creds "${REGISTRY_USERNAME}:${REGISTRY_PASSWORD}" \
         "docker://${source_image}" \
         "docker://${target_image}"; then
-        add_mapping "$source_image" "$target_image" "success"
-        echo "✓ 同步成功: $source_image"
+
+        # 2. 设置为 public
+        local error_msg=""
+        local status="success:private"
+
+        if [ -n "${IAM_ENDPOINT:-}" ]; then
+            # 解析 namespace 和 repository
+            local parsed=$(parse_target_image "$target_image")
+            local namespace=$(echo "$parsed" | cut -d'|' -f1)
+            local repository=$(echo "$parsed" | cut -d'|' -f2)
+
+            # 获取 Token 并设置 public
+            local token
+            token=$(get_iam_token 2>&1)
+            if [ $? -eq 0 ]; then
+                local set_public_result
+                set_public_result=$(set_repo_public "$namespace" "$repository" "$token" 2>&1)
+                if [ $? -eq 0 ]; then
+                    status="success:public"
+                else
+                    error_msg="$set_public_result"
+                fi
+            else
+                error_msg="$token"
+            fi
+        fi
+
+        add_mapping "$source_image" "$target_image" "$status" "$error_msg"
+        echo "✓ 同步成功: $source_image (${status})"
         return 0
     else
-        add_mapping "$source_image" "$target_image" "failed"
+        add_mapping "$source_image" "$target_image" "failed" "skopeo copy 失败"
         echo "✗ 同步失败: $source_image"
         return 1
     fi

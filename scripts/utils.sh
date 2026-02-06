@@ -40,3 +40,23 @@ deduplicate_images() {
     local input_file="$1"
     sort -u "$input_file" | grep -v '^#' | grep -v '^$'
 }
+
+# 解析目标镜像名，提取 namespace 和 repository
+# 输入: swr.cn-north-1.myhuaweicloud.com/shanyou/image-name:tag
+# 输出: namespace|repository|tag
+parse_target_image() {
+    local target_image="$1"
+
+    # 移除 registry 部分
+    local without_registry="${target_image#*/}"
+
+    # 分离 namespace 和 repository:tag
+    local namespace="${without_registry%%/*}"
+    local repo_with_tag="${without_registry#*/}"
+
+    # 分离 repository 和 tag
+    local repository="${repo_with_tag%:*}"
+    local tag="${repo_with_tag##*:}"
+
+    echo "${namespace}|${repository}|${tag}"
+}
