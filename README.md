@@ -16,8 +16,18 @@
 
 在仓库 Settings → Secrets and variables → Actions 中添加:
 
-- `REGISTRY_USERNAME`: SWR 用户名
+**必需（镜像同步）**:
+- `REGISTRY_USERNAME`: SWR 用户名 (格式: `区域@账号`)
 - `REGISTRY_PASSWORD`: SWR 密码
+
+**可选（自动设置 public）**:
+- `IAM_ENDPOINT`: IAM 端点，如 `iam.myhuaweicloud.com`
+- `SWR_API_ENDPOINT`: SWR API 端点，如 `swr-api.cn-north-1.myhuaweicloud.com`
+- `IAM_DOMAIN`: IAM 账号名
+- `IAM_USERNAME`: IAM 用户名
+- `IAM_PASSWORD`: IAM 用户密码
+
+> 注意：配置 IAM 相关变量后，镜像同步后会自动设置为 public。如果未配置，镜像将保持 private 状态。
 
 ### 2. 添加需要同步的镜像
 
@@ -83,6 +93,13 @@ export TARGET_REGISTRY="swr.cn-north-1.myhuaweicloud.com"
 export REGISTRY_USERNAME="your-username"
 export REGISTRY_PASSWORD="your-password"
 export SWR_ORG_NAME="shanyou"
+
+# SWR API 配置（可选，用于自动设置 public）
+export IAM_ENDPOINT="iam.myhuaweicloud.com"
+export SWR_API_ENDPOINT="swr-api.cn-north-1.myhuaweicloud.com"
+export IAM_DOMAIN="your-domain"
+export IAM_USERNAME="your-iam-username"
+export IAM_PASSWORD="your-iam-password"
 
 # 运行同步脚本
 ./scripts/sync.sh

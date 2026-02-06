@@ -37,4 +37,10 @@ jobs:
           TARGET_REGISTRY: swr.cn-north-1.myhuaweicloud.com
           REGISTRY_USERNAME: ${{ secrets.REGISTRY_USERNAME }}
           REGISTRY_PASSWORD: ${{ secrets.REGISTRY_PASSWORD }}
+          # SWR API 配置（用于设置镜像为 public）
+          IAM_ENDPOINT: ${{ secrets.IAM_ENDPOINT }}
+          SWR_API_ENDPOINT: ${{ secrets.SWR_API_ENDPOINT }}
+          IAM_DOMAIN: ${{ secrets.IAM_DOMAIN }}
+          IAM_USERNAME: ${{ secrets.IAM_USERNAME }}
+          IAM_PASSWORD: ${{ secrets.IAM_PASSWORD }}
         run: ./scripts/sync.sh
