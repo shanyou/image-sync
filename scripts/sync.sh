@@ -82,7 +82,7 @@ main() {
         # 检查是否已同步
         if is_synced "$image" "$MAPPING_FILE"; then
             echo "⊘ 跳过已同步: $image"
-            ((skip_count++))
+            skip_count=$((skip_count + 1))
             continue
         fi
 
@@ -91,9 +91,9 @@ main() {
 
         # 同步镜像
         if sync_image "$image" "$target_image"; then
-            ((sync_count++))
+            sync_count=$((sync_count + 1))
         else
-            ((error_count++))
+            error_count=$((error_count + 1))
         fi
 
     done < <(deduplicate_images "$INPUT_FILE")
