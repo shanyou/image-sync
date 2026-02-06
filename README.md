@@ -2,6 +2,11 @@
 
 这是一个用于将 Docker 镜像同步到华为云 SWR 的工具，使用 GitHub Actions 进行 CI/CD。
 
+[![Sync Status](https://img.shields.io/badge/Sync-Status-green?style=flat-square&logo=github)](https://shanyou.github.io/image-sync/)
+[![GitHub Pages](https://img.shields.io/badge/GitHub-Pages-blue?style=flat-square&logo=github)](https://shanyou.github.io/image-sync/)
+
+📊 **查看同步状态**: [https://shanyou.github.io/image-sync/](https://shanyou.github.io/image-sync/)
+
 ## 功能
 
 - 从 `data/images.txt` 文件读取需要同步的镜像列表
@@ -105,9 +110,28 @@ export IAM_PASSWORD="your-iam-password"
 ./scripts/sync.sh
 ```
 
+## GitHub Pages 状态页面
+
+本项目包含一个 Web UI 用于展示镜像同步状态，自动部署到 GitHub Pages。
+
+### 配置步骤
+
+1. 在仓库 Settings → Pages 中设置 Source 为 "GitHub Actions"
+2. 推送代码后，GitHub Actions 会自动部署页面
+3. 访问 `https://shanyou.github.io/image-sync/` 查看状态
+
+### 功能特性
+
+- 📊 实时展示同步统计（总数、成功、Public、失败）
+- 🔍 支持搜索镜像名称
+- 🏷️ 按状态筛选（全部/成功/Public/失败）
+- 📋 一键复制目标镜像地址
+- 📱 响应式设计，支持移动端
+
 ## 技术栈
 
 - **GitHub Actions**: CI/CD 平台
 - **Skopeo**: 镜像同步工具
 - **jq**: JSON 处理工具
 - **Bash**: 脚本语言
+- **Pico CSS**: 前端样式框架
