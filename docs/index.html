@@ -26,9 +26,21 @@
         }
         
         .status-success { background: #d4edda; color: #155724; }
-        .status-success-public { background: #d1ecf1; color: #0c5460; }
         .status-failed { background: #f8d7da; color: #721c24; }
         .status-pending { background: #fff3cd; color: #856404; }
+        
+        .visibility-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        
+        .visibility-public { background: #d1ecf1; color: #0c5460; }
+        .visibility-private { background: #f8f9fa; color: #6c757d; }
         
         .stats-grid {
             display: grid;
@@ -201,7 +213,7 @@
             <div class="filter-tabs">
                 <button class="filter-tab active" data-filter="all">全部</button>
                 <button class="filter-tab" data-filter="success">成功</button>
-                <button class="filter-tab" data-filter="success:public">Public</button>
+                <button class="filter-tab" data-filter="public">Public</button>
                 <button class="filter-tab" data-filter="failed">失败</button>
             </div>
 
@@ -213,6 +225,7 @@
                             <th>目标镜像</th>
                             <th>同步时间</th>
                             <th>状态</th>
+                            <th>可见性</th>
                         </tr>
                     </thead>
                     <tbody id="images-table">
@@ -286,8 +299,8 @@
         // 更新统计
         function updateStats() {
             const total = allData.length;
-            const success = allData.filter(d => d.status && d.status.startsWith('success')).length;
-            const publicImages = allData.filter(d => d.status === 'success:public').length;
+            const success = allData.filter(d => d.status === 'success').length;
+            const publicImages = allData.filter(d => d.is_public === 'true' || d.is_public === true).length;
             const failed = allData.filter(d => d.status === 'failed').length;
             
             document.getElementById('total-count').textContent = total;
@@ -309,9 +322,9 @@
                 // 状态过滤
                 let matchFilter = true;
                 if (currentFilter === 'success') {
-                    matchFilter = item.status?.startsWith('success');
-                } else if (currentFilter === 'success:public') {
-                    matchFilter = item.status === 'success:public';
+                    matchFilter = item.status === 'success';
+                } else if (currentFilter === 'public') {
+                    matchFilter = item.is_public === 'true' || item.is_public === true;
                 } else if (currentFilter === 'failed') {
                     matchFilter = item.status === 'failed';
                 }
@@ -339,6 +352,7 @@
                     </td>
                     <td>${formatDate(item.syncedAt)}</td>
                     <td>${getStatusBadge(item.status, item.error_msg)}</td>
+                    <td>${getVisibilityBadge(item.is_public)}</td>
                 </tr>
             `).join('');
         }
@@ -347,8 +361,6 @@
         function getStatusBadge(status, errorMsg) {
             const statusMap = {
                 'success': { class: 'status-success', icon: 'check-circle', text: '成功' },
-                'success:public': { class: 'status-success-public', icon: 'globe', text: 'Public' },
-                'success:private': { class: 'status-success', icon: 'lock', text: 'Private' },
                 'failed': { class: 'status-failed', icon: 'times-circle', text: '失败' }
             };
             
@@ -356,6 +368,18 @@
             const title = errorMsg ? `title="${escapeHtml(errorMsg)}"` : '';
             
             return `<span class="status-badge ${config.class}" ${title}>
+                <i class="fas fa-${config.icon}"></i> ${config.text}
+            </span>`;
+        }
+        
+        // 获取可见性标签
+        function getVisibilityBadge(isPublic) {
+            const isPublicBool = isPublic === 'true' || isPublic === true;
+            const config = isPublicBool 
+                ? { class: 'visibility-public', icon: 'globe', text: 'Public' }
+                : { class: 'visibility-private', icon: 'lock', text: 'Private' };
+            
+            return `<span class="visibility-badge ${config.class}">
                 <i class="fas fa-${config.icon}"></i> ${config.text}
             </span>`;
         }

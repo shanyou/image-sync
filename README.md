@@ -73,7 +73,9 @@ git push
       "source": "gcr.io/kubernetes-release/pause:3.9",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/gcr-io-kubernetes-release-pause:3.9",
       "syncedAt": "2026-02-06T10:25:00Z",
-      "status": "success"
+      "status": "success",
+      "is_public": "true",
+      "error_msg": ""
     }
   }
 }

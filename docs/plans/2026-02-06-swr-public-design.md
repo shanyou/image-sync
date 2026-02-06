@@ -128,14 +128,16 @@ skopeo copy (使用 REGISTRY_USERNAME/PASSWORD)
       "source": "gcr.io/kubernetes-release/pause:3.9",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/gcr-io-kubernetes-release-pause:3.9",
       "syncedAt": "2026-02-06T10:25:00Z",
-      "status": "success:public",
+      "status": "success",
+      "is_public": "true",
       "error_msg": ""
     },
     "ghcr.io/prometheus/prometheus:v2.45.0": {
       "source": "ghcr.io/prometheus/prometheus:v2.45.0",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/ghcr-io-prometheus-prometheus:v2.45.0",
       "syncedAt": "2026-02-06T10:26:00Z",
-      "status": "success:private",
+      "status": "success",
+      "is_public": "false",
       "error_msg": "设置 public 失败: API 返回 401 Unauthorized"
     },
     "gcr.io/failed/image:1.0": {
@@ -143,20 +145,29 @@ skopeo copy (使用 REGISTRY_USERNAME/PASSWORD)
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/gcr-io-failed-image:1.0",
       "syncedAt": "2026-02-06T10:27:00Z",
       "status": "failed",
+      "is_public": "false",
       "error_msg": "skopeo copy 失败: manifest unknown"
     }
   }
 }
 ```
 
+### 字段说明
+
+| 字段 | 类型 | 说明 |
+|------|------|------|
+| `status` | string | 同步状态: `success` 或 `failed` |
+| `is_public` | string | 是否公开: `"true"` 或 `"false"` |
+| `error_msg` | string | 错误信息，成功时为空字符串 |
+
 ### 错误信息记录策略
 
-| 场景 | status | error_msg |
-|------|--------|-----------|
-| 同步成功，public 成功 | `success:public` | `""` |
-| 同步成功，public 失败 | `success:private` | `"设置 public 失败: <具体原因>"` |
-| 同步失败 | `failed` | `"同步失败: <具体原因>"` |
-| Token 获取失败 | `success:private` | `"获取 IAM Token 失败: <具体原因>"` |
+| 场景 | status | is_public | error_msg |
+|------|--------|-----------|-----------|
+| 同步成功，public 成功 | `success` | `"true"` | `""` |
+| 同步成功，public 失败 | `success` | `"false"` | `"设置 public 失败: <具体原因>"` |
+| 同步失败 | `failed` | `"false"` | `"同步失败: <具体原因>"` |
+| Token 获取失败 | `success` | `"false"` | `"获取 IAM Token 失败: <具体原因>"` |
 
 ## 实现细节
 

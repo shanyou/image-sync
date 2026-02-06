@@ -26,7 +26,8 @@ add_mapping() {
     local source="$1"
     local target="$2"
     local status="$3"
-    local error_msg="${4:-}"
+    local is_public="$4"
+    local error_msg="${5:-}"
 
     local timestamp=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
 
@@ -35,12 +36,14 @@ add_mapping() {
            --arg tgt "$target" \
            --arg time "$timestamp" \
            --arg st "$status" \
+           --arg pub "$is_public" \
            --arg err "$error_msg" \
            '.lastUpdated = $time | .mappings[$src] = {
                "source": $src,
                "target": $tgt,
                "syncedAt": $time,
                "status": $st,
+               "is_public": $pub,
                "error_msg": $err
            }' "$MAPPING_FILE" > "${MAPPING_FILE}.tmp" \
            && mv "${MAPPING_FILE}.tmp" "$MAPPING_FILE"
@@ -61,7 +64,8 @@ sync_image() {
 
         # 2. 设置为 public
         local error_msg=""
-        local status="success:private"
+        local status="success"
+        local is_public="false"
 
         if [ -n "${IAM_ENDPOINT:-}" ]; then
             # 解析 namespace 和 repository
@@ -76,7 +80,7 @@ sync_image() {
                 local set_public_result
                 set_public_result=$(set_repo_public "$namespace" "$repository" "$token" 2>&1)
                 if [ $? -eq 0 ]; then
-                    status="success:public"
+                    is_public="true"
                 else
                     error_msg="$set_public_result"
                 fi
@@ -85,11 +89,11 @@ sync_image() {
             fi
         fi
 
-        add_mapping "$source_image" "$target_image" "$status" "$error_msg"
-        echo "✓ 同步成功: $source_image (${status})"
+        add_mapping "$source_image" "$target_image" "$status" "$is_public" "$error_msg"
+        echo "✓ 同步成功: $source_image (is_public: ${is_public})"
         return 0
     else
-        add_mapping "$source_image" "$target_image" "failed" "skopeo copy 失败"
+        add_mapping "$source_image" "$target_image" "failed" "false" "skopeo copy 失败"
         echo "✗ 同步失败: $source_image"
         return 1
     fi
