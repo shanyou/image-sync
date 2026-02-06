@@ -5,11 +5,8 @@ convert_image_name() {
     local source_image="$1"
     local namespace="$2"
 
-    # 提取镜像名部分(去掉 registry)
-    local image_path="${source_image#*/}"
-
     # 替换 / 和 . 为 -
-    local converted_name=$(echo "$image_path" | sed 's/[\/.]/-/g')
+    local converted_name=$(echo "$source_image" | sed 's/[\/.]/-/g')
 
     echo "${TARGET_REGISTRY}/${namespace}/${converted_name}"
 }
