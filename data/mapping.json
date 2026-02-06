@@ -1,4 +1,23 @@
 {
-  "lastUpdated": "",
-  "mappings": {}
+  "lastUpdated": "2026-02-06T13:06:15Z",
+  "mappings": {
+    "docker.io/jenkins/jenkins:2.541.1-jdk21": {
+      "source": "docker.io/jenkins/jenkins:2.541.1-jdk21",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/docker-io-jenkins-jenkins:2-541-1-jdk21",
+      "syncedAt": "2026-02-06T13:05:26Z",
+      "status": "success"
+    },
+    "docker.io/kiwigrid/k8s-sidecar:2.5.0": {
+      "source": "docker.io/kiwigrid/k8s-sidecar:2.5.0",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/docker-io-kiwigrid-k8s-sidecar:2-5-0",
+      "syncedAt": "2026-02-06T13:05:49Z",
+      "status": "success"
+    },
+    "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
+      "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/jenkins-inbound-agent:3355-v388858a_47b_33-9",
+      "syncedAt": "2026-02-06T13:06:15Z",
+      "status": "success"
+    }
+  }
 }
