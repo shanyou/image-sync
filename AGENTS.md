@@ -29,7 +29,8 @@
 image-sync/
 ├── .github/
 │   └── workflows/
-│       └── sync-images.yml        # GitHub Actions 工作流定义
+│       ├── sync-images.yml        # GitHub Actions 工作流定义
+│       └── deploy-pages.yml       # GitHub Pages 自动部署工作流
 ├── scripts/
 │   ├── sync.sh                    # 主同步脚本（入口点）
 │   ├── utils.sh                   # 工具函数（镜像名转换、查重等）
@@ -37,12 +38,10 @@ image-sync/
 │   └── test-utils.sh              # 单元测试脚本
 ├── data/
 │   ├── images.txt                 # 输入：待同步镜像列表
-│   └── mapping.json               # 输出：同步历史与映射记录
+│   ├── mapping.json               # 输出：同步历史与映射记录
+│   └── index.html                 # Web UI 状态页面（GitHub Pages 入口）
 ├── docs/
 │   └── plans/                     # 设计文档与实现计划
-│       ├── 2026-02-06-image-sync-design.md
-│       ├── 2026-02-06-image-sync-implementation.md
-│       └── 2026-02-06-swr-public-design.md
 ├── .env                           # 本地环境变量配置（已 gitignore）
 ├── .gitignore                     # Git 忽略规则
 └── README.md                      # 用户文档
@@ -125,7 +124,8 @@ quay.io/coreos/etcd:v3.5.9
       "source": "gcr.io/kubernetes-release/pause:3.9",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/gcr-io-kubernetes-release-pause:3.9",
       "syncedAt": "2026-02-06T10:25:00Z",
-      "status": "success:public",
+      "status": "success",
+      "is_public": "true",
       "error_msg": ""
     }
   }
@@ -133,9 +133,12 @@ quay.io/coreos/etcd:v3.5.9
 ```
 
 **status 枚举值**：
-- `success:public` - 同步成功且已设置为 public
-- `success:private` - 同步成功但设置 public 失败
+- `success` - 同步成功
 - `failed` - 同步失败
+
+**is_public 枚举值**：
+- `true` - 已设置为 public
+- `false` - 未设置为 public（可能同步成功但未公开，或设置 public 失败）
 
 ## 环境变量
 
@@ -195,9 +198,40 @@ source .env
 
 ### GitHub Actions 触发方式
 
+**镜像同步工作流** (`sync-images.yml`):
 1. **文件变更触发**：修改 `data/images.txt` 并 push
 2. **手动触发**：GitHub Actions 页面 → Sync Docker Images → Run workflow
 3. **定时触发**：每天 UTC 02:00 自动运行
+
+**Pages 部署工作流** (`deploy-pages.yml`):
+1. **文件变更触发**：修改 `data/**` 目录下的文件并 push 到 `main` 分支
+2. **手动触发**：GitHub Actions 页面 → Deploy to GitHub Pages → Run workflow
+
+## GitHub Pages 部署
+
+### 部署流程
+
+1. `main` 分支的 `data/` 目录包含源文件
+2. `.github/workflows/deploy-pages.yml` 工作流自动将 `data/` 内容部署到 `gh-pages` 分支
+3. GitHub Pages 从 `gh-pages` 分支提供服务
+
+### Web UI
+
+**入口文件**: `data/index.html`
+
+**特性**:
+- 动态加载 `mapping.json`（通过 `fetch()`），数据更新无需重新生成 HTML
+- 赛博朋克风格界面
+- 显示同步统计、镜像列表、时间线、注册源分布
+- 一键复制目标镜像地址
+- 响应式设计
+
+**本地预览**:
+```bash
+cd data
+python3 -m http.server 8080
+# 访问 http://localhost:8080
+```
 
 ## 开发规范
 
@@ -236,6 +270,12 @@ source .env
 - 通过 GitHub Actions 在实际环境中运行
 - 测试完整的同步流程
 - 验证 mapping.json 更新
+
+### Web UI 测试
+
+- 本地使用 `python3 -m http.server` 或 `npx serve` 预览
+- 验证 `mapping.json` 能正常加载
+- 检查响应式布局
 
 ## 安全考虑
 

@@ -116,11 +116,24 @@ export IAM_PASSWORD="your-iam-password"
 
 本项目包含一个 Web UI 用于展示镜像同步状态，自动部署到 GitHub Pages。
 
+**访问地址**: [https://shanyou.github.io/image-sync/](https://shanyou.github.io/image-sync/)
+
 ### 配置步骤
 
-1. 在仓库 Settings → Pages 中设置 Source 为 "GitHub Actions"
-2. 推送代码后，GitHub Actions 会自动部署页面
+1. 在仓库 **Settings → Pages** 中设置：
+   - **Source**: `Deploy from a branch`
+   - **Branch**: `gh-pages` + `/ (root)`
+   - 点击 **Save**
+
+2. `data` 目录中的内容会自动部署到 `gh-pages` 分支
+
 3. 访问 `https://shanyou.github.io/image-sync/` 查看状态
+
+### 自动部署
+
+`.github/workflows/deploy-pages.yml` 工作流会在以下情况自动触发：
+- `data/` 目录下的文件被修改并 push 到 `main` 分支
+- 手动触发（Actions → Deploy to GitHub Pages → Run workflow）
 
 ### 功能特性
 
@@ -129,6 +142,7 @@ export IAM_PASSWORD="your-iam-password"
 - 🏷️ 按状态筛选（全部/成功/Public/失败）
 - 📋 一键复制目标镜像地址
 - 📱 响应式设计，支持移动端
+- 🔄 动态加载 `mapping.json`，无需重新生成 HTML
 
 ## 技术栈
 
@@ -136,4 +150,4 @@ export IAM_PASSWORD="your-iam-password"
 - **Skopeo**: 镜像同步工具
 - **jq**: JSON 处理工具
 - **Bash**: 脚本语言
-- **Pico CSS**: 前端样式框架
+- **GitHub Pages**: 静态页面托管
