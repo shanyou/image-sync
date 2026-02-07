@@ -1,0 +1,28 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'data/**'      # 只有 data 目录变化时才触发
+      - '.github/workflows/deploy-pages.yml'
+  workflow_dispatch:   # 支持手动触发
+
+permissions:
+  contents: write      # 需要写权限来推送到 gh-pages
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./data      # 发布 data 目录
+          publish_branch: gh-pages # 目标分支
+          force_orphan: true       # 每次都创建新的孤立分支（保持分支简洁）
+          commit_message: 'deploy: update from main @ ${{ github.sha }}'
