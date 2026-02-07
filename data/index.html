@@ -830,44 +830,8 @@
     </div>
 
     <script>
-        // 嵌入的 JSON 数据
-        const mappingData = {
-            "lastUpdated": "2026-02-06T16:44:35Z",
-            "mappings": {
-                "docker.io/jenkins/jenkins:2.541.1-jdk21": {
-                    "source": "docker.io/jenkins/jenkins:2.541.1-jdk21",
-                    "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/docker-io-jenkins-jenkins:2-541-1-jdk21",
-                    "syncedAt": "2026-02-06T13:05:26Z",
-                    "status": "success",
-                    "is_public": "true",
-                    "error_msg": ""
-                },
-                "docker.io/kiwigrid/k8s-sidecar:2.5.0": {
-                    "source": "docker.io/kiwigrid/k8s-sidecar:2.5.0",
-                    "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/docker-io-kiwigrid-k8s-sidecar:2-5-0",
-                    "syncedAt": "2026-02-06T13:05:49Z",
-                    "status": "success",
-                    "is_public": "true",
-                    "error_msg": ""
-                },
-                "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
-                    "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
-                    "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/jenkins-inbound-agent:3355-v388858a_47b_33-9",
-                    "syncedAt": "2026-02-06T13:06:15Z",
-                    "status": "success",
-                    "is_public": "true",
-                    "error_msg": ""
-                },
-                "nginx:latest": {
-                    "source": "nginx:latest",
-                    "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/nginx:latest",
-                    "syncedAt": "2026-02-06T16:44:35Z",
-                    "status": "success",
-                    "is_public": "true",
-                    "error_msg": ""
-                }
-            }
-        };
+        // 动态加载的 JSON 数据
+        let mappingData = null;
 
         // 格式化日期
         function formatDate(dateString) {
@@ -909,6 +873,8 @@
         // 统计注册源
         function getRegistryStats() {
             const registries = {};
+            if (!mappingData || !mappingData.mappings) return registries;
+            
             Object.values(mappingData.mappings).forEach(item => {
                 const { registry } = parseImage(item.source);
                 registries[registry] = (registries[registry] || 0) + 1;
@@ -918,6 +884,8 @@
 
         // 渲染统计
         function renderStats() {
+            if (!mappingData || !mappingData.mappings) return;
+            
             const mappings = Object.values(mappingData.mappings);
             const total = mappings.length;
             const success = mappings.filter(m => m.status === 'success').length;
@@ -934,6 +902,16 @@
         // 渲染镜像列表
         function renderImageList(filter = 'all') {
             const container = document.getElementById('imageList');
+            if (!mappingData || !mappingData.mappings) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <div class="empty-state-icon">📭</div>
+                        <p>暂无数据</p>
+                    </div>
+                `;
+                return;
+            }
+            
             const mappings = Object.entries(mappingData.mappings);
             
             let filtered = mappings;
@@ -1008,6 +986,11 @@
         // 渲染时间线
         function renderTimeline() {
             const container = document.getElementById('timeline');
+            if (!mappingData || !mappingData.mappings) {
+                container.innerHTML = '<div class="timeline-item"><div class="timeline-content">加载中...</div></div>';
+                return;
+            }
+            
             const sorted = Object.entries(mappingData.mappings)
                 .sort((a, b) => new Date(b[1].syncedAt) - new Date(a[1].syncedAt))
                 .slice(0, 5);
@@ -1032,6 +1015,11 @@
         // 渲染注册源分布
         function renderRegistries() {
             const container = document.getElementById('registryList');
+            if (!mappingData || !mappingData.mappings) {
+                container.innerHTML = '<div class="registry-item"><div class="registry-info">加载中...</div></div>';
+                return;
+            }
+            
             const stats = getRegistryStats();
             const total = Object.values(stats).reduce((a, b) => a + b, 0);
             const registryIcons = {
@@ -1142,16 +1130,58 @@
             });
         });
 
-        // 初始化
-        renderStats();
-        renderImageList();
-        renderTimeline();
-        renderRegistries();
+        // 显示加载状态
+        function showLoading() {
+            document.getElementById('imageList').innerHTML = `
+                <div class="empty-state">
+                    <div class="empty-state-icon">⏳</div>
+                    <p>正在加载数据...</p>
+                </div>
+            `;
+        }
 
-        // 每分钟刷新相对时间
+        // 显示错误状态
+        function showError(message) {
+            document.getElementById('imageList').innerHTML = `
+                <div class="empty-state">
+                    <div class="empty-state-icon">⚠️</div>
+                    <p style="color: var(--accent-red);">${message}</p>
+                    <p style="font-size: 0.8rem; margin-top: 0.5rem;">请检查 mapping.json 文件是否存在</p>
+                </div>
+            `;
+        }
+
+        // 加载 mapping.json 数据
+        async function loadMappingData() {
+            showLoading();
+            
+            try {
+                const response = await fetch('mapping.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                mappingData = await response.json();
+                
+                // 数据加载完成后渲染
+                renderStats();
+                renderImageList();
+                renderTimeline();
+                renderRegistries();
+            } catch (error) {
+                console.error('加载数据失败:', error);
+                showError('加载数据失败: ' + error.message);
+            }
+        }
+
+        // 初始化
+        loadMappingData();
+
+        // 每分钟刷新数据和相对时间
         setInterval(() => {
-            renderTimeline();
-            renderImageList(document.querySelector('.filter-tab.active').dataset.filter);
+            if (mappingData) {
+                renderTimeline();
+                renderImageList(document.querySelector('.filter-tab.active').dataset.filter);
+            }
         }, 60000);
     </script>
 </body>
