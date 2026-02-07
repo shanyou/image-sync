@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>镜像同步监控面板 | Image Sync Monitor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0b0f;
+            --bg-secondary: #11141c;
+            --bg-card: rgba(20, 25, 35, 0.85);
+            --accent-cyan: #00d4ff;
+            --accent-amber: #ff9f43;
+            --accent-green: #00d68f;
+            --accent-red: #ff4757;
+            --text-primary: #e8ecf1;
+            --text-secondary: #8b92a8;
+            --text-dim: #4a5568;
+            --border-color: rgba(0, 212, 255, 0.15);
+            --grid-line: rgba(0, 212, 255, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'JetBrains Mono', monospace;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* 背景网格效果 */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(var(--grid-line) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* 扫描线效果 */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 2px,
+                rgba(0, 0, 0, 0.15) 2px,
+                rgba(0, 0, 0, 0.15) 4px
+            );
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.4;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* 头部区域 */
+        header {
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+
+        .title-section {
+            position: relative;
+        }
+
+        .title-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 1rem;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(0, 212, 255, 0.05));
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 0.75rem;
+            color: var(--accent-cyan);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 1rem;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--accent-green);
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+            box-shadow: 0 0 10px var(--accent-green);
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.1); }
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent-cyan), #7b2cbf);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-top: 0.5rem;
+            letter-spacing: 0.05em;
+        }
+
+        .timestamp-box {
+            text-align: right;
+            padding: 1rem 1.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
+
+        .timestamp-label {
+            font-size: 0.7rem;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-bottom: 0.3rem;
+        }
+
+        .timestamp-value {
+            font-size: 0.9rem;
+            color: var(--accent-amber);
+            font-weight: 500;
+        }
+
+        /* 统计卡片网格 */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent-cyan), transparent);
+            opacity: 0.8;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(0, 212, 255, 0.3);
+            box-shadow: 0 10px 40px rgba(0, 212, 255, 0.1);
+        }
+
+        .stat-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .stat-icon.cyan {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.2), rgba(0, 212, 255, 0.05));
+            border: 1px solid rgba(0, 212, 255, 0.3);
+        }
+
+        .stat-icon.green {
+            background: linear-gradient(135deg, rgba(0, 214, 143, 0.2), rgba(0, 214, 143, 0.05));
+            border: 1px solid rgba(0, 214, 143, 0.3);
+        }
+
+        .stat-icon.amber {
+            background: linear-gradient(135deg, rgba(255, 159, 67, 0.2), rgba(255, 159, 67, 0.05));
+            border: 1px solid rgba(255, 159, 67, 0.3);
+        }
+
+        .stat-icon.purple {
+            background: linear-gradient(135deg, rgba(123, 44, 191, 0.2), rgba(123, 44, 191, 0.05));
+            border: 1px solid rgba(123, 44, 191, 0.3);
+        }
+
+        .stat-value {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.3rem;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* 主内容区域 */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 380px;
+            gap: 2rem;
+        }
+
+        /* 镜像列表 */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .section-title::before {
+            content: '//';
+            color: var(--accent-cyan);
+        }
+
+        .filter-tabs {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .filter-tab {
+            padding: 0.5rem 1rem;
+            background: transparent;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            color: var(--text-secondary);
+            font-family: inherit;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .filter-tab:hover,
+        .filter-tab.active {
+            background: rgba(0, 212, 255, 0.1);
+            border-color: var(--accent-cyan);
+            color: var(--accent-cyan);
+        }
+
+        .image-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .image-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.25rem;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .image-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 3px;
+            height: 100%;
+            background: var(--accent-green);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .image-card:hover {
+            border-color: rgba(0, 212, 255, 0.25);
+            transform: translateX(4px);
+        }
+
+        .image-card:hover::before {
+            opacity: 1;
+        }
+
+        .image-card.failed::before {
+            background: var(--accent-red);
+        }
+
+        .image-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .image-source {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            font-weight: 500;
+            word-break: break-all;
+        }
+
+        .image-tag {
+            display: inline-block;
+            padding: 0.25rem 0.6rem;
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 4px;
+            font-size: 0.7rem;
+            color: var(--accent-cyan);
+            margin-left: 0.5rem;
+        }
+
+        .status-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .status-badge.success {
+            background: rgba(0, 214, 143, 0.1);
+            border: 1px solid rgba(0, 214, 143, 0.3);
+            color: var(--accent-green);
+        }
+
+        .status-badge.public {
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            color: var(--accent-cyan);
+        }
+
+        .status-badge.failed {
+            background: rgba(255, 71, 87, 0.1);
+            border: 1px solid rgba(255, 71, 87, 0.3);
+            color: var(--accent-red);
+        }
+
+        .image-paths {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .path-box {
+            padding: 0.75rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .path-label {
+            font-size: 0.65rem;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.4rem;
+        }
+
+        .path-value {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            word-break: break-all;
+            line-height: 1.5;
+        }
+
+        .path-value.target {
+            color: var(--accent-amber);
+        }
+
+        .image-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 0.75rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .sync-time {
+            font-size: 0.75rem;
+            color: var(--text-dim);
+        }
+
+        .sync-time span {
+            color: var(--text-secondary);
+        }
+
+        /* 侧边栏 */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .side-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .side-card-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .side-card-title::before {
+            content: '>';
+            color: var(--accent-cyan);
+        }
+
+        /* 时间线 */
+        .timeline {
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 6px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--accent-cyan), transparent);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+            padding-bottom: 1.25rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 2px;
+            width: 14px;
+            height: 14px;
+            background: var(--bg-primary);
+            border: 2px solid var(--accent-cyan);
+            border-radius: 50%;
+        }
+
+        .timeline-item.success::before {
+            border-color: var(--accent-green);
+            background: var(--accent-green);
+        }
+
+        .timeline-time {
+            font-size: 0.7rem;
+            color: var(--text-dim);
+            margin-bottom: 0.3rem;
+        }
+
+        .timeline-content {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .timeline-content strong {
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+
+        /* 注册表分布 */
+        .registry-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .registry-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .registry-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+        }
+
+        .registry-info {
+            flex: 1;
+        }
+
+        .registry-name {
+            font-size: 0.85rem;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .registry-count {
+            font-size: 0.7rem;
+            color: var(--text-dim);
+        }
+
+        .registry-bar {
+            width: 60px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .registry-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-green));
+            border-radius: 2px;
+        }
+
+        /* 复制按钮样式 */
+        .copy-wrapper {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 0.5rem;
+        }
+
+        .copy-btn {
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 6px;
+            background: rgba(0, 212, 255, 0.1);
+            color: var(--accent-cyan);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            margin-top: -2px;
+        }
+
+        .copy-btn:hover {
+            background: rgba(0, 212, 255, 0.2);
+            border-color: var(--accent-cyan);
+            transform: scale(1.05);
+        }
+
+        .copy-btn:active {
+            transform: scale(0.95);
+        }
+
+        .copy-btn.copied {
+            background: rgba(0, 214, 143, 0.2);
+            border-color: var(--accent-green);
+            color: var(--accent-green);
+        }
+
+        /* Toast 提示 */
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: var(--bg-card);
+            border: 1px solid var(--accent-green);
+            border-radius: 8px;
+            padding: 0.875rem 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 214, 143, 0.2);
+            z-index: 10000;
+            opacity: 0;
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+
+        .toast-icon {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--accent-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+
+        /* 空状态 */
+        .empty-state {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-dim);
+        }
+
+        .empty-state-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            opacity: 0.5;
+        }
+
+        /* 响应式 */
+        @media (max-width: 1024px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .sidebar {
+                order: -1;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .image-paths {
+                grid-template-columns: 1fr;
+            }
+
+            .header-top {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .timestamp-box {
+                text-align: left;
+                width: 100%;
+            }
+        }
+
+        /* 动画 */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .stat-card,
+        .image-card,
+        .side-card {
+            animation: slideIn 0.5s ease-out forwards;
+        }
+
+        .stat-card:nth-child(1) { animation-delay: 0.1s; }
+        .stat-card:nth-child(2) { animation-delay: 0.2s; }
+        .stat-card:nth-child(3) { animation-delay: 0.3s; }
+        .stat-card:nth-child(4) { animation-delay: 0.4s; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-top">
+                <div class="title-section">
+                    <div class="title-badge">
+                        <span class="status-dot"></span>
+                        SYSTEM ONLINE
+                    </div>
+                    <h1>镜像同步监控</h1>
+                    <p class="subtitle">Docker Image Synchronization Monitor</p>
+                </div>
+                <div class="timestamp-box">
+                    <div class="timestamp-label">Last Updated</div>
+                    <div class="timestamp-value" id="lastUpdated">--</div>
+                </div>
+            </div>
+        </header>
+
+        <section class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon cyan">📦</div>
+                <div class="stat-value" id="totalImages">--</div>
+                <div class="stat-label">Total Images</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon green">✓</div>
+                <div class="stat-value" id="successCount">--</div>
+                <div class="stat-label">Sync Success</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon amber">🌐</div>
+                <div class="stat-value" id="publicCount">--</div>
+                <div class="stat-label">Public Repos</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon purple">📡</div>
+                <div class="stat-value" id="registryCount">--</div>
+                <div class="stat-label">Registries</div>
+            </div>
+        </section>
+
+        <div class="main-content">
+            <main>
+                <div class="section-header">
+                    <h2 class="section-title">同步镜像列表</h2>
+                    <div class="filter-tabs">
+                        <button class="filter-tab active" data-filter="all">全部</button>
+                        <button class="filter-tab" data-filter="success">成功</button>
+                        <button class="filter-tab" data-filter="public">公开</button>
+                    </div>
+                </div>
+                <div class="image-list" id="imageList">
+                    <!-- 动态生成 -->
+                </div>
+            </main>
+
+            <aside class="sidebar">
+                <div class="side-card">
+                    <h3 class="side-card-title">同步时间线</h3>
+                    <div class="timeline" id="timeline">
+                        <!-- 动态生成 -->
+                    </div>
+                </div>
+
+                <div class="side-card">
+                    <h3 class="side-card-title">注册源分布</h3>
+                    <div class="registry-list" id="registryList">
+                        <!-- 动态生成 -->
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <script>
+        // 嵌入的 JSON 数据
+        const mappingData = {
+            "lastUpdated": "2026-02-06T16:44:35Z",
+            "mappings": {
+                "docker.io/jenkins/jenkins:2.541.1-jdk21": {
+                    "source": "docker.io/jenkins/jenkins:2.541.1-jdk21",
+                    "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/docker-io-jenkins-jenkins:2-541-1-jdk21",
+                    "syncedAt": "2026-02-06T13:05:26Z",
+                    "status": "success",
+                    "is_public": "true",
+                    "error_msg": ""
+                },
+                "docker.io/kiwigrid/k8s-sidecar:2.5.0": {
+                    "source": "docker.io/kiwigrid/k8s-sidecar:2.5.0",
+                    "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/docker-io-kiwigrid-k8s-sidecar:2-5-0",
+                    "syncedAt": "2026-02-06T13:05:49Z",
+                    "status": "success",
+                    "is_public": "true",
+                    "error_msg": ""
+                },
+                "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
+                    "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
+                    "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/jenkins-inbound-agent:3355-v388858a_47b_33-9",
+                    "syncedAt": "2026-02-06T13:06:15Z",
+                    "status": "success",
+                    "is_public": "true",
+                    "error_msg": ""
+                },
+                "nginx:latest": {
+                    "source": "nginx:latest",
+                    "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/nginx:latest",
+                    "syncedAt": "2026-02-06T16:44:35Z",
+                    "status": "success",
+                    "is_public": "true",
+                    "error_msg": ""
+                }
+            }
+        };
+
+        // 格式化日期
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleString('zh-CN', {
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            });
+        }
+
+        // 格式化相对时间
+        function formatRelativeTime(dateString) {
+            const date = new Date(dateString);
+            const now = new Date();
+            const diff = now - date;
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            const days = Math.floor(hours / 24);
+
+            if (days > 0) return `${days}天前`;
+            if (hours > 0) return `${hours}小时前`;
+            return '刚刚';
+        }
+
+        // 提取镜像名称和标签
+        function parseImage(imageName) {
+            const parts = imageName.split(':');
+            const tag = parts.pop() || 'latest';
+            const name = parts.join(':');
+            const nameParts = name.split('/');
+            const shortName = nameParts[nameParts.length - 1];
+            
+            return { name, shortName, tag, registry: nameParts[0] };
+        }
+
+        // 统计注册源
+        function getRegistryStats() {
+            const registries = {};
+            Object.values(mappingData.mappings).forEach(item => {
+                const { registry } = parseImage(item.source);
+                registries[registry] = (registries[registry] || 0) + 1;
+            });
+            return registries;
+        }
+
+        // 渲染统计
+        function renderStats() {
+            const mappings = Object.values(mappingData.mappings);
+            const total = mappings.length;
+            const success = mappings.filter(m => m.status === 'success').length;
+            const publicRepos = mappings.filter(m => m.is_public === 'true').length;
+            const registries = Object.keys(getRegistryStats()).length;
+
+            document.getElementById('totalImages').textContent = total;
+            document.getElementById('successCount').textContent = success;
+            document.getElementById('publicCount').textContent = publicRepos;
+            document.getElementById('registryCount').textContent = registries;
+            document.getElementById('lastUpdated').textContent = formatDate(mappingData.lastUpdated);
+        }
+
+        // 渲染镜像列表
+        function renderImageList(filter = 'all') {
+            const container = document.getElementById('imageList');
+            const mappings = Object.entries(mappingData.mappings);
+            
+            let filtered = mappings;
+            if (filter === 'success') {
+                filtered = mappings.filter(([_, m]) => m.status === 'success');
+            } else if (filter === 'public') {
+                filtered = mappings.filter(([_, m]) => m.is_public === 'true');
+            }
+
+            if (filtered.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <div class="empty-state-icon">📭</div>
+                        <p>暂无数据</p>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = filtered.map(([key, item], index) => {
+                const { shortName, tag } = parseImage(item.source);
+                const isSuccess = item.status === 'success';
+                const isPublic = item.is_public === 'true';
+
+                return `
+                    <div class="image-card ${!isSuccess ? 'failed' : ''}" style="animation-delay: ${index * 0.1}s">
+                        <div class="image-header">
+                            <div>
+                                <span class="image-source">${shortName}</span>
+                                <span class="image-tag">${tag}</span>
+                            </div>
+                            <div style="display: flex; gap: 0.5rem;">
+                                <span class="status-badge ${isSuccess ? 'success' : 'failed'}">
+                                    ${isSuccess ? '●' : '✕'} ${isSuccess ? '已同步' : '失败'}
+                                </span>
+                                ${isPublic ? `
+                                    <span class="status-badge public">
+                                        🌐 公开
+                                    </span>
+                                ` : ''}
+                            </div>
+                        </div>
+                        <div class="image-paths">
+                            <div class="path-box">
+                                <div class="path-label">Source Registry</div>
+                                <div class="path-value">${item.source}</div>
+                            </div>
+                            <div class="path-box">
+                                <div class="path-label">Target Registry</div>
+                                <div class="path-value target copy-wrapper" data-copy="${item.target}">
+                                    ${item.target}
+                                    <button class="copy-btn" title="复制到剪切板">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="image-meta">
+                            <div class="sync-time">
+                                同步时间: <span>${formatDate(item.syncedAt)}</span>
+                                <span style="color: var(--text-dim); margin-left: 0.5rem;">(${formatRelativeTime(item.syncedAt)})</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // 渲染时间线
+        function renderTimeline() {
+            const container = document.getElementById('timeline');
+            const sorted = Object.entries(mappingData.mappings)
+                .sort((a, b) => new Date(b[1].syncedAt) - new Date(a[1].syncedAt))
+                .slice(0, 5);
+
+            container.innerHTML = sorted.map(([key, item]) => {
+                const { shortName } = parseImage(item.source);
+                const isSuccess = item.status === 'success';
+
+                return `
+                    <div class="timeline-item ${isSuccess ? 'success' : ''}">
+                        <div class="timeline-time">${formatRelativeTime(item.syncedAt)}</div>
+                        <div class="timeline-content">
+                            <strong>${shortName}</strong>
+                            ${isSuccess ? '同步成功' : '同步失败'}
+                            ${item.is_public === 'true' ? ' • 已设为公开' : ''}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // 渲染注册源分布
+        function renderRegistries() {
+            const container = document.getElementById('registryList');
+            const stats = getRegistryStats();
+            const total = Object.values(stats).reduce((a, b) => a + b, 0);
+            const registryIcons = {
+                'docker.io': '🐳',
+                'gcr.io': '☸️',
+                'ghcr.io': '📦',
+                'quay.io': '📮',
+                'jenkins': '🔧',
+                'nginx': '🌐'
+            };
+
+            container.innerHTML = Object.entries(stats).map(([registry, count]) => {
+                const percentage = (count / total * 100).toFixed(0);
+                const icon = registryIcons[registry] || registryIcons[registry.split('.')[0]] || '📡';
+
+                return `
+                    <div class="registry-item">
+                        <div class="registry-icon">${icon}</div>
+                        <div class="registry-info">
+                            <div class="registry-name">${registry}</div>
+                            <div class="registry-count">${count} 个镜像</div>
+                        </div>
+                        <div class="registry-bar">
+                            <div class="registry-bar-fill" style="width: ${percentage}%"></div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // 复制到剪切板功能
+        async function copyToClipboard(text, btn) {
+            try {
+                await navigator.clipboard.writeText(text);
+                
+                // 按钮视觉反馈
+                const originalHTML = btn.innerHTML;
+                btn.classList.add('copied');
+                btn.innerHTML = `
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                `;
+                
+                // 显示 toast
+                showToast('镜像地址已复制到剪切板');
+                
+                // 恢复按钮状态
+                setTimeout(() => {
+                    btn.classList.remove('copied');
+                    btn.innerHTML = originalHTML;
+                }, 2000);
+                
+            } catch (err) {
+                console.error('复制失败:', err);
+                showToast('复制失败，请手动复制', 'error');
+            }
+        }
+
+        // Toast 提示
+        function showToast(message, type = 'success') {
+            // 移除已有的 toast
+            const existing = document.querySelector('.toast');
+            if (existing) existing.remove();
+            
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.innerHTML = `
+                <div class="toast-icon">${type === 'success' ? '✓' : '✕'}</div>
+                <span>${message}</span>
+            `;
+            
+            if (type === 'error') {
+                toast.style.borderColor = 'var(--accent-red)';
+                toast.querySelector('.toast-icon').style.background = 'var(--accent-red)';
+            }
+            
+            document.body.appendChild(toast);
+            
+            // 触发动画
+            requestAnimationFrame(() => {
+                toast.classList.add('show');
+            });
+            
+            // 自动隐藏
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => toast.remove(), 300);
+            }, 2500);
+        }
+
+        // 绑定复制按钮事件
+        document.addEventListener('click', (e) => {
+            const btn = e.target.closest('.copy-btn');
+            if (btn) {
+                const wrapper = btn.closest('.copy-wrapper');
+                const text = wrapper.dataset.copy;
+                copyToClipboard(text, btn);
+            }
+        });
+
+        // 过滤器事件
+        document.querySelectorAll('.filter-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                renderImageList(tab.dataset.filter);
+            });
+        });
+
+        // 初始化
+        renderStats();
+        renderImageList();
+        renderTimeline();
+        renderRegistries();
+
+        // 每分钟刷新相对时间
+        setInterval(() => {
+            renderTimeline();
+            renderImageList(document.querySelector('.filter-tab.active').dataset.filter);
+        }, 60000);
+    </script>
+</body>
+</html>
