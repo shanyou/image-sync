@@ -1,4 +1,10 @@
 #!/bin/bash
+# 镜像同步脚本
+# 使用方法: ./sync.sh [-f|--force]
+#   -f, --force: 强制同步所有镜像，不管是否已同步过
+#
+# 功能: 将 Docker 镜像同步到华为云 SWR，并保留原始 tag 格式
+
 set -eo pipefail
 
 source ./scripts/utils.sh
@@ -8,6 +14,22 @@ source ./scripts/swr-api.sh
 INPUT_FILE="data/images.txt"
 MAPPING_FILE="data/mapping.json"
 NAMESPACE="${SWR_ORG_NAME:-shanyou}"
+FORCE_SYNC=false
+
+# 解析命令行参数
+while [[ $# -gt 0 ]]; do
+    case $1 in
+        -f|--force)
+            FORCE_SYNC=true
+            shift
+            ;;
+        *)
+            echo "未知参数: $1"
+            echo "使用方法: $0 [-f|--force]"
+            exit 1
+            ;;
+    esac
+done
 
 # 检查必需的环境变量
 : "${TARGET_REGISTRY:?TARGET_REGISTRY 环境变量未设置}"
@@ -114,8 +136,8 @@ main() {
         # 跳过注释和空行
         [[ "$image" =~ ^#.*$ || -z "$image" ]] && continue
 
-        # 检查是否已同步
-        if is_synced "$image" "$MAPPING_FILE"; then
+        # 检查是否已同步，除非使用 --force 选项
+        if [ "$FORCE_SYNC" = false ] && is_synced "$image" "$MAPPING_FILE"; then
             echo "⊘ 跳过已同步: $image"
             skip_count=$((skip_count + 1))
             continue

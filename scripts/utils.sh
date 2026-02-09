@@ -5,10 +5,19 @@ convert_image_name() {
     local source_image="$1"
     local namespace="$2"
 
-    # 替换 / 和 . 为 -
-    local converted_name=$(echo "$source_image" | sed 's/[\/.]/-/g')
+    # 分离镜像名和 tag
+    local image_part="${source_image%%:*}"
+    local tag_part="${source_image#*:}"
 
-    echo "${TARGET_REGISTRY}/${namespace}/${converted_name}"
+    # 如果没有 tag，默认使用 latest
+    if [ "$image_part" = "$tag_part" ]; then
+        tag_part="latest"
+    fi
+
+    # 只替换镜像名部分的 / 和 . 为 -，保留 tag 部分的原样
+    local converted_image_part=$(echo "$image_part" | sed 's/[\/.]/-/g')
+
+    echo "${TARGET_REGISTRY}/${namespace}/${converted_image_part}:${tag_part}"
 }
 
 # 检查镜像是否已同步(从 mapping.json)

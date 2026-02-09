@@ -8,7 +8,7 @@ echo "=== 测试工具函数 ==="
 # 测试镜像名转换
 export TARGET_REGISTRY="swr.cn-north-1.myhuaweicloud.com"
 result=$(convert_image_name "gcr.io/kubernetes-release/pause" "test-ns")
-expected="swr.cn-north-1.myhuaweicloud.com/test-ns/gcr-io-kubernetes-release-pause"
+expected="swr.cn-north-1.myhuaweicloud.com/test-ns/gcr-io-kubernetes-release-pause:latest"
 
 if [ "$result" = "$expected" ]; then
     echo "✓ convert_image_name 测试通过"
