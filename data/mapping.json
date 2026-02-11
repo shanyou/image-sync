@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-09T08:25:37Z",
+  "lastUpdated": "2026-02-11T04:43:49Z",
   "mappings": {
     "docker.io/jenkins/jenkins:2.541.1-jdk21": {
       "source": "docker.io/jenkins/jenkins:2.541.1-jdk21",
@@ -29,6 +29,14 @@
       "source": "nginx:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/nginx:latest",
       "syncedAt": "2026-02-09T08:25:37Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": ""
+    },
+    "mysql:latest": {
+      "source": "mysql:latest",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/mysql:latest",
+      "syncedAt": "2026-02-11T04:43:49Z",
       "status": "success",
       "is_public": "true",
       "error_msg": ""
