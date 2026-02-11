@@ -10,3 +10,4 @@ docker.io/jenkins/jenkins:2.541.1-jdk21
 docker.io/kiwigrid/k8s-sidecar:2.5.0
 jenkins/inbound-agent:3355.v388858a_47b_33-9
 nginx:latest
+mysql:latest
