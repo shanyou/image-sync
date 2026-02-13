@@ -1,0 +1,69 @@
+{
+  "lastUpdated": "2026-02-13T02:06:20Z",
+  "mappings": {
+    "docker.io/jenkins/jenkins:2.541.1-jdk21": {
+      "source": "docker.io/jenkins/jenkins:2.541.1-jdk21",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/docker-io-jenkins-jenkins:2.541.1-jdk21",
+      "syncedAt": "2026-02-09T08:25:20Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": ""
+    },
+    "docker.io/kiwigrid/k8s-sidecar:2.5.0": {
+      "source": "docker.io/kiwigrid/k8s-sidecar:2.5.0",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/docker-io-kiwigrid-k8s-sidecar:2.5.0",
+      "syncedAt": "2026-02-09T08:25:26Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": ""
+    },
+    "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
+      "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/jenkins-inbound-agent:3355.v388858a_47b_33-9",
+      "syncedAt": "2026-02-09T08:25:32Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": ""
+    },
+    "nginx:latest": {
+      "source": "nginx:latest",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/nginx:latest",
+      "syncedAt": "2026-02-09T08:25:37Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": ""
+    },
+    "mysql:latest": {
+      "source": "mysql:latest",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/mysql:latest",
+      "syncedAt": "2026-02-11T04:43:49Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": ""
+    },
+    "busybox:latest": {
+      "source": "busybox:latest",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/busybox:latest",
+      "syncedAt": "2026-02-11T05:07:48Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": ""
+    },
+    "docker.io/busybox:stable@sha256:3fbc632167424a6d997e74f52b878d7cc478225cffac6bc977eedfe51c7f4e79": {
+      "source": "docker.io/busybox:stable@sha256:3fbc632167424a6d997e74f52b878d7cc478225cffac6bc977eedfe51c7f4e79",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/docker-io-busybox:stable@sha256:3fbc632167424a6d997e74f52b878d7cc478225cffac6bc977eedfe51c7f4e79",
+      "syncedAt": "2026-02-13T02:06:20Z",
+      "status": "failed",
+      "is_public": "false",
+      "error_msg": "skopeo copy 失败"
+    },
+    "docker.io/rancher/local-path-provisioner:v0.0.22@sha256:e34c88ae0affb1cdefbb874140d6339d4a27ec4ee420ae8199cd839997b05246": {
+      "source": "docker.io/rancher/local-path-provisioner:v0.0.22@sha256:e34c88ae0affb1cdefbb874140d6339d4a27ec4ee420ae8199cd839997b05246",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/docker-io-rancher-local-path-provisioner:v0.0.22@sha256:e34c88ae0affb1cdefbb874140d6339d4a27ec4ee420ae8199cd839997b05246",
+      "syncedAt": "2026-02-13T02:06:20Z",
+      "status": "failed",
+      "is_public": "false",
+      "error_msg": "skopeo copy 失败"
+    }
+  }
+}
