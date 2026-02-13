@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-13T02:06:20Z",
+  "lastUpdated": "2026-02-13T02:11:12Z",
   "mappings": {
     "docker.io/jenkins/jenkins:2.541.1-jdk21": {
       "source": "docker.io/jenkins/jenkins:2.541.1-jdk21",
@@ -64,6 +64,22 @@
       "status": "failed",
       "is_public": "false",
       "error_msg": "skopeo copy 失败"
+    },
+    "docker.io/busybox:stable": {
+      "source": "docker.io/busybox:stable",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/docker-io-busybox:stable",
+      "syncedAt": "2026-02-13T02:11:00Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": ""
+    },
+    "docker.io/rancher/local-path-provisioner:v0.0.22": {
+      "source": "docker.io/rancher/local-path-provisioner:v0.0.22",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/docker-io-rancher-local-path-provisioner:v0.0.22",
+      "syncedAt": "2026-02-13T02:11:12Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": ""
     }
   }
 }
