@@ -12,3 +12,5 @@ jenkins/inbound-agent:3355.v388858a_47b_33-9
 nginx:latest
 mysql:latest
 busybox:latest
+docker.io/busybox:stable@sha256:3fbc632167424a6d997e74f52b878d7cc478225cffac6bc977eedfe51c7f4e79
+docker.io/rancher/local-path-provisioner:v0.0.22@sha256:e34c88ae0affb1cdefbb874140d6339d4a27ec4ee420ae8199cd839997b05246
