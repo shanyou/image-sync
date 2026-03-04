@@ -16,3 +16,4 @@ docker.io/busybox:stable
 docker.io/rancher/local-path-provisioner:v0.0.22
 codeberg.org/forgejo/forgejo:14
 postgres:14
+goacme/lego:latest
