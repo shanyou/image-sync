@@ -18,3 +18,4 @@ codeberg.org/forgejo/forgejo:14
 postgres:14
 goacme/lego:latest
 forgejo.ellis.link/continuwuation/continuwuity:latest
+vectorim/element-web:latest
