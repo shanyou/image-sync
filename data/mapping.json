@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-04T16:28:28Z",
+  "lastUpdated": "2026-03-05T14:04:06Z",
   "mappings": {
     "docker.io/jenkins/jenkins:2.541.1-jdk21": {
       "source": "docker.io/jenkins/jenkins:2.541.1-jdk21",
@@ -101,6 +101,14 @@
       "source": "goacme/lego:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/goacme-lego:latest",
       "syncedAt": "2026-03-04T16:28:28Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": ""
+    },
+    "forgejo.ellis.link/continuwuation/continuwuity:latest": {
+      "source": "forgejo.ellis.link/continuwuation/continuwuity:latest",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/forgejo-ellis-link-continuwuation-continuwuity:latest",
+      "syncedAt": "2026-03-05T14:04:06Z",
       "status": "success",
       "is_public": "true",
       "error_msg": ""
