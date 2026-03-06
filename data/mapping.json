@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-05T15:02:28Z",
+  "lastUpdated": "2026-03-06T09:25:25Z",
   "mappings": {
     "docker.io/jenkins/jenkins:2.541.1-jdk21": {
       "source": "docker.io/jenkins/jenkins:2.541.1-jdk21",
@@ -120,6 +120,30 @@
       "status": "success",
       "is_public": "true",
       "error_msg": ""
+    },
+    "bitnami/mysql:9.4.0-debian-12-r1": {
+      "source": "bitnami/mysql:9.4.0-debian-12-r1",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/bitnami-mysql:9.4.0-debian-12-r1",
+      "syncedAt": "2026-03-06T09:25:25Z",
+      "status": "failed",
+      "is_public": "false",
+      "error_msg": "skopeo copy 失败"
+    },
+    "bitnami/rabbitmq:4.1.3-debian-12-r1": {
+      "source": "bitnami/rabbitmq:4.1.3-debian-12-r1",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/bitnami-rabbitmq:4.1.3-debian-12-r1",
+      "syncedAt": "2026-03-06T09:25:25Z",
+      "status": "failed",
+      "is_public": "false",
+      "error_msg": "skopeo copy 失败"
+    },
+    "bitnami/redis:8.2.1-debian-12-r0": {
+      "source": "bitnami/redis:8.2.1-debian-12-r0",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/bitnami-redis:8.2.1-debian-12-r0",
+      "syncedAt": "2026-03-06T09:25:25Z",
+      "status": "failed",
+      "is_public": "false",
+      "error_msg": "skopeo copy 失败"
     }
   }
 }
