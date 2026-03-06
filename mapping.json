@@ -1,0 +1,149 @@
+{
+  "lastUpdated": "2026-03-06T09:25:25Z",
+  "mappings": {
+    "docker.io/jenkins/jenkins:2.541.1-jdk21": {
+      "source": "docker.io/jenkins/jenkins:2.541.1-jdk21",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/docker-io-jenkins-jenkins:2.541.1-jdk21",
+      "syncedAt": "2026-02-09T08:25:20Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": ""
+    },
+    "docker.io/kiwigrid/k8s-sidecar:2.5.0": {
+      "source": "docker.io/kiwigrid/k8s-sidecar:2.5.0",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/docker-io-kiwigrid-k8s-sidecar:2.5.0",
+      "syncedAt": "2026-02-09T08:25:26Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": ""
+    },
+    "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
+      "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/jenkins-inbound-agent:3355.v388858a_47b_33-9",
+      "syncedAt": "2026-02-09T08:25:32Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": ""
+    },
+    "nginx:latest": {
+      "source": "nginx:latest",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/nginx:latest",
+      "syncedAt": "2026-02-09T08:25:37Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": ""
+    },
+    "mysql:latest": {
+      "source": "mysql:latest",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/mysql:latest",
+      "syncedAt": "2026-02-11T04:43:49Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": ""
+    },
+    "busybox:latest": {
+      "source": "busybox:latest",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/busybox:latest",
+      "syncedAt": "2026-02-11T05:07:48Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": ""
+    },
+    "docker.io/busybox:stable@sha256:3fbc632167424a6d997e74f52b878d7cc478225cffac6bc977eedfe51c7f4e79": {
+      "source": "docker.io/busybox:stable@sha256:3fbc632167424a6d997e74f52b878d7cc478225cffac6bc977eedfe51c7f4e79",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/docker-io-busybox:stable@sha256:3fbc632167424a6d997e74f52b878d7cc478225cffac6bc977eedfe51c7f4e79",
+      "syncedAt": "2026-02-13T02:06:20Z",
+      "status": "failed",
+      "is_public": "false",
+      "error_msg": "skopeo copy 失败"
+    },
+    "docker.io/rancher/local-path-provisioner:v0.0.22@sha256:e34c88ae0affb1cdefbb874140d6339d4a27ec4ee420ae8199cd839997b05246": {
+      "source": "docker.io/rancher/local-path-provisioner:v0.0.22@sha256:e34c88ae0affb1cdefbb874140d6339d4a27ec4ee420ae8199cd839997b05246",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/docker-io-rancher-local-path-provisioner:v0.0.22@sha256:e34c88ae0affb1cdefbb874140d6339d4a27ec4ee420ae8199cd839997b05246",
+      "syncedAt": "2026-02-13T02:06:20Z",
+      "status": "failed",
+      "is_public": "false",
+      "error_msg": "skopeo copy 失败"
+    },
+    "docker.io/busybox:stable": {
+      "source": "docker.io/busybox:stable",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/docker-io-busybox:stable",
+      "syncedAt": "2026-02-13T02:11:00Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": ""
+    },
+    "docker.io/rancher/local-path-provisioner:v0.0.22": {
+      "source": "docker.io/rancher/local-path-provisioner:v0.0.22",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/docker-io-rancher-local-path-provisioner:v0.0.22",
+      "syncedAt": "2026-02-13T02:11:12Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": ""
+    },
+    "codeberg.org/forgejo/forgejo:14": {
+      "source": "codeberg.org/forgejo/forgejo:14",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/codeberg-org-forgejo-forgejo:14",
+      "syncedAt": "2026-03-04T15:52:26Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": ""
+    },
+    "postgres:14": {
+      "source": "postgres:14",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/postgres:14",
+      "syncedAt": "2026-03-04T15:52:50Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": ""
+    },
+    "goacme/lego:latest": {
+      "source": "goacme/lego:latest",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/goacme-lego:latest",
+      "syncedAt": "2026-03-04T16:28:28Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": ""
+    },
+    "forgejo.ellis.link/continuwuation/continuwuity:latest": {
+      "source": "forgejo.ellis.link/continuwuation/continuwuity:latest",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/forgejo-ellis-link-continuwuation-continuwuity:latest",
+      "syncedAt": "2026-03-05T14:04:06Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": ""
+    },
+    "vectorim/element-web:latest": {
+      "source": "vectorim/element-web:latest",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/vectorim-element-web:latest",
+      "syncedAt": "2026-03-05T15:02:28Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": ""
+    },
+    "bitnami/mysql:9.4.0-debian-12-r1": {
+      "source": "bitnami/mysql:9.4.0-debian-12-r1",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/bitnami-mysql:9.4.0-debian-12-r1",
+      "syncedAt": "2026-03-06T09:25:25Z",
+      "status": "failed",
+      "is_public": "false",
+      "error_msg": "skopeo copy 失败"
+    },
+    "bitnami/rabbitmq:4.1.3-debian-12-r1": {
+      "source": "bitnami/rabbitmq:4.1.3-debian-12-r1",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/bitnami-rabbitmq:4.1.3-debian-12-r1",
+      "syncedAt": "2026-03-06T09:25:25Z",
+      "status": "failed",
+      "is_public": "false",
+      "error_msg": "skopeo copy 失败"
+    },
+    "bitnami/redis:8.2.1-debian-12-r0": {
+      "source": "bitnami/redis:8.2.1-debian-12-r0",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/bitnami-redis:8.2.1-debian-12-r0",
+      "syncedAt": "2026-03-06T09:25:25Z",
+      "status": "failed",
+      "is_public": "false",
+      "error_msg": "skopeo copy 失败"
+    }
+  }
+}
