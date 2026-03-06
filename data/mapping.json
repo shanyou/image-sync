@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-06T09:25:25Z",
+  "lastUpdated": "2026-03-06T09:26:49Z",
   "mappings": {
     "docker.io/jenkins/jenkins:2.541.1-jdk21": {
       "source": "docker.io/jenkins/jenkins:2.541.1-jdk21",
@@ -144,6 +144,22 @@
       "status": "failed",
       "is_public": "false",
       "error_msg": "skopeo copy 失败"
+    },
+    "quay.io/metallb/controller:v0.9.6 ": {
+      "source": "quay.io/metallb/controller:v0.9.6 ",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/quay-io-metallb-controller:v0.9.6 ",
+      "syncedAt": "2026-03-06T09:26:35Z",
+      "status": "failed",
+      "is_public": "false",
+      "error_msg": "skopeo copy 失败"
+    },
+    "quay.io/metallb/speaker:v0.9.6": {
+      "source": "quay.io/metallb/speaker:v0.9.6",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/quay-io-metallb-speaker:v0.9.6",
+      "syncedAt": "2026-03-06T09:26:49Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": ""
     }
   }
 }
