@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-06T09:26:49Z",
+  "lastUpdated": "2026-03-12T08:03:10Z",
   "mappings": {
     "docker.io/jenkins/jenkins:2.541.1-jdk21": {
       "source": "docker.io/jenkins/jenkins:2.541.1-jdk21",
@@ -117,6 +117,30 @@
       "source": "vectorim/element-web:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/vectorim-element-web:latest",
       "syncedAt": "2026-03-05T15:02:28Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": ""
+    },
+    "postgres:18-alpine": {
+      "source": "postgres:18-alpine",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/postgres:18-alpine",
+      "syncedAt": "2026-03-12T08:02:45Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": ""
+    },
+    "redis:8-alpine": {
+      "source": "redis:8-alpine",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/redis:8-alpine",
+      "syncedAt": "2026-03-12T08:02:58Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": ""
+    },
+    "weishaw/sub2api:latest": {
+      "source": "weishaw/sub2api:latest",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/weishaw-sub2api:latest",
+      "syncedAt": "2026-03-12T08:03:10Z",
       "status": "success",
       "is_public": "true",
       "error_msg": ""
