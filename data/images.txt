@@ -22,4 +22,4 @@ vectorim/element-web:latest
 weishaw/sub2api:latest
 postgres:18-alpine
 redis:8-alpine
-pocketbase/pocketbase:latest
+adrianmusante/pocketbase
