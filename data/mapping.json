@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-15T04:55:33Z",
+  "lastUpdated": "2026-03-15T05:03:18Z",
   "mappings": {
     "docker.io/jenkins/jenkins:2.541.1-jdk21": {
       "source": "docker.io/jenkins/jenkins:2.541.1-jdk21",
@@ -141,6 +141,14 @@
       "source": "weishaw/sub2api:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/weishaw-sub2api:latest",
       "syncedAt": "2026-03-12T08:03:10Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": ""
+    },
+    "adrianmusante/pocketbase": {
+      "source": "adrianmusante/pocketbase",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/adrianmusante-pocketbase:latest",
+      "syncedAt": "2026-03-15T05:03:18Z",
       "status": "success",
       "is_public": "true",
       "error_msg": ""
