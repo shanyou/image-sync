@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-12T08:03:10Z",
+  "lastUpdated": "2026-03-15T04:55:33Z",
   "mappings": {
     "docker.io/jenkins/jenkins:2.541.1-jdk21": {
       "source": "docker.io/jenkins/jenkins:2.541.1-jdk21",
@@ -144,6 +144,14 @@
       "status": "success",
       "is_public": "true",
       "error_msg": ""
+    },
+    "pocketbase/pocketbase:latest": {
+      "source": "pocketbase/pocketbase:latest",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/pocketbase-pocketbase:latest",
+      "syncedAt": "2026-03-15T04:55:33Z",
+      "status": "failed",
+      "is_public": "false",
+      "error_msg": "skopeo copy 失败"
     }
   }
 }
