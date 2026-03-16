@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-16T05:40:00Z",
+  "lastUpdated": "2026-03-16T10:48:08Z",
   "mappings": {
     "docker.io/jenkins/jenkins:2.541.1-jdk21": {
       "source": "docker.io/jenkins/jenkins:2.541.1-jdk21",
@@ -157,6 +157,14 @@
       "source": "docker:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/docker:latest",
       "syncedAt": "2026-03-16T05:40:00Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": ""
+    },
+    "codeberg.org/forgejo/forgejo:14.0.3": {
+      "source": "codeberg.org/forgejo/forgejo:14.0.3",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/codeberg-org-forgejo-forgejo:14.0.3",
+      "syncedAt": "2026-03-16T10:48:08Z",
       "status": "success",
       "is_public": "true",
       "error_msg": ""
