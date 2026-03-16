@@ -25,3 +25,4 @@ redis:8-alpine
 adrianmusante/pocketbase
 docker:latest
 codeberg.org/forgejo/forgejo:14.0.3
+jevolk/tuwunel:latest
