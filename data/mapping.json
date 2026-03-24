@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-23T02:41:01Z",
+  "lastUpdated": "2026-03-24T09:40:52Z",
   "mappings": {
     "docker.io/jenkins/jenkins:2.541.1-jdk21": {
       "source": "docker.io/jenkins/jenkins:2.541.1-jdk21",
@@ -181,6 +181,14 @@
       "source": "eceasy/cli-proxy-api:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/eceasy-cli-proxy-api:latest",
       "syncedAt": "2026-03-23T02:41:01Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": ""
+    },
+    "jenkinsci/blueocean:latest": {
+      "source": "jenkinsci/blueocean:latest",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/jenkinsci-blueocean:latest",
+      "syncedAt": "2026-03-24T09:40:52Z",
       "status": "success",
       "is_public": "true",
       "error_msg": ""
