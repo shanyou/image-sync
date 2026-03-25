@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-24T09:40:52Z",
+  "lastUpdated": "2026-03-25T12:37:30Z",
   "mappings": {
     "docker.io/jenkins/jenkins:2.541.1-jdk21": {
       "source": "docker.io/jenkins/jenkins:2.541.1-jdk21",
@@ -189,6 +189,14 @@
       "source": "jenkinsci/blueocean:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/jenkinsci-blueocean:latest",
       "syncedAt": "2026-03-24T09:40:52Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": ""
+    },
+    "headscale/headscale:latest": {
+      "source": "headscale/headscale:latest",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/headscale-headscale:latest",
+      "syncedAt": "2026-03-25T12:37:30Z",
       "status": "success",
       "is_public": "true",
       "error_msg": ""
