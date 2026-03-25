@@ -28,3 +28,4 @@ codeberg.org/forgejo/forgejo:14.0.3
 jevolk/tuwunel:latest
 eceasy/cli-proxy-api:latest
 jenkinsci/blueocean:latest
+headscale/headscale:latest
