@@ -30,3 +30,5 @@ eceasy/cli-proxy-api:latest
 jenkinsci/blueocean:latest
 headscale/headscale:latest
 bitnami/postgresql
+bitnami/os-shell
+bitnami/postgres-exporter
