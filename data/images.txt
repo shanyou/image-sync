@@ -29,3 +29,4 @@ jevolk/tuwunel:latest
 eceasy/cli-proxy-api:latest
 jenkinsci/blueocean:latest
 headscale/headscale:latest
+bitnami/postgresql
