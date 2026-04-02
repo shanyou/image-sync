@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-02T06:15:52Z",
+  "lastUpdated": "2026-04-02T07:07:22Z",
   "mappings": {
     "docker.io/jenkins/jenkins:2.541.1-jdk21": {
       "source": "docker.io/jenkins/jenkins:2.541.1-jdk21",
@@ -245,6 +245,14 @@
       "source": "kasmweb/ubuntu-noble-desktop:1.18.0-rolling-daily",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/kasmweb-ubuntu-noble-desktop:1.18.0-rolling-daily",
       "syncedAt": "2026-04-02T06:15:52Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": ""
+    },
+    "kasmweb/ubuntu-noble-desktop:1.18.0": {
+      "source": "kasmweb/ubuntu-noble-desktop:1.18.0",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/kasmweb-ubuntu-noble-desktop:1.18.0",
+      "syncedAt": "2026-04-02T07:07:22Z",
       "status": "success",
       "is_public": "true",
       "error_msg": ""
