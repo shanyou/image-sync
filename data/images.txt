@@ -33,3 +33,4 @@ bitnami/postgresql
 bitnami/os-shell
 bitnami/postgres-exporter
 harness/harness:latest
+dockurr/windows:latest
