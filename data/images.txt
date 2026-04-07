@@ -36,3 +36,5 @@ harness/harness:latest
 dockurr/windows:latest
 kasmweb/ubuntu-noble-desktop:1.18.0-rolling-daily
 kasmweb/ubuntu-noble-desktop:1.18.0
+golang:1.26.1
+ubuntu:24.04
