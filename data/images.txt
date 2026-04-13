@@ -39,3 +39,4 @@ kasmweb/ubuntu-noble-desktop:1.18.0
 golang:1.26.1
 ubuntu:24.04
 docker:dind
+kindest/node:v1.35.0
