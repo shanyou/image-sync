@@ -8,3 +8,6 @@
 
 # 智能代理配置
 .agents/
+
+# oh-my-claudecode state
+.omc/
