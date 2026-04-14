@@ -41,3 +41,4 @@ ubuntu:24.04
 docker:dind
 kindest/node:v1.35.0
 nginxinc/nginx-unprivileged:latest
+nginxinc/nginx-unprivileged:1.27
