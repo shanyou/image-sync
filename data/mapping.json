@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-13T13:28:31Z",
+  "lastUpdated": "2026-04-14T09:39:29Z",
   "mappings": {
     "docker.io/jenkins/jenkins:2.541.1-jdk21": {
       "source": "docker.io/jenkins/jenkins:2.541.1-jdk21",
@@ -285,6 +285,14 @@
       "source": "kindest/node:v1.35.0",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/kindest-node:v1.35.0",
       "syncedAt": "2026-04-13T13:28:31Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": ""
+    },
+    "nginxinc/nginx-unprivileged:latest": {
+      "source": "nginxinc/nginx-unprivileged:latest",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/nginxinc-nginx-unprivileged:latest",
+      "syncedAt": "2026-04-14T09:39:29Z",
       "status": "success",
       "is_public": "true",
       "error_msg": ""
