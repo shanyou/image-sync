@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-14T09:43:19Z",
+  "lastUpdated": "2026-04-15T10:41:39Z",
   "mappings": {
     "docker.io/jenkins/jenkins:2.541.1-jdk21": {
       "source": "docker.io/jenkins/jenkins:2.541.1-jdk21",
@@ -301,6 +301,14 @@
       "source": "nginxinc/nginx-unprivileged:1.27",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/nginxinc-nginx-unprivileged:1.27",
       "syncedAt": "2026-04-14T09:43:19Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": ""
+    },
+    "alpine/socat": {
+      "source": "alpine/socat",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/alpine-socat:latest",
+      "syncedAt": "2026-04-15T10:41:39Z",
       "status": "success",
       "is_public": "true",
       "error_msg": ""
