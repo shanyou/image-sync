@@ -43,4 +43,4 @@ kindest/node:v1.35.0
 nginxinc/nginx-unprivileged:latest
 nginxinc/nginx-unprivileged:1.27
 alpine/socat
-ghcr.nju.edu.cn/kubelauncher/redis:8.6.1
+ghcr.io/kubelauncher/redis:8.6.1
