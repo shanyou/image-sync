@@ -44,3 +44,4 @@ nginxinc/nginx-unprivileged:latest
 nginxinc/nginx-unprivileged:1.27
 alpine/socat
 ghcr.io/kubelauncher/redis:8.6.1
+ghcr.io/kubelauncher/rabbitmq:4.2.4
