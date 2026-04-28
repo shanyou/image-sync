@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-27T08:31:24Z",
+  "lastUpdated": "2026-04-28T00:35:19Z",
   "mappings": {
     "docker.io/jenkins/jenkins:2.541.1-jdk21": {
       "source": "docker.io/jenkins/jenkins:2.541.1-jdk21",
@@ -317,6 +317,14 @@
       "source": "ghcr.io/kubelauncher/redis:8.6.1",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/ghcr-io-kubelauncher-redis:8.6.1",
       "syncedAt": "2026-04-27T08:31:24Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": ""
+    },
+    "ghcr.io/kubelauncher/rabbitmq:4.2.4": {
+      "source": "ghcr.io/kubelauncher/rabbitmq:4.2.4",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/ghcr-io-kubelauncher-rabbitmq:4.2.4",
+      "syncedAt": "2026-04-28T00:35:19Z",
       "status": "success",
       "is_public": "true",
       "error_msg": ""
