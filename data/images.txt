@@ -46,3 +46,4 @@ alpine/socat
 ghcr.io/kubelauncher/redis:8.6.1
 ghcr.io/kubelauncher/rabbitmq:4.2.4
 ghcr.io/kubelauncher/mysql:8.0.45
+calciumion/new-api:latest
