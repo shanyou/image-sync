@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-28T00:41:30Z",
+  "lastUpdated": "2026-04-29T01:57:59Z",
   "mappings": {
     "docker.io/jenkins/jenkins:2.541.1-jdk21": {
       "source": "docker.io/jenkins/jenkins:2.541.1-jdk21",
@@ -333,6 +333,14 @@
       "source": "ghcr.io/kubelauncher/mysql:8.0.45",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/ghcr-io-kubelauncher-mysql:8.0.45",
       "syncedAt": "2026-04-28T00:41:30Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": ""
+    },
+    "calciumion/new-api:latest": {
+      "source": "calciumion/new-api:latest",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/calciumion-new-api:latest",
+      "syncedAt": "2026-04-29T01:57:59Z",
       "status": "success",
       "is_public": "true",
       "error_msg": ""
