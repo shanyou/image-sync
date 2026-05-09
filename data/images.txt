@@ -47,3 +47,38 @@ ghcr.io/kubelauncher/redis:8.6.1
 ghcr.io/kubelauncher/rabbitmq:4.2.4
 ghcr.io/kubelauncher/mysql:8.0.45
 calciumion/new-api:latest
+
+# Dify 核心镜像
+langgenius/dify-api:1.14.0
+langgenius/dify-web:1.14.0
+langgenius/dify-sandbox:0.2.15
+langgenius/dify-plugin-daemon:0.6.0-local
+postgres:15-alpine
+redis:6-alpine
+ubuntu/squid:latest
+
+# Dify 向量数据库
+semitechnologies/weaviate:1.27.0
+milvusdb/milvus:v2.6.3
+minio/minio:RELEASE.2023-03-20T20-16-18Z
+quay.io/coreos/etcd:v3.5.5
+langgenius/qdrant:v1.8.3
+pgvector/pgvector:pg16
+tensorchord/pgvecto-rs:pg16-v0.3.0
+ghcr.io/chroma-core/chroma:0.5.20
+oceanbase/oceanbase-ce:4.3.5-lts
+oceanbase/seekdb:latest
+opengauss/opengauss:7.0.0-RC1
+myscale/myscaledb:1.6.4
+matrixorigin/matrixone:2.1.1
+containers.intersystems.com/intersystems/iris-community:2025.3
+container-registry.oracle.com/database/free:latest
+opensearchproject/opensearch:latest
+opensearchproject/opensearch-dashboards:latest
+
+# Dify 可选组件
+certbot/certbot:latest
+mysql:8.0
+docker.elastic.co/elasticsearch/elasticsearch:8.14.3
+docker.elastic.co/kibana/kibana:8.14.3
+downloads.unstructured.io/unstructured-io/unstructured-api:latest
