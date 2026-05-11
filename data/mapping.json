@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-09T07:34:33Z",
+  "lastUpdated": "2026-05-11T07:02:06Z",
   "mappings": {
     "docker.io/jenkins/jenkins:2.541.1-jdk21": {
       "source": "docker.io/jenkins/jenkins:2.541.1-jdk21",
@@ -573,6 +573,14 @@
       "source": "ubuntu/squid:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/ubuntu-squid:latest",
       "syncedAt": "2026-05-09T07:34:33Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": ""
+    },
+    "tmate/tmate-ssh-server:latest": {
+      "source": "tmate/tmate-ssh-server:latest",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/tmate-tmate-ssh-server:latest",
+      "syncedAt": "2026-05-11T07:02:06Z",
       "status": "success",
       "is_public": "true",
       "error_msg": ""
