@@ -1,0 +1,85 @@
+# Docker 镜像同步列表
+# 每行一个镜像，格式: source-image[:tag]
+
+# 示例镜像
+# gcr.io/kubernetes-release/pause:3.9
+# ghcr.io/prometheus/prometheus:v2.45.0
+# quay.io/coreos/etcd:v3.5.9
+
+docker.io/jenkins/jenkins:2.541.1-jdk21
+docker.io/kiwigrid/k8s-sidecar:2.5.0
+jenkins/inbound-agent:3355.v388858a_47b_33-9
+nginx:latest
+mysql:latest
+busybox:latest
+docker.io/busybox:stable
+docker.io/rancher/local-path-provisioner:v0.0.22
+codeberg.org/forgejo/forgejo:14
+postgres:14
+goacme/lego:latest
+forgejo.ellis.link/continuwuation/continuwuity:latest
+vectorim/element-web:latest
+weishaw/sub2api:latest
+postgres:18-alpine
+redis:8-alpine
+adrianmusante/pocketbase
+docker:latest
+codeberg.org/forgejo/forgejo:14.0.3
+jevolk/tuwunel:latest
+eceasy/cli-proxy-api:latest
+jenkinsci/blueocean:latest
+headscale/headscale:latest
+bitnami/postgresql
+bitnami/os-shell
+bitnami/postgres-exporter
+harness/harness:latest
+dockurr/windows:latest
+kasmweb/ubuntu-noble-desktop:1.18.0-rolling-daily
+kasmweb/ubuntu-noble-desktop:1.18.0
+golang:1.26.1
+ubuntu:24.04
+docker:dind
+kindest/node:v1.35.0
+nginxinc/nginx-unprivileged:latest
+nginxinc/nginx-unprivileged:1.27
+alpine/socat
+ghcr.io/kubelauncher/redis:8.6.1
+ghcr.io/kubelauncher/rabbitmq:4.2.4
+ghcr.io/kubelauncher/mysql:8.0.45
+calciumion/new-api:latest
+
+# Dify 核心镜像
+langgenius/dify-api:1.14.0
+langgenius/dify-web:1.14.0
+langgenius/dify-sandbox:0.2.15
+langgenius/dify-plugin-daemon:0.6.0-local
+postgres:15-alpine
+redis:6-alpine
+ubuntu/squid:latest
+
+# Dify 向量数据库
+semitechnologies/weaviate:1.27.0
+milvusdb/milvus:v2.6.3
+minio/minio:RELEASE.2023-03-20T20-16-18Z
+quay.io/coreos/etcd:v3.5.5
+langgenius/qdrant:v1.8.3
+pgvector/pgvector:pg16
+tensorchord/pgvecto-rs:pg16-v0.3.0
+ghcr.io/chroma-core/chroma:0.5.20
+oceanbase/oceanbase-ce:4.3.5-lts
+oceanbase/seekdb:latest
+opengauss/opengauss:7.0.0-RC1
+myscale/myscaledb:1.6.4
+matrixorigin/matrixone:2.1.1
+containers.intersystems.com/intersystems/iris-community:2025.3
+container-registry.oracle.com/database/free:latest
+opensearchproject/opensearch:latest
+opensearchproject/opensearch-dashboards:latest
+
+# Dify 可选组件
+certbot/certbot:latest
+mysql:8.0
+docker.elastic.co/elasticsearch/elasticsearch:8.14.3
+docker.elastic.co/kibana/kibana:8.14.3
+downloads.unstructured.io/unstructured-io/unstructured-api:latest
+tmate/tmate-ssh-server:latest
