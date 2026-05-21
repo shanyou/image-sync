@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-20T02:55:16Z",
+  "lastUpdated": "2026-05-21T06:03:47Z",
   "mappings": {
     "docker.io/jenkins/jenkins:2.541.1-jdk21": {
       "source": "docker.io/jenkins/jenkins:2.541.1-jdk21",
@@ -589,6 +589,14 @@
       "source": "tomcat:9.0.118-jdk8-temurin-noble",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/tomcat:9.0.118-jdk8-temurin-noble",
       "syncedAt": "2026-05-20T02:55:16Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": ""
+    },
+    "quay.io/minio/minio:RELEASE.2024-12-18T13-15-44Z": {
+      "source": "quay.io/minio/minio:RELEASE.2024-12-18T13-15-44Z",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/quay-io-minio-minio:RELEASE.2024-12-18T13-15-44Z",
+      "syncedAt": "2026-05-21T06:03:47Z",
       "status": "success",
       "is_public": "true",
       "error_msg": ""
