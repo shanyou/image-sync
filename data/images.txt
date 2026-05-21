@@ -84,3 +84,4 @@ docker.elastic.co/kibana/kibana:8.14.3
 downloads.unstructured.io/unstructured-io/unstructured-api:latest
 tmate/tmate-ssh-server:latest
 tomcat:9.0.118-jdk8-temurin-noble
+quay.io/minio/minio:RELEASE.2024-12-18T13-15-44Z
