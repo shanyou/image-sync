@@ -85,3 +85,4 @@ downloads.unstructured.io/unstructured-io/unstructured-api:latest
 tmate/tmate-ssh-server:latest
 tomcat:9.0.118-jdk8-temurin-noble
 quay.io/minio/minio:RELEASE.2024-12-18T13-15-44Z
+quay.io/minio/mc:RELEASE.2024-11-21T17-21-54Z
