@@ -87,3 +87,8 @@ tomcat:9.0.118-jdk8-temurin-noble
 quay.io/minio/minio:RELEASE.2024-12-18T13-15-44Z
 quay.io/minio/mc:RELEASE.2024-11-21T17-21-54Z
 centos:7
+ubuntu:18.04
+ubuntu:20.04
+ubuntu:22.04
+ubuntu:24.04
+ubuntu:26.04
