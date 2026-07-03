@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-03T02:20:01Z",
+  "lastUpdated": "2026-07-03T02:23:32Z",
   "mappings": {
     "docker.io/jenkins/jenkins:2.541.1-jdk21": {
       "source": "docker.io/jenkins/jenkins:2.541.1-jdk21",
@@ -613,6 +613,38 @@
       "source": "centos:7",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/centos:7",
       "syncedAt": "2026-07-03T02:20:01Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": ""
+    },
+    "ubuntu:18.04": {
+      "source": "ubuntu:18.04",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/ubuntu:18.04",
+      "syncedAt": "2026-07-03T02:22:10Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": ""
+    },
+    "ubuntu:20.04": {
+      "source": "ubuntu:20.04",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/ubuntu:20.04",
+      "syncedAt": "2026-07-03T02:22:29Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": ""
+    },
+    "ubuntu:22.04": {
+      "source": "ubuntu:22.04",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/ubuntu:22.04",
+      "syncedAt": "2026-07-03T02:23:15Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": ""
+    },
+    "ubuntu:26.04": {
+      "source": "ubuntu:26.04",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/ubuntu:26.04",
+      "syncedAt": "2026-07-03T02:23:32Z",
       "status": "success",
       "is_public": "true",
       "error_msg": ""
