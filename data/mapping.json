@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-21T06:19:23Z",
+  "lastUpdated": "2026-07-03T02:20:01Z",
   "mappings": {
     "docker.io/jenkins/jenkins:2.541.1-jdk21": {
       "source": "docker.io/jenkins/jenkins:2.541.1-jdk21",
@@ -605,6 +605,14 @@
       "source": "quay.io/minio/mc:RELEASE.2024-11-21T17-21-54Z",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/quay-io-minio-mc:RELEASE.2024-11-21T17-21-54Z",
       "syncedAt": "2026-05-21T06:19:23Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": ""
+    },
+    "centos:7": {
+      "source": "centos:7",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/centos:7",
+      "syncedAt": "2026-07-03T02:20:01Z",
       "status": "success",
       "is_public": "true",
       "error_msg": ""
