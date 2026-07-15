@@ -1,7 +1,8 @@
 #!/bin/bash
 # 镜像同步脚本
-# 使用方法: ./sync.sh [-f|--force]
+# 使用方法: ./sync.sh [-f|--force] [--refresh-rolling]
 #   -f, --force: 强制同步所有镜像，不管是否已同步过
+#   --refresh-rolling: 重同步所有 rolling tag（可变 tag，如 :latest/:alpine）
 #
 # 功能: 将 Docker 镜像同步到华为云 SWR，并保留原始 tag 格式
 
@@ -15,6 +16,7 @@ INPUT_FILE="data/images.txt"
 MAPPING_FILE="data/mapping.json"
 NAMESPACE="${SWR_ORG_NAME:-shanyou}"
 FORCE_SYNC=false
+REFRESH_ROLLING=false
 
 # 解析命令行参数
 while [[ $# -gt 0 ]]; do
@@ -23,9 +25,13 @@ while [[ $# -gt 0 ]]; do
             FORCE_SYNC=true
             shift
             ;;
+        --refresh-rolling)
+            REFRESH_ROLLING=true
+            shift
+            ;;
         *)
             echo "未知参数: $1"
-            echo "使用方法: $0 [-f|--force]"
+            echo "使用方法: $0 [-f|--force] [--refresh-rolling]"
             exit 1
             ;;
     esac
@@ -50,6 +56,7 @@ add_mapping() {
     local status="$3"
     local is_public="$4"
     local error_msg="${5:-}"
+    local source_digest="${6:-}"
 
     local timestamp=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
 
@@ -60,13 +67,15 @@ add_mapping() {
            --arg st "$status" \
            --arg pub "$is_public" \
            --arg err "$error_msg" \
+           --arg dig "$source_digest" \
            '.lastUpdated = $time | .mappings[$src] = {
                "source": $src,
                "target": $tgt,
                "syncedAt": $time,
                "status": $st,
                "is_public": $pub,
-               "error_msg": $err
+               "error_msg": $err,
+               "sourceDigest": $dig
            }' "$MAPPING_FILE" > "${MAPPING_FILE}.tmp" \
            && mv "${MAPPING_FILE}.tmp" "$MAPPING_FILE"
     fi
@@ -79,10 +88,14 @@ sync_image() {
 
     echo "正在同步: $source_image -> $target_image"
 
-    if skopeo copy \
+    if skopeo copy --all \
         --dest-creds "${REGISTRY_USERNAME}:${REGISTRY_PASSWORD}" \
         "docker://${source_image}" \
         "docker://${target_image}"; then
+
+        # 取源镜像 digest 用于追溯（非致命，失败留空）
+        local source_digest=""
+        source_digest=$(skopeo inspect --format '{{.Digest}}' "docker://${source_image}" 2>/dev/null || echo "")
 
         # 2. 设置为 public
         local error_msg=""
@@ -111,11 +124,11 @@ sync_image() {
             fi
         fi
 
-        add_mapping "$source_image" "$target_image" "$status" "$is_public" "$error_msg"
+        add_mapping "$source_image" "$target_image" "$status" "$is_public" "$error_msg" "$source_digest"
         echo "✓ 同步成功: $source_image (is_public: ${is_public})"
         return 0
     else
-        add_mapping "$source_image" "$target_image" "failed" "false" "skopeo copy 失败"
+        add_mapping "$source_image" "$target_image" "failed" "false" "skopeo copy 失败" ""
         echo "✗ 同步失败: $source_image"
         return 1
     fi
@@ -136,11 +149,18 @@ main() {
         # 跳过注释和空行
         [[ "$image" =~ ^#.*$ || -z "$image" ]] && continue
 
-        # 检查是否已同步，除非使用 --force 选项
-        if [ "$FORCE_SYNC" = false ] && is_synced "$image" "$MAPPING_FILE"; then
-            echo "⊘ 跳过已同步: $image"
-            skip_count=$((skip_count + 1))
-            continue
+        # 跳过逻辑：--force 全量重同步；否则已成功同步的跳过，
+        # 除非开启 --refresh-rolling 且该镜像为 rolling tag
+        if [ "$FORCE_SYNC" = true ]; then
+            : # 强制同步，不跳过
+        elif is_synced "$image" "$MAPPING_FILE"; then
+            if [ "$REFRESH_ROLLING" = true ] && is_rolling_tag "$image"; then
+                echo "↻ 刷新 rolling tag: $image"
+            else
+                echo "⊘ 跳过已同步: $image"
+                skip_count=$((skip_count + 1))
+                continue
+            fi
         fi
 
         # 转换目标镜像名

@@ -53,6 +53,9 @@ jobs:
           if [ "${{ github.event.inputs.force_sync }}" = "true" ]; then
             echo "执行强制同步模式"
             ./scripts/sync.sh --force
+          elif [ "${{ github.event_name }}" = "schedule" ]; then
+            echo "执行定时刷新模式（重同步 rolling tag）"
+            ./scripts/sync.sh --refresh-rolling
           else
             echo "执行常规同步模式"
             ./scripts/sync.sh
