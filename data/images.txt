@@ -91,3 +91,4 @@ ubuntu:22.04
 ubuntu:24.04
 ubuntu:26.04
 litellm/litellm:latest
+1dev/server:latest
