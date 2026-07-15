@@ -186,8 +186,16 @@ main() {
     else
         git add "$MAPPING_FILE"
         git commit -m "chore: 更新镜像映射记录"
-        git push
-    fi
+        # pull --rebase + retry: 防止与并发运行的 CI 或中间推送冲突
+        for i in 1 2 3; do
+            if git pull --rebase && git push; then
+                break
+            fi
+            echo "git push 失败，第 ${i} 次重试..."
+            sleep 2
+        done
+        # 确保循环结束后 git push 确实成功了（否则 set -e 不捕获 for 的退出码）
+        git diff --quiet "@{u}..HEAD" || { echo "错误: 3 次重试后 git push 仍然失败"; exit 1; }
 }
 
 main
