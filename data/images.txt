@@ -68,7 +68,6 @@ ghcr.io/chroma-core/chroma:0.5.20
 oceanbase/oceanbase-ce:4.3.5-lts
 oceanbase/seekdb:latest
 opengauss/opengauss:7.0.0-RC1
-myscale/myscaledb:1.6.4
 matrixorigin/matrixone:2.1.1
 containers.intersystems.com/intersystems/iris-community:2025.3
 container-registry.oracle.com/database/free:latest
