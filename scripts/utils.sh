@@ -5,9 +5,12 @@ convert_image_name() {
     local source_image="$1"
     local namespace="$2"
 
+    # 去掉 digest 部分（@sha256:...），digest 是源镜像特定的，不带 到目标
+    local ref="${source_image%%@*}"
+
     # 分离镜像名和 tag
-    local image_part="${source_image%%:*}"
-    local tag_part="${source_image#*:}"
+    local image_part="${ref%%:*}"
+    local tag_part="${ref#*:}"
 
     # 如果没有 tag，默认使用 latest
     if [ "$image_part" = "$tag_part" ]; then
@@ -29,16 +32,37 @@ is_synced() {
         return 1
     fi
 
-    # 使用 jq 检查是否存在
+    # 使用 jq 检查：仅 status=success 才算已同步（失败镜像可重试）
     if command -v jq &> /dev/null; then
-        if jq -e ".mappings[\"$source_image\"]" "$mapping_file" > /dev/null 2>&1; then
+        if jq -e ".mappings[\"$source_image\"] | select(.status == \"success\")" "$mapping_file" > /dev/null 2>&1; then
             return 0
         fi
     else
-        # 没有 jq 时使用 grep 简单检查
+        # 没有 jq 时使用 grep 简单检查（降级：不区分 status）
         if grep -q "\"$source_image\"" "$mapping_file"; then
             return 0
         fi
+    fi
+
+    return 1
+}
+
+# 判断是否为 rolling tag（可变 tag，需定期重同步）
+# 规则：无显式 tag（默认 latest），或 tag 中不含数字
+# 返回：0 = rolling，1 = 固定版本
+is_rolling_tag() {
+    local source_image="$1"
+
+    # 无冒号 => 无显式 tag => 默认 latest => rolling
+    if [[ "$source_image" != *:* ]]; then
+        return 0
+    fi
+
+    local tag="${source_image##*:}"
+
+    # tag 中不含数字 => rolling（latest/alpine/stable/daily/dind 等）
+    if [[ ! "$tag" =~ [0-9] ]]; then
+        return 0
     fi
 
     return 1
@@ -56,8 +80,11 @@ deduplicate_images() {
 parse_target_image() {
     local target_image="$1"
 
+    # 防御性去掉 digest
+    local ref="${target_image%%@*}"
+
     # 移除 registry 部分
-    local without_registry="${target_image#*/}"
+    local without_registry="${ref#*/}"
 
     # 分离 namespace 和 repository:tag
     local namespace="${without_registry%%/*}"
