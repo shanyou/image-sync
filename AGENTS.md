@@ -74,6 +74,7 @@ image-sync/
 - `is_rolling_tag(source_image)`: 判断是否为 rolling tag（无显式 tag 或 tag 不含数字），定时任务据此重同步
 - `parse_target_image(target_image)`: 解析目标镜像名
   - 输出格式: `namespace|repository|tag`
+- `get_source_creds_args(source_image)`: 构造 skopeo 源凭据参数（仅 docker.io 源且配置了 `DOCKERHUB_USERNAME`/`DOCKERHUB_TOKEN` 时返回 `--src-creds`）
 
 ### 3. SWR API 封装 (scripts/swr-api.sh)
 
@@ -156,16 +157,16 @@ quay.io/coreos/etcd:v3.5.9
 | `REGISTRY_USERNAME` | SWR 登录用户名 | `cn-north-1@xxx` |
 | `REGISTRY_PASSWORD` | SWR 登录密码 | - |
 
-### 可选环境变量
+### Docker Hub 源凭据（可选，强烈推荐）
 
-| 变量名 | 用途 | 默认值 |
-|--------|------|--------|
-| `SWR_ORG_NAME` | SWR 命名空间/组织 | `shanyou` |
-| `IAM_ENDPOINT` | IAM 认证端点 | `iam.myhuaweicloud.com` |
-| `SWR_API_ENDPOINT` | SWR API 端点 | `swr-api.cn-north-1.myhuaweicloud.com` |
-| `IAM_DOMAIN` | IAM 用户所属账号名 | - |
-| `IAM_USERNAME` | IAM 用户名 | - |
-| `IAM_PASSWORD` | IAM 用户密码 | - |
+规避 Docker Hub 匿名拉取限流（匿名 100/6h，认证 200/6h）。仅对 docker.io 源生效。
+
+| 变量名 | 用途 |
+|--------|------|
+| `DOCKERHUB_USERNAME` | Docker Hub 账号用户名 |
+| `DOCKERHUB_TOKEN` | Docker Hub Access Token（非密码，hub.docker.com → Settings → Security 生成） |
+
+未配置时降级为匿名拉取，docker.io 镜像较多时可能触发限流（CI 表现为 `denied` 或 `502`）。
 
 ### 本地开发环境配置 (.env)
 
@@ -174,6 +175,10 @@ export TARGET_REGISTRY=swr.cn-north-1.myhuaweicloud.com
 export REGISTRY_USERNAME=your-username
 export REGISTRY_PASSWORD=your-password
 export SWR_ORG_NAME=shanyou
+
+# Docker Hub 源凭据（规避匿名限流，强烈推荐）
+export DOCKERHUB_USERNAME=your-dockerhub-username
+export DOCKERHUB_TOKEN=dckr_pat_xxx
 
 # 如需自动设置 public，需配置以下变量
 export IAM_ENDPOINT=iam.myhuaweicloud.com

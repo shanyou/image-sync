@@ -74,6 +74,23 @@ deduplicate_images() {
     sort -u "$input_file" | grep -v '^#' | grep -v '^$'
 }
 
+# 构造 skopeo 的源凭据参数（仅 docker.io 源且配置了凭据时返回 --src-creds）
+# 用法: src_creds=( $(get_source_creds_args "$source_image") )
+# 输出: 空（无凭据）或两元素 "--src-creds" "user:pass"
+# 通过全局数组变量 SRC_CREDS_ARGS 返回，避免子 shell 单词分割问题
+get_source_creds_args() {
+    local source_image="$1"
+
+    # 仅 docker.io 源需要认证（其他 registry 无匿名限额问题）
+    # docker.io 引用形式: "nginx:tag" / "docker.io/..." / "library/nginx:tag"
+    local registry="${source_image%%/*}"
+    if [ "$registry" = "$source_image" ] || [ "$registry" = "docker.io" ] || [ "$registry" = "library" ]; then
+        if [ -n "${DOCKERHUB_USERNAME:-}" ] && [ -n "${DOCKERHUB_TOKEN:-}" ]; then
+            printf '%s\n%s\n' "--src-creds" "${DOCKERHUB_USERNAME}:${DOCKERHUB_TOKEN}"
+        fi
+    fi
+}
+
 # 解析目标镜像名，提取 namespace 和 repository
 # 输入: swr.cn-north-1.myhuaweicloud.com/shanyou/image-name:tag
 # 输出: namespace|repository|tag

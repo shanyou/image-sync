@@ -107,4 +107,47 @@ for case in "${roll_cases[@]}"; do
         exit 1
     fi
 done
+# 测试 get_source_creds_args
+# 场景 1: docker.io 源 + 有凭据 → 应返回两行
+export DOCKERHUB_USERNAME="testuser"
+export DOCKERHUB_TOKEN="testtoken"
+creds_out=$(get_source_creds_args "docker.io/library/nginx:latest")
+creds_line1=$(echo "$creds_out" | sed -n '1p')
+creds_line2=$(echo "$creds_out" | sed -n '2p')
+if [ "$creds_line1" = "--src-creds" ] && [ "$creds_line2" = "testuser:testtoken" ]; then
+    echo "✓ get_source_creds_args (docker.io + 凭据) 测试通过"
+else
+    echo "✗ get_source_creds_args (docker.io + 凭据) 测试失败"
+    echo "  期望: --src-creds / testuser:testtoken"
+    echo "  实际: [$creds_line1] / [$creds_line2]"
+    exit 1
+fi
+
+# 场景 2: 裸镜像名（默认 docker.io）+ 有凭据 → 应返回凭据
+creds_out=$(get_source_creds_args "nginx:latest")
+if [ -n "$creds_out" ]; then
+    echo "✓ get_source_creds_args (裸名 + 凭据) 测试通过"
+else
+    echo "✗ get_source_creds_args (裸名 + 凭据) 测试失败：裸名应视为 docker.io"
+    exit 1
+fi
+
+# 场景 3: 非 docker.io 源 + 有凭据 → 应为空（不注入）
+creds_out=$(get_source_creds_args "quay.io/prometheus/node-exporter:v1.6.0")
+if [ -z "$creds_out" ]; then
+    echo "✓ get_source_creds_args (非 docker.io 源) 测试通过"
+else
+    echo "✗ get_source_creds_args (非 docker.io 源) 测试失败：不该注入凭据"
+    exit 1
+fi
+
+# 场景 4: docker.io 源 + 无凭据 → 应为空（降级匿名）
+unset DOCKERHUB_USERNAME DOCKERHUB_TOKEN
+creds_out=$(get_source_creds_args "docker.io/library/nginx:latest")
+if [ -z "$creds_out" ]; then
+    echo "✓ get_source_creds_args (无凭据降级) 测试通过"
+else
+    echo "✗ get_source_creds_args (无凭据降级) 测试失败：无凭据应空输出"
+    exit 1
+fi
 echo "=== 所有测试通过 ==="

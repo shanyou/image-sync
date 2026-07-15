@@ -88,14 +88,19 @@ sync_image() {
 
     echo "正在同步: $source_image -> $target_image"
 
+    # 源凭据（仅 docker.io 源且配置了 DOCKERHUB_USERNAME/TOKEN 时注入，规避匿名限流）
+    local -a src_creds=()
+    while IFS= read -r line; do src_creds+=("$line"); done < <(get_source_creds_args "$source_image")
+
     if skopeo copy --all \
+        "${src_creds[@]}" \
         --dest-creds "${REGISTRY_USERNAME}:${REGISTRY_PASSWORD}" \
         "docker://${source_image}" \
         "docker://${target_image}"; then
 
-        # 取源镜像 digest 用于追溯（非致命，失败留空）
+        # 取源镜像 digest 用于追溯（非致命，失败留空；带源凭据避免 docker.io 限流）
         local source_digest=""
-        source_digest=$(skopeo inspect --format '{{.Digest}}' "docker://${source_image}" 2>/dev/null || echo "")
+        source_digest=$(skopeo inspect --format '{{.Digest}}' "${src_creds[@]}" "docker://${source_image}" 2>/dev/null || echo "")
 
         # 2. 设置为 public
         local error_msg=""
