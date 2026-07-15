@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-15T04:54:45Z",
+  "lastUpdated": "2026-07-15T06:03:32Z",
   "mappings": {
     "docker.io/jenkins/jenkins:2.541.1-jdk21": {
       "source": "docker.io/jenkins/jenkins:2.541.1-jdk21",
@@ -31,10 +31,10 @@
     "nginx:latest": {
       "source": "nginx:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/nginx:latest",
-      "syncedAt": "2026-07-15T04:15:06Z",
-      "status": "failed",
-      "is_public": "false",
-      "error_msg": "skopeo copy 失败",
+      "syncedAt": "2026-07-15T06:03:32Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": "",
       "sourceDigest": ""
     },
     "mysql:latest": {
@@ -54,22 +54,6 @@
       "is_public": "true",
       "error_msg": "",
       "sourceDigest": "sha256:fd8d9aa63ba2f0982b5304e1ee8d3b90a210bc1ffb5314d980eb6962f1a9715d"
-    },
-    "docker.io/busybox:stable@sha256:3fbc632167424a6d997e74f52b878d7cc478225cffac6bc977eedfe51c7f4e79": {
-      "source": "docker.io/busybox:stable@sha256:3fbc632167424a6d997e74f52b878d7cc478225cffac6bc977eedfe51c7f4e79",
-      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/docker-io-busybox:stable@sha256:3fbc632167424a6d997e74f52b878d7cc478225cffac6bc977eedfe51c7f4e79",
-      "syncedAt": "2026-02-13T02:06:20Z",
-      "status": "failed",
-      "is_public": "false",
-      "error_msg": "skopeo copy 失败"
-    },
-    "docker.io/rancher/local-path-provisioner:v0.0.22@sha256:e34c88ae0affb1cdefbb874140d6339d4a27ec4ee420ae8199cd839997b05246": {
-      "source": "docker.io/rancher/local-path-provisioner:v0.0.22@sha256:e34c88ae0affb1cdefbb874140d6339d4a27ec4ee420ae8199cd839997b05246",
-      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/docker-io-rancher-local-path-provisioner:v0.0.22@sha256:e34c88ae0affb1cdefbb874140d6339d4a27ec4ee420ae8199cd839997b05246",
-      "syncedAt": "2026-02-13T02:06:20Z",
-      "status": "failed",
-      "is_public": "false",
-      "error_msg": "skopeo copy 失败"
     },
     "docker.io/busybox:stable": {
       "source": "docker.io/busybox:stable",
@@ -178,15 +162,6 @@
       "is_public": "true",
       "error_msg": "",
       "sourceDigest": "sha256:66d292e5c26bd33a6f6f61cacb880de2186339a524ecba1ce098dbbaceed6515"
-    },
-    "codeberg.org/forgejo/forgejo:14.0.3": {
-      "source": "codeberg.org/forgejo/forgejo:14.0.3",
-      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/codeberg-org-forgejo-forgejo:14.0.3",
-      "syncedAt": "2026-07-15T02:48:25Z",
-      "status": "failed",
-      "is_public": "false",
-      "error_msg": "skopeo copy 失败",
-      "sourceDigest": ""
     },
     "jevolk/tuwunel:latest": {
       "source": "jevolk/tuwunel:latest",
@@ -524,7 +499,7 @@
     "myscale/myscaledb:1.6.4": {
       "source": "myscale/myscaledb:1.6.4",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/myscale-myscaledb:1.6.4",
-      "syncedAt": "2026-07-15T04:12:27Z",
+      "syncedAt": "2026-07-15T06:01:17Z",
       "status": "failed",
       "is_public": "false",
       "error_msg": "skopeo copy 失败",
@@ -727,6 +702,15 @@
       "is_public": "true",
       "error_msg": "",
       "sourceDigest": "sha256:b7f48194d4d8b763a478a621cdc81c27be222ba2206ca3ca6bc42b49685f3d9e"
+    },
+    "litellm/litellm:latest": {
+      "source": "litellm/litellm:latest",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/litellm-litellm:latest",
+      "syncedAt": "2026-07-15T06:01:16Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": "",
+      "sourceDigest": "sha256:9ef6f45bc0104940571765e610c52a1d761b5ec85efcd193795281086ee61277"
     }
   }
 }
