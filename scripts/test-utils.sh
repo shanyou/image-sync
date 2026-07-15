@@ -19,17 +19,13 @@ else
     exit 1
 fi
 
-# 测试 is_synced (空文件)
-echo '{"lastUpdated": "", "mappings": {}}' > /tmp/test-mapping.json
-
-if is_synced "gcr.io/test/image:1.0" "/tmp/test-mapping.json"; then
-    echo "✗ is_synced 测试失败"
-    exit 1
+# 测试 needs_sync：无 mapping 文件 → 应需要同步
+if needs_sync "img" "target" "/nonexistent/file" "false"; then
+    echo "✓ needs_sync (无 mapping) 测试通过"
 else
-    echo "✓ is_synced 测试通过"
+    echo "✗ needs_sync (无 mapping) 失败：应需要同步"
+    exit 1
 fi
-
-rm -f /tmp/test-mapping.json
 
 # 测试 parse_target_image
 result=$(parse_target_image "swr.cn-north-1.myhuaweicloud.com/shanyou/gcr-io-kubernetes-release-pause:3.9")
@@ -69,85 +65,101 @@ else
     exit 1
 fi
 
-# 测试 is_synced：status=failed 不应视为已同步（可重试）
-echo '{"lastUpdated":"","mappings":{"foo/bar:1.0":{"source":"foo/bar:1.0","status":"failed"}}}' > /tmp/test-mapping.json
-if is_synced "foo/bar:1.0" "/tmp/test-mapping.json"; then
-    echo "✗ is_synced (failed status) 测试失败：失败的镜像不应被跳过"
-    exit 1
+# 测试 needs_sync：status=failed → 应需要同步（重试）
+echo '{"lastUpdated":"","mappings":{"foo/bar:1.0":{"source":"foo/bar:1.0","status":"failed","sourceDigest":""}}}' > /tmp/test-mapping-ns.json
+if needs_sync "foo/bar:1.0" "target/foo:1.0" "/tmp/test-mapping-ns.json" "false"; then
+    echo "✓ needs_sync (failed 状态) 测试通过"
 else
-    echo "✓ is_synced (failed status) 测试通过"
-fi
-# 反向：status=success 应视为已同步
-echo '{"lastUpdated":"","mappings":{"foo/bar:2.0":{"source":"foo/bar:2.0","status":"success"}}}' > /tmp/test-mapping.json
-if is_synced "foo/bar:2.0" "/tmp/test-mapping.json"; then
-    echo "✓ is_synced (success status) 测试通过"
-else
-    echo "✗ is_synced (success status) 测试失败"
+    echo "✗ needs_sync (failed 状态) 失败：应需要同步（重试）"
     exit 1
 fi
-rm -f /tmp/test-mapping.json
+# 反向：success 且 sourceDigest 非空，mock digest 相同 → 不需同步
+echo '{"lastUpdated":"","mappings":{"foo/bar:2.0":{"source":"foo/bar:2.0","status":"success","sourceDigest":"sha256:abc"}}}' > /tmp/test-mapping-ns.json
+get_source_digest() { echo "sha256:abc"; }
+export -f get_source_digest
+if needs_sync "foo/bar:2.0" "target/foo:2.0" "/tmp/test-mapping-ns.json" "false"; then
+    echo "✗ needs_sync (digest 相同) 失败：不应需要同步"
+    exit 1
+else
+    echo "✓ needs_sync (digest 相同) 测试通过"
+fi
+unset -f get_source_digest
+rm -f /tmp/test-mapping-ns.json
 
-# 测试 is_rolling_tag
-roll_cases=(
-    "nginx:latest|0"
-    "redis:8-alpine|1"
-    "bitnami/postgresql|0"
-    "minio/minio:RELEASE.2023-03-20T20-16-18Z|1"
-    "docker.io/busybox:stable|0"
-    "golang:1.26.1|1"
-)
-for case in "${roll_cases[@]}"; do
-    IFS='|' read -r img expected <<< "$case"
-    actual=0
-    is_rolling_tag "$img" || actual=$?
-    if [ "$actual" = "$expected" ]; then
-        echo "✓ is_rolling_tag ($img) 测试通过"
-    else
-        echo "✗ is_rolling_tag ($img) 测试失败：期望 $expected，实际 $actual"
-        exit 1
-    fi
-done
-# 测试 get_source_creds_args
-# 场景 1: docker.io 源 + 有凭据 → 应返回两行
+# 测试 needs_sync：digest 不同 → 应需要同步
+echo '{"lastUpdated":"","mappings":{"foo/bar:d":{"source":"foo/bar:d","status":"success","sourceDigest":"sha256:old"}}}' > /tmp/test-mapping-ns.json
+get_source_digest() { echo "sha256:new"; }
+export -f get_source_digest
+if needs_sync "foo/bar:d" "target/foo:d" "/tmp/test-mapping-ns.json" "false"; then
+    echo "✓ needs_sync (digest 不同) 测试通过"
+else
+    echo "✗ needs_sync (digest 不同) 失败：上游变了应需要同步"
+    exit 1
+fi
+# 反向：digest 相同 → 不应同步
+get_source_digest() { echo "sha256:old"; }
+export -f get_source_digest
+if needs_sync "foo/bar:d" "target/foo:d" "/tmp/test-mapping-ns.json" "false"; then
+    echo "✗ needs_sync (digest 相同-反向) 失败：不应需要同步"
+    exit 1
+else
+    echo "✓ needs_sync (digest 相同-反向) 测试通过"
+fi
+rm -f /tmp/test-mapping-ns.json
+
+# 测试 needs_sync：drift 检测（目标 digest 与记录不一致）
+echo '{"lastUpdated":"","mappings":{"drift/img":{"source":"drift/img","status":"success","sourceDigest":"sha256:rec"}}}' > /tmp/test-mapping-ns.json
+get_source_digest() { echo "sha256:rec"; }
+get_target_digest() { echo "sha256:wrong"; }
+export -f get_source_digest get_target_digest
+if needs_sync "drift/img" "tgt/drift" "/tmp/test-mapping-ns.json" "true"; then
+    echo "✓ needs_sync (drift 不一致) 测试通过"
+else
+    echo "✗ needs_sync (drift 不一致) 失败：目标漂移应需要同步"
+    exit 1
+fi
+# 反向：drift 检测关闭时，仅目标不一致不触发同步
+get_target_digest() { echo "sha256:wrong"; }
+export -f get_target_digest
+if needs_sync "drift/img" "tgt/drift" "/tmp/test-mapping-ns.json" "false"; then
+    echo "✗ needs_sync (drift 关闭) 失败：关了 drift 不应因目标不一致而同步"
+    exit 1
+else
+    echo "✓ needs_sync (drift 关闭) 测试通过"
+fi
+unset -f get_source_digest get_target_digest
+rm -f /tmp/test-mapping-ns.json
+
+# 测试 get_source_creds_value（取代旧的 get_source_creds_args）
 export DOCKERHUB_USERNAME="testuser"
 export DOCKERHUB_TOKEN="testtoken"
-creds_out=$(get_source_creds_args "docker.io/library/nginx:latest")
-creds_line1=$(echo "$creds_out" | sed -n '1p')
-creds_line2=$(echo "$creds_out" | sed -n '2p')
-if [ "$creds_line1" = "--src-creds" ] && [ "$creds_line2" = "testuser:testtoken" ]; then
-    echo "✓ get_source_creds_args (docker.io + 凭据) 测试通过"
+creds_val=$(get_source_creds_value "docker.io/library/nginx:latest")
+if [ "$creds_val" = "testuser:testtoken" ]; then
+    echo "✓ get_source_creds_value (docker.io + 凭据) 测试通过"
 else
-    echo "✗ get_source_creds_args (docker.io + 凭据) 测试失败"
-    echo "  期望: --src-creds / testuser:testtoken"
-    echo "  实际: [$creds_line1] / [$creds_line2]"
+    echo "✗ get_source_creds_value (docker.io + 凭据) 失败: [$creds_val]"
     exit 1
 fi
-
-# 场景 2: 裸镜像名（默认 docker.io）+ 有凭据 → 应返回凭据
-creds_out=$(get_source_creds_args "nginx:latest")
-if [ -n "$creds_out" ]; then
-    echo "✓ get_source_creds_args (裸名 + 凭据) 测试通过"
+creds_val=$(get_source_creds_value "nginx:latest")
+if [ -n "$creds_val" ]; then
+    echo "✓ get_source_creds_value (裸名 + 凭据) 测试通过"
 else
-    echo "✗ get_source_creds_args (裸名 + 凭据) 测试失败：裸名应视为 docker.io"
+    echo "✗ get_source_creds_value (裸名) 失败：裸名应视为 docker.io"
     exit 1
 fi
-
-# 场景 3: 非 docker.io 源 + 有凭据 → 应为空（不注入）
-creds_out=$(get_source_creds_args "quay.io/prometheus/node-exporter:v1.6.0")
-if [ -z "$creds_out" ]; then
-    echo "✓ get_source_creds_args (非 docker.io 源) 测试通过"
+creds_val=$(get_source_creds_value "quay.io/prom/node:v1")
+if [ -z "$creds_val" ]; then
+    echo "✓ get_source_creds_value (非 docker.io) 测试通过"
 else
-    echo "✗ get_source_creds_args (非 docker.io 源) 测试失败：不该注入凭据"
+    echo "✗ get_source_creds_value (非 docker.io) 失败：不应注入"
     exit 1
 fi
-
-# 场景 4: docker.io 源 + 无凭据 → 应为空（降级匿名）
 unset DOCKERHUB_USERNAME DOCKERHUB_TOKEN
-creds_out=$(get_source_creds_args "docker.io/library/nginx:latest")
-if [ -z "$creds_out" ]; then
-    echo "✓ get_source_creds_args (无凭据降级) 测试通过"
+creds_val=$(get_source_creds_value "docker.io/nginx:latest")
+if [ -z "$creds_val" ]; then
+    echo "✓ get_source_creds_value (无凭据降级) 测试通过"
 else
-    echo "✗ get_source_creds_args (无凭据降级) 测试失败：无凭据应空输出"
+    echo "✗ get_source_creds_value (无凭据降级) 失败：无凭据应空"
     exit 1
 fi
 

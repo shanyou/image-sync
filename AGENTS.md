@@ -53,11 +53,10 @@ image-sync/
 
 **职责**：协调整个同步流程
 
-**关键函数**：
 - `init_mapping()`: 初始化 mapping.json 文件
 - `add_mapping()`: 添加同步记录到 mapping.json（含 `sourceDigest` 字段，成功时记录源镜像 manifest digest）
-- `sync_image()`: 同步单个镜像并设置 public
-- `main()`: 主流程控制
+- `sync_image()`: 同步单个镜像（含 `--all` multi-arch 支持）并设置 public
+- `main()`: 主流程控制（默认基于 manifest digest 比对，`--force` 全量，`--check-drift` 额外校验 SWR 端）
 
 **依赖**：utils.sh, swr-api.sh
 
@@ -69,13 +68,14 @@ image-sync/
 - `convert_image_name(source, namespace)`: 转换镜像名称
   - 输入: `gcr.io/kubernetes-release/pause:3.9`
   - 输出: `swr.cn-north-1.myhuaweicloud.com/shanyou/gcr-io-kubernetes-release-pause:3-9`
-- `is_synced(image, mapping_file)`: 检查镜像是否已同步（仅 status=success 视为已同步，失败镜像可重试）
+- `get_source_creds_value(source_image)`: 返回源凭据值（仅 docker.io 源且配置了凭据时返回 `user:pass`）
+- `get_source_digest(source_image)`: 取源镜像 manifest digest（正确处理 inspect 凭据）
+- `get_target_digest(target_image)`: 取目标镜像 manifest digest
+- `needs_sync(source, target, mapping, check_drift)`: 基于 digest 比对判定是否需要同步（替代 is_synced）
 - `deduplicate_images(input_file)`: 去重并过滤注释和空行
-- `is_rolling_tag(source_image)`: 判断是否为 rolling tag（无显式 tag 或 tag 不含数字），定时任务据此重同步
+- `cleanup_stale_mappings(input_file, mapping_file)`: 清理 `mapping.json` 中不在输入列表里的僵尸记录
 - `parse_target_image(target_image)`: 解析目标镜像名
   - 输出格式: `namespace|repository|tag`
-- `get_source_creds_args(source_image)`: 构造 skopeo 源凭据参数（仅 docker.io 源且配置了 `DOCKERHUB_USERNAME`/`DOCKERHUB_TOKEN` 时返回 `--src-creds`）
-- `cleanup_stale_mappings(input_file, mapping_file)`: 清理 `mapping.json` 中不在输入列表里的僵尸记录（每次同步末尾自动调用）
 
 ### 3. SWR API 封装 (scripts/swr-api.sh)
 
@@ -197,8 +197,10 @@ export IAM_PASSWORD=your-iam-password
 # 1. 加载环境变量
 source .env
 
-# 2. 运行同步脚本
-./scripts/sync.sh
+# 2. 运行同步脚本（默认 digest 比对模式）
+./scripts/sync.sh                 # 比对源 digest，仅变更的同步
+./scripts/sync.sh --check-drift   # 额外校验 SWR 端是否被改动
+./scripts/sync.sh --force          # 强制全量同步
 ```
 
 ### 本地测试
@@ -211,9 +213,9 @@ source .env
 ### GitHub Actions 触发方式
 
 **镜像同步工作流** (`sync-images.yml`):
-1. **文件变更触发**：修改 `data/images.txt` 并 push
-2. **手动触发**：GitHub Actions 页面 → Sync Docker Images → Run workflow
-3. **定时触发**：每天 UTC 02:00 自动运行，执行 `--refresh-rolling`（重同步所有 rolling tag，如 `:latest`/`:alpine`，并重试失败的镜像）
+1. **文件变更触发**：修改 `data/images.txt` 并 push（比对源 digest，仅变更的镜像同步）
+2. **手动触发**：GitHub Actions 页面 → Sync Docker Images → Run workflow（可选 force_sync 或 check_drift）
+3. **定时触发**：每天 UTC 02:00 自动运行（默认 digest 比对模式，追踪 rolling tag 更新）
 
 **Pages 部署工作流** (`deploy-pages.yml`):
 1. **文件变更触发**：修改 `data/**` 目录下的文件并 push 到 `main` 分支

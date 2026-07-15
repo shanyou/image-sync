@@ -10,7 +10,12 @@ on:
   workflow_dispatch:
     inputs:
       force_sync:
-        description: '是否强制同步所有镜像（包括已同步的）'
+        description: '是否强制同步所有镜像（不管 digest 是否一致）'
+        required: false
+        default: 'false'
+        type: boolean
+      check_drift:
+        description: '是否检查 SWR 端是否被改动（检测目标与 mapping 不一致也同步）'
         required: false
         default: 'false'
         type: boolean
@@ -56,10 +61,12 @@ jobs:
           if [ "${{ github.event.inputs.force_sync }}" = "true" ]; then
             echo "执行强制同步模式"
             ./scripts/sync.sh --force
-          elif [ "${{ github.event_name }}" = "schedule" ]; then
-            echo "执行定时刷新模式（重同步 rolling tag）"
-            ./scripts/sync.sh --refresh-rolling
           else
-            echo "执行常规同步模式"
-            ./scripts/sync.sh
+            echo "执行 digest 比对模式"
+            if [ "${{ github.event.inputs.check_drift }}" = "true" ]; then
+              echo "  （含 SWR drift 检测）"
+              ./scripts/sync.sh --check-drift
+            else
+              ./scripts/sync.sh
+            fi
           fi

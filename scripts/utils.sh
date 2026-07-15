@@ -23,72 +23,92 @@ convert_image_name() {
     echo "${TARGET_REGISTRY}/${namespace}/${converted_image_part}:${tag_part}"
 }
 
-# 检查镜像是否已同步(从 mapping.json)
-is_synced() {
+# 返回源镜像的凭据值（user:pass），仅 docker.io 源且配置了凭据时返回
+# 用于 skopeo inspect --creds / skopeo copy --src-creds
+get_source_creds_value() {
     local source_image="$1"
-    local mapping_file="$2"
-
-    if [ ! -f "$mapping_file" ]; then
-        return 1
-    fi
-
-    # 使用 jq 检查：仅 status=success 才算已同步（失败镜像可重试）
-    if command -v jq &> /dev/null; then
-        if jq -e ".mappings[\"$source_image\"] | select(.status == \"success\")" "$mapping_file" > /dev/null 2>&1; then
-            return 0
-        fi
-    else
-        # 没有 jq 时使用 grep 简单检查（降级：不区分 status）
-        if grep -q "\"$source_image\"" "$mapping_file"; then
-            return 0
+    local registry="${source_image%%/*}"
+    # docker.io 引用形式: "nginx:tag"（裸名）/ "docker.io/..." / "library/..."
+    if [ "$registry" = "$source_image" ] || [ "$registry" = "docker.io" ] || [ "$registry" = "library" ]; then
+        if [ -n "${DOCKERHUB_USERNAME:-}" ] && [ -n "${DOCKERHUB_TOKEN:-}" ]; then
+            echo "${DOCKERHUB_USERNAME}:${DOCKERHUB_TOKEN}"
         fi
     fi
-
-    return 1
 }
 
-# 判断是否为 rolling tag（可变 tag，需定期重同步）
-# 规则：无显式 tag（默认 latest），或 tag 中不含数字
-# 返回：0 = rolling，1 = 固定版本
-is_rolling_tag() {
+# 取源镜像的 manifest digest（带源凭据规避 docker.io 限流）
+# 失败返回空字符串
+get_source_digest() {
     local source_image="$1"
+    local creds; creds=$(get_source_creds_value "$source_image")
+    if [ -n "$creds" ]; then
+        skopeo inspect --format '{{.Digest}}' --creds "$creds" "docker://${source_image}" 2>/dev/null
+    else
+        skopeo inspect --format '{{.Digest}}' "docker://${source_image}" 2>/dev/null
+    fi
+}
 
-    # 无冒号 => 无显式 tag => 默认 latest => rolling
-    if [[ "$source_image" != *:* ]]; then
+# 取目标镜像的 manifest digest（带 SWR 目标凭据）
+# 失败返回空字符串
+get_target_digest() {
+    local target_image="$1"
+    skopeo inspect --format '{{.Digest}}' \
+        --creds "${REGISTRY_USERNAME}:${REGISTRY_PASSWORD}" \
+        "docker://${target_image}" 2>/dev/null
+}
+
+# 判定是否需要同步（基于 manifest digest 比对）
+# 返回: 0 = 需要同步, 1 = 不需要（已是最新）
+# 参数: source_image target_image mapping_file [check_drift]
+needs_sync() {
+    local source_image="$1"
+    local target_image="$2"
+    local mapping_file="$3"
+    local check_drift="${4:-false}"
+
+    # 无 mapping 文件或无 jq → 无法判断，默认需要同步
+    if [ ! -f "$mapping_file" ] || ! command -v jq &> /dev/null; then
         return 0
     fi
 
-    local tag="${source_image##*:}"
+    local recorded_status recorded_digest
+    recorded_status=$(jq -r --arg k "$source_image" '.mappings[$k].status // ""' "$mapping_file" 2>/dev/null)
+    recorded_digest=$(jq -r --arg k "$source_image" '.mappings[$k].sourceDigest // ""' "$mapping_file" 2>/dev/null)
 
-    # tag 中不含数字 => rolling（latest/alpine/stable/daily/dind 等）
-    if [[ ! "$tag" =~ [0-9] ]]; then
+    # 失败记录或无记录 → 需要同步（重试失败 / 新镜像）
+    if [ "$recorded_status" != "success" ]; then
         return 0
     fi
 
-    return 1
+    # 记录的 digest 为空（旧记录或曾取 digest 失败）→ 需要同步
+    if [ -z "$recorded_digest" ]; then
+        return 0
+    fi
+
+    # 比对源 digest：上游变了 → 需要同步
+    local src_digest; src_digest=$(get_source_digest "$source_image")
+    if [ -z "$src_digest" ]; then
+        return 0  # 取不到源 digest（网络问题等）→ 尝试同步
+    fi
+    if [ "$src_digest" != "$recorded_digest" ]; then
+        return 0
+    fi
+
+    # drift 检测：SWR 端实际内容与记录不一致（被删/被改）→ 需要同步
+    if [ "$check_drift" = true ]; then
+        local dst_digest; dst_digest=$(get_target_digest "$target_image")
+        if [ "$dst_digest" != "$recorded_digest" ]; then
+            return 0
+        fi
+    fi
+
+    return 1  # 源（及目标）digest 均与记录一致，不需要同步
 }
 
 # 镜像去重
 deduplicate_images() {
     local input_file="$1"
     sort -u "$input_file" | grep -v '^#' | grep -v '^$'
-}
-
-# 构造 skopeo 的源凭据参数（仅 docker.io 源且配置了凭据时返回 --src-creds）
-# 用法: src_creds=( $(get_source_creds_args "$source_image") )
-# 输出: 空（无凭据）或两元素 "--src-creds" "user:pass"
-# 通过全局数组变量 SRC_CREDS_ARGS 返回，避免子 shell 单词分割问题
-get_source_creds_args() {
-    local source_image="$1"
-
-    # 仅 docker.io 源需要认证（其他 registry 无匿名限额问题）
-    # docker.io 引用形式: "nginx:tag" / "docker.io/..." / "library/nginx:tag"
-    local registry="${source_image%%/*}"
-    if [ "$registry" = "$source_image" ] || [ "$registry" = "docker.io" ] || [ "$registry" = "library" ]; then
-        if [ -n "${DOCKERHUB_USERNAME:-}" ] && [ -n "${DOCKERHUB_TOKEN:-}" ]; then
-            printf '%s\n%s\n' "--src-creds" "${DOCKERHUB_USERNAME}:${DOCKERHUB_TOKEN}"
-        fi
-    fi
 }
 
 # 清理僵尸映射记录：删除 mapping.json 中不在输入列表里的镜像条目

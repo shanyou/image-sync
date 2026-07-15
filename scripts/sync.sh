@@ -1,8 +1,10 @@
 #!/bin/bash
 # 镜像同步脚本
-# 使用方法: ./sync.sh [-f|--force] [--refresh-rolling]
-#   -f, --force: 强制同步所有镜像，不管是否已同步过
-#   --refresh-rolling: 重同步所有 rolling tag（可变 tag，如 :latest/:alpine）
+# 使用方法: ./sync.sh [-f|--force] [--check-drift]
+#   -f, --force: 强制同步所有镜像，不管 digest 是否一致
+#   --check-drift: 额外检查 SWR 端是否被改动（目标 digest 与记录不一致也重同步）
+#
+# 默认行为: 比对源 manifest digest 与 mapping.json 记录，不一致才同步
 #
 # 功能: 将 Docker 镜像同步到华为云 SWR，并保留原始 tag 格式
 
@@ -16,7 +18,7 @@ INPUT_FILE="data/images.txt"
 MAPPING_FILE="data/mapping.json"
 NAMESPACE="${SWR_ORG_NAME:-shanyou}"
 FORCE_SYNC=false
-REFRESH_ROLLING=false
+CHECK_DRIFT=false
 
 # 解析命令行参数
 while [[ $# -gt 0 ]]; do
@@ -25,13 +27,13 @@ while [[ $# -gt 0 ]]; do
             FORCE_SYNC=true
             shift
             ;;
-        --refresh-rolling)
-            REFRESH_ROLLING=true
+        --check-drift)
+            CHECK_DRIFT=true
             shift
             ;;
         *)
             echo "未知参数: $1"
-            echo "使用方法: $0 [-f|--force] [--refresh-rolling]"
+            echo "使用方法: $0 [-f|--force] [--check-drift]"
             exit 1
             ;;
     esac
@@ -89,18 +91,18 @@ sync_image() {
     echo "正在同步: $source_image -> $target_image"
 
     # 源凭据（仅 docker.io 源且配置了 DOCKERHUB_USERNAME/TOKEN 时注入，规避匿名限流）
-    local -a src_creds=()
-    while IFS= read -r line; do src_creds+=("$line"); done < <(get_source_creds_args "$source_image")
+    local src_creds_val; src_creds_val=$(get_source_creds_value "$source_image")
+    local -a src_args=()
+    [ -n "$src_creds_val" ] && src_args=(--src-creds "$src_creds_val")
 
     if skopeo copy --all \
-        "${src_creds[@]}" \
+        "${src_args[@]}" \
         --dest-creds "${REGISTRY_USERNAME}:${REGISTRY_PASSWORD}" \
         "docker://${source_image}" \
         "docker://${target_image}"; then
 
-        # 取源镜像 digest 用于追溯（非致命，失败留空；带源凭据避免 docker.io 限流）
-        local source_digest=""
-        source_digest=$(skopeo inspect --format '{{.Digest}}' "${src_creds[@]}" "docker://${source_image}" 2>/dev/null || echo "")
+        # 取源镜像 digest 用于追溯（封装函数正确处理 inspect 的 --creds 凭据）
+        local source_digest; source_digest=$(get_source_digest "$source_image")
 
         # 2. 设置为 public
         local error_msg=""
@@ -151,25 +153,17 @@ main() {
     local error_count=0
 
     while IFS= read -r image; do
-        # 跳过注释和空行
-        [[ "$image" =~ ^#.*$ || -z "$image" ]] && continue
+        # 转换目标镜像名（提前计算，needs_sync 比对目标 digest 时需要）
+        target_image=$(convert_image_name "$image" "$NAMESPACE")
 
-        # 跳过逻辑：--force 全量重同步；否则已成功同步的跳过，
-        # 除非开启 --refresh-rolling 且该镜像为 rolling tag
+        # 跳过逻辑：--force 全量重同步；否则用 digest 比对判断是否需要同步
         if [ "$FORCE_SYNC" = true ]; then
             : # 强制同步，不跳过
-        elif is_synced "$image" "$MAPPING_FILE"; then
-            if [ "$REFRESH_ROLLING" = true ] && is_rolling_tag "$image"; then
-                echo "↻ 刷新 rolling tag: $image"
-            else
-                echo "⊘ 跳过已同步: $image"
-                skip_count=$((skip_count + 1))
-                continue
-            fi
+        elif ! needs_sync "$image" "$target_image" "$MAPPING_FILE" "$CHECK_DRIFT"; then
+            echo "⊘ 跳过（已是最新）: $image"
+            skip_count=$((skip_count + 1))
+            continue
         fi
-
-        # 转换目标镜像名
-        target_image=$(convert_image_name "$image" "$NAMESPACE")
 
         # 同步镜像
         if sync_image "$image" "$target_image"; then
