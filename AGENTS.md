@@ -55,7 +55,7 @@ image-sync/
 
 **关键函数**：
 - `init_mapping()`: 初始化 mapping.json 文件
-- `add_mapping()`: 添加同步记录到 mapping.json
+- `add_mapping()`: 添加同步记录到 mapping.json（含 `sourceDigest` 字段，成功时记录源镜像 manifest digest）
 - `sync_image()`: 同步单个镜像并设置 public
 - `main()`: 主流程控制
 
@@ -69,8 +69,9 @@ image-sync/
 - `convert_image_name(source, namespace)`: 转换镜像名称
   - 输入: `gcr.io/kubernetes-release/pause:3.9`
   - 输出: `swr.cn-north-1.myhuaweicloud.com/shanyou/gcr-io-kubernetes-release-pause:3-9`
-- `is_synced(image, mapping_file)`: 检查镜像是否已同步
+- `is_synced(image, mapping_file)`: 检查镜像是否已同步（仅 status=success 视为已同步，失败镜像可重试）
 - `deduplicate_images(input_file)`: 去重并过滤注释和空行
+- `is_rolling_tag(source_image)`: 判断是否为 rolling tag（无显式 tag 或 tag 不含数字），定时任务据此重同步
 - `parse_target_image(target_image)`: 解析目标镜像名
   - 输出格式: `namespace|repository|tag`
 
@@ -126,7 +127,8 @@ quay.io/coreos/etcd:v3.5.9
       "syncedAt": "2026-02-06T10:25:00Z",
       "status": "success",
       "is_public": "true",
-      "error_msg": ""
+      "error_msg": "",
+      "sourceDigest": "sha256:..."
     }
   }
 }
@@ -139,6 +141,10 @@ quay.io/coreos/etcd:v3.5.9
 **is_public 枚举值**：
 - `true` - 已设置为 public
 - `false` - 未设置为 public（可能同步成功但未公开，或设置 public 失败）
+
+**sourceDigest**：
+- 同步成功时为源镜像 manifest digest（`sha256:...`），用于追溯 rolling tag 对应的上游版本
+- 同步失败或未取到时为空字符串
 
 ## 环境变量
 
@@ -201,7 +207,7 @@ source .env
 **镜像同步工作流** (`sync-images.yml`):
 1. **文件变更触发**：修改 `data/images.txt` 并 push
 2. **手动触发**：GitHub Actions 页面 → Sync Docker Images → Run workflow
-3. **定时触发**：每天 UTC 02:00 自动运行
+3. **定时触发**：每天 UTC 02:00 自动运行，执行 `--refresh-rolling`（重同步所有 rolling tag，如 `:latest`/`:alpine`，并重试失败的镜像）
 
 **Pages 部署工作流** (`deploy-pages.yml`):
 1. **文件变更触发**：修改 `data/**` 目录下的文件并 push 到 `main` 分支
