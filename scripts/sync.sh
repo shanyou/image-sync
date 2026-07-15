@@ -196,6 +196,7 @@ main() {
         done
         # 确保循环结束后 git push 确实成功了（否则 set -e 不捕获 for 的退出码）
         git diff --quiet "@{u}..HEAD" || { echo "错误: 3 次重试后 git push 仍然失败"; exit 1; }
+    fi
 }
 
 main
