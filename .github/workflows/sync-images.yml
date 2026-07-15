@@ -42,6 +42,7 @@ jobs:
         env:
           TARGET_REGISTRY: swr.cn-north-1.myhuaweicloud.com
           REGISTRY_USERNAME: ${{ secrets.REGISTRY_USERNAME }}
+          REGISTRY_PASSWORD: ${{ secrets.REGISTRY_PASSWORD }}
           # Docker Hub 源凭据（规避匿名拉取限流，仅 docker.io 源生效）
           DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
           DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
