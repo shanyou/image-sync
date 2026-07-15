@@ -10,7 +10,7 @@
 - 自动查重，跳过已同步的镜像（基于 `data/mapping.json`）
 - 使用 Skopeo 进行无需中间存储的镜像传输
 - 同步完成后自动调用华为云 API 设置镜像为 public
-- 记录详细的同步映射关系到 JSON 文件
+- 同步完成后自动清理 `mapping.json` 中已从 `images.txt` 移除的僵尸记录
 - 支持多种触发方式：文件变更、手动触发、定时触发
 
 ## 技术栈
@@ -75,6 +75,7 @@ image-sync/
 - `parse_target_image(target_image)`: 解析目标镜像名
   - 输出格式: `namespace|repository|tag`
 - `get_source_creds_args(source_image)`: 构造 skopeo 源凭据参数（仅 docker.io 源且配置了 `DOCKERHUB_USERNAME`/`DOCKERHUB_TOKEN` 时返回 `--src-creds`）
+- `cleanup_stale_mappings(input_file, mapping_file)`: 清理 `mapping.json` 中不在输入列表里的僵尸记录（每次同步末尾自动调用）
 
 ### 3. SWR API 封装 (scripts/swr-api.sh)
 

@@ -91,6 +91,32 @@ get_source_creds_args() {
     fi
 }
 
+# 清理僵尸映射记录：删除 mapping.json 中不在输入列表里的镜像条目
+# 镜像从 images.txt 移除后，mapping.json 的对应记录成为僵尸（永久显示失败、虚高统计）
+# 用法: cleanup_stale_mappings "$INPUT_FILE" "$MAPPING_FILE"
+cleanup_stale_mappings() {
+    local input_file="$1"
+    local mapping_file="$2"
+
+    if ! command -v jq &> /dev/null; then
+        return 0  # 无 jq 时跳过（降级，不清理）
+    fi
+
+    if [ ! -f "$mapping_file" ] || [ ! -f "$input_file" ]; then
+        return 0
+    fi
+
+    # 构造有效镜像名 JSON 数组（经去重去注释处理）
+    local valid_json
+    valid_json=$(deduplicate_images "$input_file" | jq -R . | jq -s .)
+
+    # 保留 key 在有效列表中的条目，删除僵尸记录
+    jq --argjson valid "$valid_json" \
+       '.mappings |= with_entries(select(.key as $k | $valid | index($k)))' \
+       "$mapping_file" > "${mapping_file}.tmp" \
+       && mv "${mapping_file}.tmp" "$mapping_file"
+}
+
 # 解析目标镜像名，提取 namespace 和 repository
 # 输入: swr.cn-north-1.myhuaweicloud.com/shanyou/image-name:tag
 # 输出: namespace|repository|tag

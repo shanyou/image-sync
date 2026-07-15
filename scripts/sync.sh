@@ -183,6 +183,9 @@ main() {
     echo "=== 同步完成 ==="
     echo "成功: $sync_count, 跳过: $skip_count, 失败: $error_count"
 
+    # 清理僵尸记录（images.txt 已移除但 mapping.json 仍残留的条目）
+    cleanup_stale_mappings "$INPUT_FILE" "$MAPPING_FILE"
+
     # 提交 mapping.json 变更
     if git diff --quiet "$MAPPING_FILE"; then
         echo "没有变更需要提交"

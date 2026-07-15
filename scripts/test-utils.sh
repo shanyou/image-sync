@@ -150,4 +150,28 @@ else
     echo "✗ get_source_creds_args (无凭据降级) 测试失败：无凭据应空输出"
     exit 1
 fi
+
+# 测试 cleanup_stale_mappings：清理不在输入列表中的僵尸记录
+cat > /tmp/test-input.txt <<EOF
+foo/bar:1.0
+baz/qux:2.0
+EOF
+cat > /tmp/test-mapping-cleanup.json <<'EOF'
+{"lastUpdated":"","mappings":{
+  "foo/bar:1.0":{"source":"foo/bar:1.0","status":"success"},
+  "baz/qux:2.0":{"source":"baz/qux:2.0","status":"success"},
+  "zombie/old:0.1":{"source":"zombie/old:0.1","status":"failed"}
+}}
+EOF
+cleanup_stale_mappings "/tmp/test-input.txt" "/tmp/test-mapping-cleanup.json"
+remaining=$(jq '.mappings | keys | length' /tmp/test-mapping-cleanup.json)
+has_zombie=$(jq '.mappings | has("zombie/old:0.1")' /tmp/test-mapping-cleanup.json)
+has_foo=$(jq '.mappings | has("foo/bar:1.0")' /tmp/test-mapping-cleanup.json)
+if [ "$remaining" = "2" ] && [ "$has_zombie" = "false" ] && [ "$has_foo" = "true" ]; then
+    echo "✓ cleanup_stale_mappings 测试通过（僵尸删除，有效保留）"
+else
+    echo "✗ cleanup_stale_mappings 测试失败：剩余 $remaining 条，僵尸存在=$has_zombie"
+    exit 1
+fi
+rm -f /tmp/test-input.txt /tmp/test-mapping-cleanup.json
 echo "=== 所有测试通过 ==="
