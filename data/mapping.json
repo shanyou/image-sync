@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-18T05:01:51Z",
+  "lastUpdated": "2026-07-19T05:33:37Z",
   "mappings": {
     "docker.io/jenkins/jenkins:2.541.1-jdk21": {
       "source": "docker.io/jenkins/jenkins:2.541.1-jdk21",
@@ -139,11 +139,11 @@
     "weishaw/sub2api:latest": {
       "source": "weishaw/sub2api:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/weishaw-sub2api:latest",
-      "syncedAt": "2026-07-18T05:01:51Z",
+      "syncedAt": "2026-07-19T05:33:37Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:4eca028ecb3543619df069a57da8bc40a7ba83e4f3d15c38282c97c19f3432fe"
+      "sourceDigest": "sha256:4467f888bc37bcb297220e3246b22cb55861aea40e319307bf4512b98eac2ce8"
     },
     "adrianmusante/pocketbase": {
       "source": "adrianmusante/pocketbase",
@@ -175,11 +175,11 @@
     "eceasy/cli-proxy-api:latest": {
       "source": "eceasy/cli-proxy-api:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/eceasy-cli-proxy-api:latest",
-      "syncedAt": "2026-07-18T04:55:31Z",
+      "syncedAt": "2026-07-19T05:27:05Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:0becdf840b213f59e86feefcc47ca67ed740b03bb1fa49b376c4ec259d02c997"
+      "sourceDigest": "sha256:5f8d7999b8b4a0b2bd48705db845c6f311f7e7dc49199c94b9ef30957f390947"
     },
     "jenkinsci/blueocean:latest": {
       "source": "jenkinsci/blueocean:latest",
@@ -247,11 +247,11 @@
     "kasmweb/ubuntu-noble-desktop:1.18.0-rolling-daily": {
       "source": "kasmweb/ubuntu-noble-desktop:1.18.0-rolling-daily",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/kasmweb-ubuntu-noble-desktop:1.18.0-rolling-daily",
-      "syncedAt": "2026-07-18T05:00:46Z",
+      "syncedAt": "2026-07-19T05:31:44Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:bfb625d8fcc16261427af2d3258d084df557c512ced36daa3e158cd08df67273"
+      "sourceDigest": "sha256:09f85ec273f85e93c655b590ce3b65fc4f7ac13dae338c5b0680e17e93e483c8"
     },
     "kasmweb/ubuntu-noble-desktop:1.18.0": {
       "source": "kasmweb/ubuntu-noble-desktop:1.18.0",
@@ -697,11 +697,11 @@
     "litellm/litellm:latest": {
       "source": "litellm/litellm:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/litellm-litellm:latest",
-      "syncedAt": "2026-07-15T06:01:16Z",
+      "syncedAt": "2026-07-19T05:32:47Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:9ef6f45bc0104940571765e610c52a1d761b5ec85efcd193795281086ee61277"
+      "sourceDigest": "sha256:a1745e629abfb17d434426ff48b115f54f4f4c4a0f5af241de569e93c63c411e"
     },
     "1dev/server:latest": {
       "source": "1dev/server:latest",
