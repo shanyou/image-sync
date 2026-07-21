@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-20T05:53:22Z",
+  "lastUpdated": "2026-07-21T05:27:12Z",
   "mappings": {
     "docker.io/jenkins/jenkins:2.541.1-jdk21": {
       "source": "docker.io/jenkins/jenkins:2.541.1-jdk21",
@@ -139,11 +139,11 @@
     "weishaw/sub2api:latest": {
       "source": "weishaw/sub2api:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/weishaw-sub2api:latest",
-      "syncedAt": "2026-07-19T05:33:37Z",
+      "syncedAt": "2026-07-21T05:27:12Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:4467f888bc37bcb297220e3246b22cb55861aea40e319307bf4512b98eac2ce8"
+      "sourceDigest": "sha256:469790e0389bf31379978687149280a4e135393ad98a9a401951b6be9b1df444"
     },
     "adrianmusante/pocketbase": {
       "source": "adrianmusante/pocketbase",
@@ -175,11 +175,11 @@
     "eceasy/cli-proxy-api:latest": {
       "source": "eceasy/cli-proxy-api:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/eceasy-cli-proxy-api:latest",
-      "syncedAt": "2026-07-20T05:45:05Z",
+      "syncedAt": "2026-07-21T05:25:03Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:1658cc07fca705d0d4ff44e484c5499667eb21795e8fc8d3ed82df56ab84f4c9"
+      "sourceDigest": "sha256:18967d815dddeb09efe6c3a5bac7087777ba915e09102ad0bc9e512771f5a621"
     },
     "jenkinsci/blueocean:latest": {
       "source": "jenkinsci/blueocean:latest",
@@ -706,11 +706,11 @@
     "1dev/server:latest": {
       "source": "1dev/server:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/1dev-server:latest",
-      "syncedAt": "2026-07-20T05:42:38Z",
+      "syncedAt": "2026-07-21T05:23:24Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:28d140a617fdffecb9a9e79ef92e19b27df48e1485b1c502deec5ac7d37805bf"
+      "sourceDigest": "sha256:38e560bd9488c1dabf093c9f18c95f66ca3ed1b3f32bca9504881b2053024c25"
     }
   }
 }
