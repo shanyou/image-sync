@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-21T05:27:12Z",
+  "lastUpdated": "2026-07-22T05:43:26Z",
   "mappings": {
     "docker.io/jenkins/jenkins:2.541.1-jdk21": {
       "source": "docker.io/jenkins/jenkins:2.541.1-jdk21",
@@ -94,11 +94,11 @@
     "goacme/lego:latest": {
       "source": "goacme/lego:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/goacme-lego:latest",
-      "syncedAt": "2026-07-15T03:51:20Z",
-      "status": "success",
-      "is_public": "true",
-      "error_msg": "",
-      "sourceDigest": "sha256:d621ec01f3ca272d259a62e3e00be901293c2901ba8fc0214fe0b72523c3c278"
+      "syncedAt": "2026-07-22T05:35:36Z",
+      "status": "failed",
+      "is_public": "false",
+      "error_msg": "skopeo copy 失败",
+      "sourceDigest": ""
     },
     "forgejo.ellis.link/continuwuation/continuwuity:latest": {
       "source": "forgejo.ellis.link/continuwuation/continuwuity:latest",
@@ -112,11 +112,11 @@
     "vectorim/element-web:latest": {
       "source": "vectorim/element-web:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/vectorim-element-web:latest",
-      "syncedAt": "2026-07-15T04:54:18Z",
+      "syncedAt": "2026-07-22T05:43:26Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:2a65f32acc6fd7163523d1c4b5174de354b5ceb085898b15898f4d8ea01a8e3d"
+      "sourceDigest": "sha256:9f9b546280e67e492d56f6e775c449e74356bffb98daaf211abc755276713fad"
     },
     "postgres:18-alpine": {
       "source": "postgres:18-alpine",
@@ -175,11 +175,11 @@
     "eceasy/cli-proxy-api:latest": {
       "source": "eceasy/cli-proxy-api:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/eceasy-cli-proxy-api:latest",
-      "syncedAt": "2026-07-21T05:25:03Z",
+      "syncedAt": "2026-07-22T05:25:17Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:18967d815dddeb09efe6c3a5bac7087777ba915e09102ad0bc9e512771f5a621"
+      "sourceDigest": "sha256:5f261f6ca5505fbe4ba0bc30cc615a4d3925c99ad6ae686411e43cf32135bb5d"
     },
     "jenkinsci/blueocean:latest": {
       "source": "jenkinsci/blueocean:latest",
@@ -247,11 +247,11 @@
     "kasmweb/ubuntu-noble-desktop:1.18.0-rolling-daily": {
       "source": "kasmweb/ubuntu-noble-desktop:1.18.0-rolling-daily",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/kasmweb-ubuntu-noble-desktop:1.18.0-rolling-daily",
-      "syncedAt": "2026-07-20T05:50:32Z",
+      "syncedAt": "2026-07-22T05:41:57Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:235a18a389c7be21f058ff7d44091f51e6a9ad8f1d6e12f4ff4532f71827e1a2"
+      "sourceDigest": "sha256:6815a81d2f8e198db90b4f2e9cd12876e0fc67a98bbc07ef997410f617a4795b"
     },
     "kasmweb/ubuntu-noble-desktop:1.18.0": {
       "source": "kasmweb/ubuntu-noble-desktop:1.18.0",
@@ -382,11 +382,11 @@
     "containers.intersystems.com/intersystems/iris-community:2025.3": {
       "source": "containers.intersystems.com/intersystems/iris-community:2025.3",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/containers-intersystems-com-intersystems-iris-community:2025.3",
-      "syncedAt": "2026-07-15T03:20:02Z",
+      "syncedAt": "2026-07-22T05:23:36Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:216e5e8927195ebae840b11a163778fb9691767f01ee3e5138ee2eeddbb1b699"
+      "sourceDigest": "sha256:bebebb40d7fdfe155c46e581dc3bf2eb1b33c9df023f2d35abae19012880f977"
     },
     "docker.elastic.co/elasticsearch/elasticsearch:8.14.3": {
       "source": "docker.elastic.co/elasticsearch/elasticsearch:8.14.3",
@@ -409,11 +409,11 @@
     "downloads.unstructured.io/unstructured-io/unstructured-api:latest": {
       "source": "downloads.unstructured.io/unstructured-io/unstructured-api:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/downloads-unstructured-io-unstructured-io-unstructured-api:latest",
-      "syncedAt": "2026-07-15T03:46:36Z",
+      "syncedAt": "2026-07-22T05:24:34Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:cd18ed5ac5e0284f4d7647774e63863190b0bad4b765a049cfc91c643c55396c"
+      "sourceDigest": "sha256:658e8dc98468c9af513cd4a3fa01b95b04c2916aeb744cdd047b820ba719e7fd"
     },
     "ghcr.io/chroma-core/chroma:0.5.20": {
       "source": "ghcr.io/chroma-core/chroma:0.5.20",
