@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-23T05:33:28Z",
+  "lastUpdated": "2026-07-24T05:37:39Z",
   "mappings": {
     "docker.io/jenkins/jenkins:2.541.1-jdk21": {
       "source": "docker.io/jenkins/jenkins:2.541.1-jdk21",
@@ -40,11 +40,11 @@
     "mysql:latest": {
       "source": "mysql:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/mysql:latest",
-      "syncedAt": "2026-07-23T05:32:04Z",
+      "syncedAt": "2026-07-24T05:36:36Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:c109c421c81637a50209b57ec6af7dc0685e8b1ce7efdca0c0902a3d95df6574"
+      "sourceDigest": "sha256:cbade841779f1661300e705721f9d2ff159865cc7a8a291affbff43ac6ec7f1d"
     },
     "busybox:latest": {
       "source": "busybox:latest",
@@ -139,20 +139,20 @@
     "weishaw/sub2api:latest": {
       "source": "weishaw/sub2api:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/weishaw-sub2api:latest",
-      "syncedAt": "2026-07-23T05:33:28Z",
+      "syncedAt": "2026-07-24T05:37:39Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:ac3013098153fd276e7fb0723bbb7032f290e1de018dd7b21a238c298064ff5d"
+      "sourceDigest": "sha256:a94c25fb4c50c3bf21155142d745ff11a8d9199e4cf72d9a2424d75ccbfc1659"
     },
     "adrianmusante/pocketbase": {
       "source": "adrianmusante/pocketbase",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/adrianmusante-pocketbase:latest",
-      "syncedAt": "2026-07-20T05:43:37Z",
+      "syncedAt": "2026-07-24T05:22:48Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:b9914bce0199d32d681b965861a933592814d665ffb52e3f54d92a0a10ce7243"
+      "sourceDigest": "sha256:8a56d04a38899d75b4535d0b98d3a6b0eea8c59b32dc3271c45f98af4b9432e6"
     },
     "docker:latest": {
       "source": "docker:latest",
@@ -175,11 +175,11 @@
     "eceasy/cli-proxy-api:latest": {
       "source": "eceasy/cli-proxy-api:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/eceasy-cli-proxy-api:latest",
-      "syncedAt": "2026-07-23T05:29:19Z",
+      "syncedAt": "2026-07-24T05:24:15Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:75a50423f2065840a86991608a2b530492ad4a47badf0d5ca0033827710a18ed"
+      "sourceDigest": "sha256:42b003764f2413797950bd203e856f2847a1d89ccd3abe184ae9a881215715a7"
     },
     "jenkinsci/blueocean:latest": {
       "source": "jenkinsci/blueocean:latest",
@@ -247,11 +247,11 @@
     "kasmweb/ubuntu-noble-desktop:1.18.0-rolling-daily": {
       "source": "kasmweb/ubuntu-noble-desktop:1.18.0-rolling-daily",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/kasmweb-ubuntu-noble-desktop:1.18.0-rolling-daily",
-      "syncedAt": "2026-07-22T05:41:57Z",
+      "syncedAt": "2026-07-24T05:35:13Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:6815a81d2f8e198db90b4f2e9cd12876e0fc67a98bbc07ef997410f617a4795b"
+      "sourceDigest": "sha256:3eb4ce07df512429ef3bab62e522ba73013c8c717a986122f3ccd09012374397"
     },
     "kasmweb/ubuntu-noble-desktop:1.18.0": {
       "source": "kasmweb/ubuntu-noble-desktop:1.18.0",
