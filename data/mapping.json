@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-25T05:30:14Z",
+  "lastUpdated": "2026-07-26T05:42:32Z",
   "mappings": {
     "docker.io/jenkins/jenkins:2.541.1-jdk21": {
       "source": "docker.io/jenkins/jenkins:2.541.1-jdk21",
@@ -139,11 +139,11 @@
     "weishaw/sub2api:latest": {
       "source": "weishaw/sub2api:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/weishaw-sub2api:latest",
-      "syncedAt": "2026-07-24T05:37:39Z",
+      "syncedAt": "2026-07-26T05:42:32Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:a94c25fb4c50c3bf21155142d745ff11a8d9199e4cf72d9a2424d75ccbfc1659"
+      "sourceDigest": "sha256:5dea50f5274ae5bf31b9e090939707b616a3ef6d6ecee248631ec23b978370d2"
     },
     "adrianmusante/pocketbase": {
       "source": "adrianmusante/pocketbase",
@@ -175,11 +175,11 @@
     "eceasy/cli-proxy-api:latest": {
       "source": "eceasy/cli-proxy-api:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/eceasy-cli-proxy-api:latest",
-      "syncedAt": "2026-07-25T05:19:44Z",
+      "syncedAt": "2026-07-26T05:36:04Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:7e828ffc1c56ff9fc9fb5e1cdeb802f902c1449c7a43b702c13a7b9bf26fca28"
+      "sourceDigest": "sha256:a77937ba619e577b0ee758f312c14d7dcff61d6d8b135bd0f9743d4816550243"
     },
     "jenkinsci/blueocean:latest": {
       "source": "jenkinsci/blueocean:latest",
@@ -238,20 +238,20 @@
     "dockurr/windows:latest": {
       "source": "dockurr/windows:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/dockurr-windows:latest",
-      "syncedAt": "2026-07-18T04:54:57Z",
+      "syncedAt": "2026-07-26T05:35:23Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:8cc6f8bc4a60c078141fd3bcf7d2df69ae063a11d98be31a57429afe0dca66da"
+      "sourceDigest": "sha256:5b6aac26094e349ae95216e35b6e1f0b86a41cab1c610a00e2c7ff511eae2e16"
     },
     "kasmweb/ubuntu-noble-desktop:1.18.0-rolling-daily": {
       "source": "kasmweb/ubuntu-noble-desktop:1.18.0-rolling-daily",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/kasmweb-ubuntu-noble-desktop:1.18.0-rolling-daily",
-      "syncedAt": "2026-07-25T05:25:08Z",
+      "syncedAt": "2026-07-26T05:41:36Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:85e9f78209a8f2486f13b90ea6c1ea3e64bfc55bd21e1cc80f03d7d5da2f7146"
+      "sourceDigest": "sha256:b49e32e6c9aa4735398e6a78b070f2a7ee1a4b56684a12322631bb930d77b9ab"
     },
     "kasmweb/ubuntu-noble-desktop:1.18.0": {
       "source": "kasmweb/ubuntu-noble-desktop:1.18.0",
