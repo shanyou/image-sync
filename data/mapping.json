@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-01T05:42:01Z",
+  "lastUpdated": "2026-08-02T05:38:21Z",
   "mappings": {
     "docker.io/jenkins/jenkins:2.541.1-jdk21": {
       "source": "docker.io/jenkins/jenkins:2.541.1-jdk21",
@@ -130,11 +130,11 @@
     "redis:8-alpine": {
       "source": "redis:8-alpine",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/redis:8-alpine",
-      "syncedAt": "2026-07-31T05:51:25Z",
+      "syncedAt": "2026-08-02T05:38:21Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:e8eb6f2980c06c6a25c08f62cb2e00dc7d2fead9aa492cfdd8b54a42109ae0f2"
+      "sourceDigest": "sha256:978f0e01593e65eed801f2402944efcd936d43b5027e4908a7897baf88ed6241"
     },
     "weishaw/sub2api:latest": {
       "source": "weishaw/sub2api:latest",
@@ -247,11 +247,11 @@
     "kasmweb/ubuntu-noble-desktop:1.18.0-rolling-daily": {
       "source": "kasmweb/ubuntu-noble-desktop:1.18.0-rolling-daily",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/kasmweb-ubuntu-noble-desktop:1.18.0-rolling-daily",
-      "syncedAt": "2026-08-01T05:41:05Z",
+      "syncedAt": "2026-08-02T05:36:29Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:97257863b321f6fe05616b45a90e901829ea6058f11ded03fc553587198897c2"
+      "sourceDigest": "sha256:02003c67bb6140bd6635d37b28de25c5d4258ac87369b080425394aca2c82ff1"
     },
     "kasmweb/ubuntu-noble-desktop:1.18.0": {
       "source": "kasmweb/ubuntu-noble-desktop:1.18.0",
@@ -355,11 +355,11 @@
     "calciumion/new-api:latest": {
       "source": "calciumion/new-api:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/calciumion-new-api:latest",
-      "syncedAt": "2026-07-27T05:54:17Z",
+      "syncedAt": "2026-08-02T05:30:28Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:d600f20c2781e1a173c2a02f8c33b0c4b1b4e8e5a8b107bafaf2442ae2c9386c"
+      "sourceDigest": "sha256:bacbbfbed64b4579213316e0ed78415985223bb20c47fbc24572dd7be5aa1695"
     },
     "certbot/certbot:latest": {
       "source": "certbot/certbot:latest",
@@ -697,11 +697,11 @@
     "litellm/litellm:latest": {
       "source": "litellm/litellm:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/litellm-litellm:latest",
-      "syncedAt": "2026-07-31T05:48:40Z",
+      "syncedAt": "2026-08-02T05:37:31Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:28b10a635296730007097390939b55f8696ece548530d4ddda3e31c708b4dc81"
+      "sourceDigest": "sha256:af806882b7a6ced41658db5b6a7e98ed7b9b51d03b935e0417bf1c8552d688af"
     },
     "1dev/server:latest": {
       "source": "1dev/server:latest",
