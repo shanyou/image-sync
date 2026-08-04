@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-04T05:17:22Z",
+  "lastUpdated": "2026-08-04T06:12:29Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -166,11 +166,11 @@
     "bitnami/postgresql": {
       "source": "bitnami/postgresql",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/bitnami-postgresql:latest",
-      "syncedAt": "2026-08-03T05:45:03Z",
+      "syncedAt": "2026-08-04T06:09:46Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:13f9b9616773a51e99da0ef08df499596a1c3eff7d60e910a0675d3a8f4ab63d"
+      "sourceDigest": "sha256:03a2fc05c3b71a6fcc2e49c3f55f79767ca3bf32e6aa9b5dddc7901e02ffb923"
     },
     "bitnami/os-shell": {
       "source": "bitnami/os-shell",
@@ -184,11 +184,11 @@
     "bitnami/postgres-exporter": {
       "source": "bitnami/postgres-exporter",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/bitnami-postgres-exporter:latest",
-      "syncedAt": "2026-08-01T05:31:10Z",
+      "syncedAt": "2026-08-04T06:09:02Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:0e70d41c5ac4748ab4c67538bb7c92e4fc9a095d76a18e6fcae0c6d2a81e56ca"
+      "sourceDigest": "sha256:30a89165bd15a3991e525c4ec2f3f1fdde5d9fc425375c9f0cad416782dab930"
     },
     "harness/harness:latest": {
       "source": "harness/harness:latest",
@@ -676,78 +676,6 @@
       "error_msg": "",
       "sourceDigest": "sha256:6e38bc8b29a6e1575a165f20b69294c04fe1d5b8fbb40d8720e26aaaf79c7f25"
     },
-    "bitnami/elasticsearch:7.16.2-debian-10-r0": {
-      "source": "bitnami/elasticsearch:7.16.2-debian-10-r0",
-      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/bitnami-elasticsearch:7.16.2-debian-10-r0",
-      "syncedAt": "2026-08-04T05:16:46Z",
-      "status": "failed",
-      "is_public": "false",
-      "error_msg": "skopeo copy 失败",
-      "sourceDigest": ""
-    },
-    "bitnami/influxdb:1.8.3-debian-10-r88": {
-      "source": "bitnami/influxdb:1.8.3-debian-10-r88",
-      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/bitnami-influxdb:1.8.3-debian-10-r88",
-      "syncedAt": "2026-08-04T05:16:46Z",
-      "status": "failed",
-      "is_public": "false",
-      "error_msg": "skopeo copy 失败",
-      "sourceDigest": ""
-    },
-    "bitnami/mongodb:4.4.10-debian-10-r44": {
-      "source": "bitnami/mongodb:4.4.10-debian-10-r44",
-      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/bitnami-mongodb:4.4.10-debian-10-r44",
-      "syncedAt": "2026-08-04T05:16:47Z",
-      "status": "failed",
-      "is_public": "false",
-      "error_msg": "skopeo copy 失败",
-      "sourceDigest": ""
-    },
-    "bitnami/mysql:8.0.37-debian-12-r2": {
-      "source": "bitnami/mysql:8.0.37-debian-12-r2",
-      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/bitnami-mysql:8.0.37-debian-12-r2",
-      "syncedAt": "2026-08-04T05:16:47Z",
-      "status": "failed",
-      "is_public": "false",
-      "error_msg": "skopeo copy 失败",
-      "sourceDigest": ""
-    },
-    "bitnami/nginx-ingress-controller:0.48.1-debian-10-r38": {
-      "source": "bitnami/nginx-ingress-controller:0.48.1-debian-10-r38",
-      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/bitnami-nginx-ingress-controller:0.48.1-debian-10-r38",
-      "syncedAt": "2026-08-04T05:16:48Z",
-      "status": "failed",
-      "is_public": "false",
-      "error_msg": "skopeo copy 失败",
-      "sourceDigest": ""
-    },
-    "bitnami/nginx:1.21.1-debian-10-r46": {
-      "source": "bitnami/nginx:1.21.1-debian-10-r46",
-      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/bitnami-nginx:1.21.1-debian-10-r46",
-      "syncedAt": "2026-08-04T05:16:48Z",
-      "status": "failed",
-      "is_public": "false",
-      "error_msg": "skopeo copy 失败",
-      "sourceDigest": ""
-    },
-    "bitnami/rabbitmq:3.10.8-debian-11-r4": {
-      "source": "bitnami/rabbitmq:3.10.8-debian-11-r4",
-      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/bitnami-rabbitmq:3.10.8-debian-11-r4",
-      "syncedAt": "2026-08-04T05:17:21Z",
-      "status": "failed",
-      "is_public": "false",
-      "error_msg": "skopeo copy 失败",
-      "sourceDigest": ""
-    },
-    "bitnami/redis:6.2.7-debian-11-r11": {
-      "source": "bitnami/redis:6.2.7-debian-11-r11",
-      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/bitnami-redis:6.2.7-debian-11-r11",
-      "syncedAt": "2026-08-04T05:17:22Z",
-      "status": "failed",
-      "is_public": "false",
-      "error_msg": "skopeo copy 失败",
-      "sourceDigest": ""
-    },
     "bkci/bkci-backend:v4.1.0": {
       "source": "bkci/bkci-backend:v4.1.0",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/bkci-bkci-backend:v4.1.0",
@@ -864,6 +792,78 @@
       "is_public": "true",
       "error_msg": "",
       "sourceDigest": "sha256:e34c88ae0affb1cdefbb874140d6339d4a27ec4ee420ae8199cd839997b05246"
+    },
+    "bitnamilegacy/mysql:8.0.37-debian-12-r2": {
+      "source": "bitnamilegacy/mysql:8.0.37-debian-12-r2",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/bitnamilegacy-mysql:8.0.37-debian-12-r2",
+      "syncedAt": "2026-08-04T06:09:56Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": "",
+      "sourceDigest": "sha256:553f17e33f22c97ef65c32ceecb2217bcadca8ac1ee55690dfd5f15852262c79"
+    },
+    "bitnamilegacy/rabbitmq:3.10.8-debian-11-r4": {
+      "source": "bitnamilegacy/rabbitmq:3.10.8-debian-11-r4",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/bitnamilegacy-rabbitmq:3.10.8-debian-11-r4",
+      "syncedAt": "2026-08-04T06:10:02Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": "",
+      "sourceDigest": "sha256:3d37b2fae624aea08f43b841fb101774e9dad33d76b6e94f8e4392ab6d0d5fdb"
+    },
+    "bitnamilegacy/redis:6.2.7-debian-11-r11": {
+      "source": "bitnamilegacy/redis:6.2.7-debian-11-r11",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/bitnamilegacy-redis:6.2.7-debian-11-r11",
+      "syncedAt": "2026-08-04T06:10:09Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": "",
+      "sourceDigest": "sha256:d94907b0b6bf134fdc891c95f4d789cf4c5d9eaaf0a5a2003c19a6927a71a5d2"
+    },
+    "docker.elastic.co/elasticsearch/elasticsearch:7.16.2": {
+      "source": "docker.elastic.co/elasticsearch/elasticsearch:7.16.2",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/docker-elastic-co-elasticsearch-elasticsearch:7.16.2",
+      "syncedAt": "2026-08-04T06:10:40Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": "",
+      "sourceDigest": "sha256:055ab3c3466c6bd72ef42f7773c5fa224db4fb7cd6a9a5588ebe46642a15abf5"
+    },
+    "influxdb:1.8.3": {
+      "source": "influxdb:1.8.3",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/influxdb:1.8.3",
+      "syncedAt": "2026-08-04T06:11:28Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": "",
+      "sourceDigest": "sha256:fe53382e9fa49dd1ac079143ac5b26bfb4fb0ba32ac9b4b61c859a16943b1bff"
+    },
+    "mongo:4.4.10": {
+      "source": "mongo:4.4.10",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/mongo:4.4.10",
+      "syncedAt": "2026-08-04T06:11:46Z",
+      "status": "failed",
+      "is_public": "false",
+      "error_msg": "skopeo copy 失败",
+      "sourceDigest": ""
+    },
+    "nginx:1.21.1": {
+      "source": "nginx:1.21.1",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/nginx:1.21.1",
+      "syncedAt": "2026-08-04T06:12:07Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": "",
+      "sourceDigest": "sha256:a05b0cdd4fc1be3b224ba9662ebdf98fe44c09c0c9215b45f84344c12867002e"
+    },
+    "registry.k8s.io/ingress-nginx/controller:v0.48.1": {
+      "source": "registry.k8s.io/ingress-nginx/controller:v0.48.1",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/registry-k8s-io-ingress-nginx-controller:v0.48.1",
+      "syncedAt": "2026-08-04T06:12:29Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": "",
+      "sourceDigest": "sha256:e9fb216ace49dfa4a5983b183067e97496e7a8b307d2093f4278cd550c303899"
     }
   }
 }
