@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-04T06:12:29Z",
+  "lastUpdated": "2026-08-04T06:21:50Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -841,11 +841,11 @@
     "mongo:4.4.10": {
       "source": "mongo:4.4.10",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/mongo:4.4.10",
-      "syncedAt": "2026-08-04T06:11:46Z",
-      "status": "failed",
-      "is_public": "false",
-      "error_msg": "skopeo copy 失败",
-      "sourceDigest": ""
+      "syncedAt": "2026-08-04T06:21:50Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": "",
+      "sourceDigest": "sha256:2821997cba3c26465b59cc2e863b940d21a58732434462100af10659fc0d164f"
     },
     "nginx:1.21.1": {
       "source": "nginx:1.21.1",
