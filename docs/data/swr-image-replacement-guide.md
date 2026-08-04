@@ -60,11 +60,15 @@ Bitnami 已将老镜像从 Docker Hub 下架，以下镜像已替换为可用源
 ## 完整镜像映射表
 
 | `1dev/server:latest` | `swr.cn-north-1.myhuaweicloud.com/shanyou/1dev-server:latest` |
+| `1dev/server:latest` | `swr.cn-north-1.myhuaweicloud.com/shanyou/1dev-server:latest` |
 | `adrianmusante/pocketbase` | `swr.cn-north-1.myhuaweicloud.com/shanyou/adrianmusante-pocketbase:latest` |
 | `alpine/socat` | `swr.cn-north-1.myhuaweicloud.com/shanyou/alpine-socat:latest` |
 | `bitnami/os-shell` | `swr.cn-north-1.myhuaweicloud.com/shanyou/bitnami-os-shell:latest` |
 | `bitnami/postgres-exporter` | `swr.cn-north-1.myhuaweicloud.com/shanyou/bitnami-postgres-exporter:latest` |
 | `bitnami/postgresql` | `swr.cn-north-1.myhuaweicloud.com/shanyou/bitnami-postgresql:latest` |
+| `bitnamilegacy/elasticsearch:9.1.2-debian-12-r0` | `swr.cn-north-1.myhuaweicloud.com/shanyou/bitnamilegacy-elasticsearch:9.1.2-debian-12-r0` |
+| `bitnamilegacy/influxdb:3.4.1-debian-12-r0` | `swr.cn-north-1.myhuaweicloud.com/shanyou/bitnamilegacy-influxdb:3.4.1-debian-12-r0` |
+| `bitnamilegacy/mongodb:8.0.13-debian-12-r0` | `swr.cn-north-1.myhuaweicloud.com/shanyou/bitnamilegacy-mongodb:8.0.13-debian-12-r0` |
 | `bitnamilegacy/mysql:8.0.37-debian-12-r2` | `swr.cn-north-1.myhuaweicloud.com/shanyou/bitnamilegacy-mysql:8.0.37-debian-12-r2` |
 | `bitnamilegacy/rabbitmq:3.10.8-debian-11-r4` | `swr.cn-north-1.myhuaweicloud.com/shanyou/bitnamilegacy-rabbitmq:3.10.8-debian-11-r4` |
 | `bitnamilegacy/redis:6.2.7-debian-11-r11` | `swr.cn-north-1.myhuaweicloud.com/shanyou/bitnamilegacy-redis:6.2.7-debian-11-r11` |
@@ -83,7 +87,6 @@ Bitnami 已将老镜像从 Docker Hub 下架，以下镜像已替换为可用源
 | `codeberg.org/forgejo/forgejo:14` | `swr.cn-north-1.myhuaweicloud.com/shanyou/codeberg-org-forgejo-forgejo:14` |
 | `container-registry.oracle.com/database/free:latest` | `swr.cn-north-1.myhuaweicloud.com/shanyou/container-registry-oracle-com-database-free:latest` |
 | `containers.intersystems.com/intersystems/iris-community:2025.3` | `swr.cn-north-1.myhuaweicloud.com/shanyou/containers-intersystems-com-intersystems-iris-community:2025.3` |
-| `docker.elastic.co/elasticsearch/elasticsearch:7.16.2` | `swr.cn-north-1.myhuaweicloud.com/shanyou/docker-elastic-co-elasticsearch-elasticsearch:7.16.2` |
 | `docker.elastic.co/elasticsearch/elasticsearch:8.14.3` | `swr.cn-north-1.myhuaweicloud.com/shanyou/docker-elastic-co-elasticsearch-elasticsearch:8.14.3` |
 | `docker.elastic.co/kibana/kibana:8.14.3` | `swr.cn-north-1.myhuaweicloud.com/shanyou/docker-elastic-co-kibana-kibana:8.14.3` |
 | `docker:28.3.1-dind` | `swr.cn-north-1.myhuaweicloud.com/shanyou/docker:28.3.1-dind` |
@@ -102,7 +105,6 @@ Bitnami 已将老镜像从 Docker Hub 下架，以下镜像已替换为可用源
 | `golang:1.26.1` | `swr.cn-north-1.myhuaweicloud.com/shanyou/golang:1.26.1` |
 | `harness/harness:latest` | `swr.cn-north-1.myhuaweicloud.com/shanyou/harness-harness:latest` |
 | `headscale/headscale:latest` | `swr.cn-north-1.myhuaweicloud.com/shanyou/headscale-headscale:latest` |
-| `influxdb:1.8.3` | `swr.cn-north-1.myhuaweicloud.com/shanyou/influxdb:1.8.3` |
 | `jenkins/inbound-agent:3355.v388858a_47b_33-9` | `swr.cn-north-1.myhuaweicloud.com/shanyou/jenkins-inbound-agent:3355.v388858a_47b_33-9` |
 | `jenkins/jenkins:2.541.1-jdk21` | `swr.cn-north-1.myhuaweicloud.com/shanyou/jenkins-jenkins:2.541.1-jdk21` |
 | `jenkinsci/blueocean:latest` | `swr.cn-north-1.myhuaweicloud.com/shanyou/jenkinsci-blueocean:latest` |
@@ -120,7 +122,6 @@ Bitnami 已将老镜像从 Docker Hub 下架，以下镜像已替换为可用源
 | `matrixorigin/matrixone:2.1.1` | `swr.cn-north-1.myhuaweicloud.com/shanyou/matrixorigin-matrixone:2.1.1` |
 | `milvusdb/milvus:v2.6.3` | `swr.cn-north-1.myhuaweicloud.com/shanyou/milvusdb-milvus:v2.6.3` |
 | `minio/minio:RELEASE.2023-03-20T20-16-18Z` | `swr.cn-north-1.myhuaweicloud.com/shanyou/minio-minio:RELEASE.2023-03-20T20-16-18Z` |
-| `mongo:4.4.10` | `swr.cn-north-1.myhuaweicloud.com/shanyou/mongo:4.4.10` |
 | `mysql:8.0` | `swr.cn-north-1.myhuaweicloud.com/shanyou/mysql:8.0` |
 | `mysql:latest` | `swr.cn-north-1.myhuaweicloud.com/shanyou/mysql:latest` |
 | `nginx:1.21.1` | `swr.cn-north-1.myhuaweicloud.com/shanyou/nginx:1.21.1` |
