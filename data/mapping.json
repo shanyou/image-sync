@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-04T04:53:38Z",
+  "lastUpdated": "2026-08-04T05:17:22Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -175,11 +175,11 @@
     "bitnami/os-shell": {
       "source": "bitnami/os-shell",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/bitnami-os-shell:latest",
-      "syncedAt": "2026-08-01T05:30:39Z",
+      "syncedAt": "2026-08-04T05:17:18Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:ca81e0d0f07b18cfbef939dbf5dfc09254a8bd571f67d41f352ede348be352c8"
+      "sourceDigest": "sha256:fdb347d7a0d3add7140b4891d3e2ba0df416d96ab54e8478c3013cb076cf9c5a"
     },
     "bitnami/postgres-exporter": {
       "source": "bitnami/postgres-exporter",
@@ -679,7 +679,7 @@
     "bitnami/elasticsearch:7.16.2-debian-10-r0": {
       "source": "bitnami/elasticsearch:7.16.2-debian-10-r0",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/bitnami-elasticsearch:7.16.2-debian-10-r0",
-      "syncedAt": "2026-08-04T04:43:44Z",
+      "syncedAt": "2026-08-04T05:16:46Z",
       "status": "failed",
       "is_public": "false",
       "error_msg": "skopeo copy 失败",
@@ -688,7 +688,7 @@
     "bitnami/influxdb:1.8.3-debian-10-r88": {
       "source": "bitnami/influxdb:1.8.3-debian-10-r88",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/bitnami-influxdb:1.8.3-debian-10-r88",
-      "syncedAt": "2026-08-04T04:43:44Z",
+      "syncedAt": "2026-08-04T05:16:46Z",
       "status": "failed",
       "is_public": "false",
       "error_msg": "skopeo copy 失败",
@@ -697,7 +697,7 @@
     "bitnami/mongodb:4.4.10-debian-10-r44": {
       "source": "bitnami/mongodb:4.4.10-debian-10-r44",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/bitnami-mongodb:4.4.10-debian-10-r44",
-      "syncedAt": "2026-08-04T04:43:44Z",
+      "syncedAt": "2026-08-04T05:16:47Z",
       "status": "failed",
       "is_public": "false",
       "error_msg": "skopeo copy 失败",
@@ -706,7 +706,7 @@
     "bitnami/mysql:8.0.37-debian-12-r2": {
       "source": "bitnami/mysql:8.0.37-debian-12-r2",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/bitnami-mysql:8.0.37-debian-12-r2",
-      "syncedAt": "2026-08-04T04:43:44Z",
+      "syncedAt": "2026-08-04T05:16:47Z",
       "status": "failed",
       "is_public": "false",
       "error_msg": "skopeo copy 失败",
@@ -715,7 +715,7 @@
     "bitnami/nginx-ingress-controller:0.48.1-debian-10-r38": {
       "source": "bitnami/nginx-ingress-controller:0.48.1-debian-10-r38",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/bitnami-nginx-ingress-controller:0.48.1-debian-10-r38",
-      "syncedAt": "2026-08-04T04:43:44Z",
+      "syncedAt": "2026-08-04T05:16:48Z",
       "status": "failed",
       "is_public": "false",
       "error_msg": "skopeo copy 失败",
@@ -724,7 +724,7 @@
     "bitnami/nginx:1.21.1-debian-10-r46": {
       "source": "bitnami/nginx:1.21.1-debian-10-r46",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/bitnami-nginx:1.21.1-debian-10-r46",
-      "syncedAt": "2026-08-04T04:43:45Z",
+      "syncedAt": "2026-08-04T05:16:48Z",
       "status": "failed",
       "is_public": "false",
       "error_msg": "skopeo copy 失败",
@@ -733,7 +733,7 @@
     "bitnami/rabbitmq:3.10.8-debian-11-r4": {
       "source": "bitnami/rabbitmq:3.10.8-debian-11-r4",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/bitnami-rabbitmq:3.10.8-debian-11-r4",
-      "syncedAt": "2026-08-04T04:43:46Z",
+      "syncedAt": "2026-08-04T05:17:21Z",
       "status": "failed",
       "is_public": "false",
       "error_msg": "skopeo copy 失败",
@@ -742,7 +742,7 @@
     "bitnami/redis:6.2.7-debian-11-r11": {
       "source": "bitnami/redis:6.2.7-debian-11-r11",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/bitnami-redis:6.2.7-debian-11-r11",
-      "syncedAt": "2026-08-04T04:43:46Z",
+      "syncedAt": "2026-08-04T05:17:22Z",
       "status": "failed",
       "is_public": "false",
       "error_msg": "skopeo copy 失败",
