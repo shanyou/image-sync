@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-04T03:30:13Z",
+  "lastUpdated": "2026-08-04T04:53:38Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -121,11 +121,11 @@
     "docker:latest": {
       "source": "docker:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/docker:latest",
-      "syncedAt": "2026-08-01T05:34:44Z",
+      "syncedAt": "2026-08-04T04:47:17Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:084e385b0c9b7ab35d5a46dfedd033721448c000dbec71adcf13da8a9e71baa8"
+      "sourceDigest": "sha256:cebc379a615d8dec408ac36f8854bb5002dc83e64fc8bc6f35312130f898d0e0"
     },
     "jevolk/tuwunel:latest": {
       "source": "jevolk/tuwunel:latest",
@@ -238,20 +238,20 @@
     "ubuntu:24.04": {
       "source": "ubuntu:24.04",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/ubuntu:24.04",
-      "syncedAt": "2026-07-15T04:51:48Z",
+      "syncedAt": "2026-08-04T04:51:43Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:4fbb8e6a8395de5a7550b33509421a2bafbc0aab6c06ba2cef9ebffbc7092d90"
+      "sourceDigest": "sha256:561618e2c15bf2397621dd04f96926663a3b5616c189cf7e38db7e82f5c538ea"
     },
     "docker:dind": {
       "source": "docker:dind",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/docker:dind",
-      "syncedAt": "2026-08-01T05:34:25Z",
+      "syncedAt": "2026-08-04T04:47:01Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:084e385b0c9b7ab35d5a46dfedd033721448c000dbec71adcf13da8a9e71baa8"
+      "sourceDigest": "sha256:cebc379a615d8dec408ac36f8854bb5002dc83e64fc8bc6f35312130f898d0e0"
     },
     "kindest/node:v1.35.0": {
       "source": "kindest/node:v1.35.0",
@@ -436,11 +436,11 @@
     "matrixorigin/matrixone:2.1.1": {
       "source": "matrixorigin/matrixone:2.1.1",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/matrixorigin-matrixone:2.1.1",
-      "syncedAt": "2026-08-04T03:29:22Z",
-      "status": "failed",
-      "is_public": "false",
-      "error_msg": "skopeo copy 失败",
-      "sourceDigest": ""
+      "syncedAt": "2026-08-04T04:47:45Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": "",
+      "sourceDigest": "sha256:5a7f94d66a976d09f41a8c712aa142a39cbc9cd41a4d709c19ca5acd3f862f5b"
     },
     "milvusdb/milvus:v2.6.3": {
       "source": "milvusdb/milvus:v2.6.3",
@@ -643,20 +643,20 @@
     "ubuntu:22.04": {
       "source": "ubuntu:22.04",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/ubuntu:22.04",
-      "syncedAt": "2026-07-15T04:50:03Z",
+      "syncedAt": "2026-08-04T04:49:53Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:0e0a0fc6d18feda9db1590da249ac93e8d5abfea8f4c3c0c849ce512b5ef8982"
+      "sourceDigest": "sha256:3b06811b2afd352be909dd088a004166d665dc76d38b13eada33522a9d915c6f"
     },
     "ubuntu:26.04": {
       "source": "ubuntu:26.04",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/ubuntu:26.04",
-      "syncedAt": "2026-07-17T05:33:56Z",
+      "syncedAt": "2026-08-04T04:53:38Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:3131b4cc82a783df6c9df078f86e01819a13594b865c2cad47bd1bca2b7063bb"
+      "sourceDigest": "sha256:678c6550cc43645e08669028bc177f50be4e7c5b8cca677067b1914d4afc7a03"
     },
     "litellm/litellm:latest": {
       "source": "litellm/litellm:latest",
@@ -679,7 +679,7 @@
     "bitnami/elasticsearch:7.16.2-debian-10-r0": {
       "source": "bitnami/elasticsearch:7.16.2-debian-10-r0",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/bitnami-elasticsearch:7.16.2-debian-10-r0",
-      "syncedAt": "2026-08-04T03:17:40Z",
+      "syncedAt": "2026-08-04T04:43:44Z",
       "status": "failed",
       "is_public": "false",
       "error_msg": "skopeo copy 失败",
@@ -688,7 +688,7 @@
     "bitnami/influxdb:1.8.3-debian-10-r88": {
       "source": "bitnami/influxdb:1.8.3-debian-10-r88",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/bitnami-influxdb:1.8.3-debian-10-r88",
-      "syncedAt": "2026-08-04T03:17:41Z",
+      "syncedAt": "2026-08-04T04:43:44Z",
       "status": "failed",
       "is_public": "false",
       "error_msg": "skopeo copy 失败",
@@ -697,7 +697,7 @@
     "bitnami/mongodb:4.4.10-debian-10-r44": {
       "source": "bitnami/mongodb:4.4.10-debian-10-r44",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/bitnami-mongodb:4.4.10-debian-10-r44",
-      "syncedAt": "2026-08-04T03:17:41Z",
+      "syncedAt": "2026-08-04T04:43:44Z",
       "status": "failed",
       "is_public": "false",
       "error_msg": "skopeo copy 失败",
@@ -706,7 +706,7 @@
     "bitnami/mysql:8.0.37-debian-12-r2": {
       "source": "bitnami/mysql:8.0.37-debian-12-r2",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/bitnami-mysql:8.0.37-debian-12-r2",
-      "syncedAt": "2026-08-04T03:17:41Z",
+      "syncedAt": "2026-08-04T04:43:44Z",
       "status": "failed",
       "is_public": "false",
       "error_msg": "skopeo copy 失败",
@@ -715,7 +715,7 @@
     "bitnami/nginx-ingress-controller:0.48.1-debian-10-r38": {
       "source": "bitnami/nginx-ingress-controller:0.48.1-debian-10-r38",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/bitnami-nginx-ingress-controller:0.48.1-debian-10-r38",
-      "syncedAt": "2026-08-04T03:17:42Z",
+      "syncedAt": "2026-08-04T04:43:44Z",
       "status": "failed",
       "is_public": "false",
       "error_msg": "skopeo copy 失败",
@@ -724,7 +724,7 @@
     "bitnami/nginx:1.21.1-debian-10-r46": {
       "source": "bitnami/nginx:1.21.1-debian-10-r46",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/bitnami-nginx:1.21.1-debian-10-r46",
-      "syncedAt": "2026-08-04T03:17:42Z",
+      "syncedAt": "2026-08-04T04:43:45Z",
       "status": "failed",
       "is_public": "false",
       "error_msg": "skopeo copy 失败",
@@ -733,7 +733,7 @@
     "bitnami/rabbitmq:3.10.8-debian-11-r4": {
       "source": "bitnami/rabbitmq:3.10.8-debian-11-r4",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/bitnami-rabbitmq:3.10.8-debian-11-r4",
-      "syncedAt": "2026-08-04T03:17:45Z",
+      "syncedAt": "2026-08-04T04:43:46Z",
       "status": "failed",
       "is_public": "false",
       "error_msg": "skopeo copy 失败",
@@ -742,7 +742,7 @@
     "bitnami/redis:6.2.7-debian-11-r11": {
       "source": "bitnami/redis:6.2.7-debian-11-r11",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/bitnami-redis:6.2.7-debian-11-r11",
-      "syncedAt": "2026-08-04T03:17:45Z",
+      "syncedAt": "2026-08-04T04:43:46Z",
       "status": "failed",
       "is_public": "false",
       "error_msg": "skopeo copy 失败",
@@ -778,20 +778,20 @@
     "bkci/bkci-kubernetes-manager:0.0.33": {
       "source": "bkci/bkci-kubernetes-manager:0.0.33",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/bkci-bkci-kubernetes-manager:0.0.33",
-      "syncedAt": "2026-08-04T03:19:19Z",
-      "status": "failed",
-      "is_public": "false",
-      "error_msg": "skopeo copy 失败",
-      "sourceDigest": ""
+      "syncedAt": "2026-08-04T04:44:01Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": "",
+      "sourceDigest": "sha256:c9f861a8cff0579b099d9ac8aae5df2af2fef85db94e14f96f5973324924c027"
     },
     "bkci/bkci-turbo:0.0.21": {
       "source": "bkci/bkci-turbo:0.0.21",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/bkci-bkci-turbo:0.0.21",
-      "syncedAt": "2026-08-04T03:19:37Z",
+      "syncedAt": "2026-08-04T04:44:06Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": ""
+      "sourceDigest": "sha256:b696525b4f09930a4b17b9419bf6601e5e276425692a3f2c88652017772dc156"
     },
     "bkci/ci:jdk17": {
       "source": "bkci/ci:jdk17",
@@ -823,11 +823,11 @@
     "docker:28.3.1-dind": {
       "source": "docker:28.3.1-dind",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/docker:28.3.1-dind",
-      "syncedAt": "2026-08-04T03:22:13Z",
-      "status": "failed",
-      "is_public": "false",
-      "error_msg": "skopeo copy 失败",
-      "sourceDigest": ""
+      "syncedAt": "2026-08-04T04:45:47Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": "",
+      "sourceDigest": "sha256:4dd2f7e405b1a10fda628f22cd466be1e3be2bcfc46db653ab620e02eeed5794"
     },
     "gcr.io/kaniko-project/executor:v1.9.0": {
       "source": "gcr.io/kaniko-project/executor:v1.9.0",
