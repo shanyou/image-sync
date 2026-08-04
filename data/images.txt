@@ -98,17 +98,17 @@ bkci/bkci-backend:v4.1.0
 bkci/bkci-frontend:v4.1.0
 bkci/bkci-kubernetes-manager:0.0.33
 bkci/ci:jdk17
-bitnami/mysql:8.0.37-debian-12-r2
-bitnami/redis:6.2.7-debian-11-r11
-bitnami/elasticsearch:7.16.2-debian-10-r0
-bitnami/rabbitmq:3.10.8-debian-11-r4
-bitnami/influxdb:1.8.3-debian-10-r88
+bitnamilegacy/mysql:8.0.37-debian-12-r2
+bitnamilegacy/redis:6.2.7-debian-11-r11
+docker.elastic.co/elasticsearch/elasticsearch:7.16.2
+bitnamilegacy/rabbitmq:3.10.8-debian-11-r4
+influxdb:1.8.3
 
 docker:28.3.1-dind
 bkci/ci:latest
 gcr.io/kaniko-project/executor:v1.9.0
 
-bitnami/mongodb:4.4.10-debian-10-r44
-bitnami/nginx-ingress-controller:0.48.1-debian-10-r38
-bitnami/nginx:1.21.1-debian-10-r46
+mongo:4.4.10
+registry.k8s.io/ingress-nginx/controller:v0.48.1
+nginx:1.21.1
 bkci/bkci-turbo:0.0.21
