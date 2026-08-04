@@ -95,50 +95,79 @@ sync_image() {
     local -a src_args=()
     [ -n "$src_creds_val" ] && src_args=(--src-creds "$src_creds_val")
 
-    if skopeo copy --all \
+    # 先多平台（--all），失败降级为 Linux 单平台重试
+    # 典型场景: manifest list 里的 Windows 变体层过大，SWR 拒收
+    # （如 mongo:4.4.10 "Database Not found blob"），Linux 镜像才是 K8s 需要的
+    local err_file
+    err_file=$(mktemp)
+    local copy_ok=true
+    local fallback_note=""
+
+    if ! skopeo copy --all \
         "${src_args[@]}" \
         --dest-creds "${REGISTRY_USERNAME}:${REGISTRY_PASSWORD}" \
         "docker://${source_image}" \
-        "docker://${target_image}"; then
+        "docker://${target_image}" 2>&1 | tee "$err_file"; then
 
-        # 取源镜像 digest 用于追溯（封装函数正确处理 inspect 的 --creds 凭据）
-        local source_digest; source_digest=$(get_source_digest "$source_image")
-
-        # 2. 设置为 public
-        local error_msg=""
-        local status="success"
-        local is_public="false"
-
-        if [ -n "${IAM_ENDPOINT:-}" ]; then
-            # 解析 namespace 和 repository
-            local parsed=$(parse_target_image "$target_image")
-            local namespace=$(echo "$parsed" | cut -d'|' -f1)
-            local repository=$(echo "$parsed" | cut -d'|' -f2)
-
-            # 获取 Token 并设置 public
-            local token
-            token=$(get_iam_token 2>&1)
-            if [ $? -eq 0 ]; then
-                local set_public_result
-                set_public_result=$(set_repo_public "$namespace" "$repository" "$token" 2>&1)
-                if [ $? -eq 0 ]; then
-                    is_public="true"
-                else
-                    error_msg="$set_public_result"
-                fi
-            else
-                error_msg="$token"
-            fi
+        echo "⚠ 全平台同步失败，降级为 Linux 单平台重试..."
+        if skopeo copy \
+            --override-os linux \
+            "${src_args[@]}" \
+            --dest-creds "${REGISTRY_USERNAME}:${REGISTRY_PASSWORD}" \
+            "docker://${source_image}" \
+            "docker://${target_image}" 2>&1 | tee "$err_file"; then
+            fallback_note="（仅 Linux 单平台）"
+        else
+            copy_ok=false
         fi
+    fi
 
-        add_mapping "$source_image" "$target_image" "$status" "$is_public" "$error_msg" "$source_digest"
-        echo "✓ 同步成功: $source_image (is_public: ${is_public})"
-        return 0
-    else
-        add_mapping "$source_image" "$target_image" "failed" "false" "skopeo copy 失败" ""
+    if [ "$copy_ok" = false ]; then
+        # 提取 fatal 错误行写入 mapping 记录，替代泛化的 "skopeo copy 失败"
+        local err_msg
+        err_msg=$(grep 'level=fatal' "$err_file" | tail -n1 | cut -c1-280)
+        [ -z "$err_msg" ] && err_msg=$(tail -n1 "$err_file" | cut -c1-280)
+        [ -z "$err_msg" ] && err_msg="skopeo copy 失败"
+        rm -f "$err_file"
+        add_mapping "$source_image" "$target_image" "failed" "false" "$err_msg" ""
         echo "✗ 同步失败: $source_image"
         return 1
     fi
+    rm -f "$err_file"
+
+    # 取源镜像 digest 用于追溯（封装函数正确处理 inspect 的 --creds 凭据）
+    local source_digest; source_digest=$(get_source_digest "$source_image")
+
+    # 2. 设置为 public
+    local error_msg=""
+    local status="success"
+    local is_public="false"
+
+    if [ -n "${IAM_ENDPOINT:-}" ]; then
+        # 解析 namespace 和 repository
+        local parsed=$(parse_target_image "$target_image")
+        local namespace=$(echo "$parsed" | cut -d'|' -f1)
+        local repository=$(echo "$parsed" | cut -d'|' -f2)
+
+        # 获取 Token 并设置 public
+        local token
+        token=$(get_iam_token 2>&1)
+        if [ $? -eq 0 ]; then
+            local set_public_result
+            set_public_result=$(set_repo_public "$namespace" "$repository" "$token" 2>&1)
+            if [ $? -eq 0 ]; then
+                is_public="true"
+            else
+                error_msg="$set_public_result"
+            fi
+        else
+            error_msg="$token"
+        fi
+    fi
+
+    add_mapping "$source_image" "$target_image" "$status" "$is_public" "$error_msg" "$source_digest"
+    echo "✓ 同步成功${fallback_note}: $source_image (is_public: ${is_public})"
+    return 0
 }
 
 # 主流程
