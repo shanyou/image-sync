@@ -100,15 +100,15 @@ bkci/bkci-kubernetes-manager:0.0.33
 bkci/ci:jdk17
 bitnamilegacy/mysql:8.0.37-debian-12-r2
 bitnamilegacy/redis:6.2.7-debian-11-r11
-docker.elastic.co/elasticsearch/elasticsearch:7.16.2
+bitnamilegacy/elasticsearch:9.1.2-debian-12-r0
 bitnamilegacy/rabbitmq:3.10.8-debian-11-r4
-influxdb:1.8.3
+bitnamilegacy/influxdb:3.4.1-debian-12-r0
 
 docker:28.3.1-dind
 bkci/ci:latest
 gcr.io/kaniko-project/executor:v1.9.0
 
-mongo:4.4.10
+bitnamilegacy/mongodb:8.0.13-debian-12-r0
 registry.k8s.io/ingress-nginx/controller:v0.48.1
 nginx:1.21.1
 bkci/bkci-turbo:0.0.21

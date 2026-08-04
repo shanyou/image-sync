@@ -43,17 +43,19 @@ Bitnami 已将老镜像从 Docker Hub 下架，以下镜像已替换为可用源
 | `bitnami/mysql:8.0.37-debian-12-r2` | `bitnamilegacy/mysql:8.0.37-debian-12-r2` |
 | `bitnami/redis:6.2.7-debian-11-r11` | `bitnamilegacy/redis:6.2.7-debian-11-r11` |
 | `bitnami/rabbitmq:3.10.8-debian-11-r4` | `bitnamilegacy/rabbitmq:3.10.8-debian-11-r4` |
-| `bitnami/elasticsearch:7.16.2-debian-10-r0` | `docker.elastic.co/elasticsearch/elasticsearch:7.16.2` |
-| `bitnami/influxdb:1.8.3-debian-10-r88` | `influxdb:1.8.3`（官方） |
-| `bitnami/mongodb:4.4.10-debian-10-r44` | `mongo:4.4.10`（官方） |
+| `bitnami/elasticsearch:7.16.2-debian-10-r0` | `bitnamilegacy/elasticsearch:9.1.2-debian-12-r0`（版本升级） |
+| `bitnami/influxdb:1.8.3-debian-10-r88` | `bitnamilegacy/influxdb:3.4.1-debian-12-r0`（版本升级） |
+| `bitnami/mongodb:4.4.10-debian-10-r44` | `bitnamilegacy/mongodb:8.0.13-debian-12-r0`（版本升级） |
 | `bitnami/nginx-ingress-controller:0.48.1-debian-10-r38` | `registry.k8s.io/ingress-nginx/controller:v0.48.1` |
 | `bitnami/nginx:1.21.1-debian-10-r46` | `nginx:1.21.1`（官方） |
 
-> 注意：换成官方源的镜像（mongo/nginx/influxdb/elasticsearch/ingress-controller）与 bitnami 版的文件布局、环境变量、启动方式不同（如 bitnami 的 `/opt/bitnami/...` 路径、`ALLOW_EMPTY_PASSWORD` 等专属变量）。配置挂载这些镜像的项目需相应调整。
+> 注意：
+> 1. 换成官方源的镜像（nginx-ingress-controller、nginx）与 bitnami 版的文件布局、环境变量、启动方式不同（如 `/opt/bitnami/...` 路径、`ALLOW_EMPTY_PASSWORD` 等专属变量），配置挂载这些镜像的项目需相应调整。
+> 2. elasticsearch/influxdb/mongodb 已替换为 `bitnamilegacy/*`，保持 bitnami 生态兼容（`/opt/bitnami/scripts` 路径、环境变量等不变），但**版本已升级**（7→9、1→3、4→8），对接的 chart 需验证兼容性。
 
 ### 多平台镜像说明
 
-`mongo:4.4.10` 因 manifest list 含 Windows 巨型变体无法上传 SWR，已按 Linux 单平台同步（`linux/amd64` + `linux/arm64`）。K8s 使用不受影响。
+`mongo:4.4.10`（已替换为 `bitnamilegacy/mongodb:8.0.13-debian-12-r0`）同步为 Linux 多平台镜像（`linux/amd64` + `linux/arm64`），K8s 使用不受影响。
 
 ## 完整镜像映射表
 
