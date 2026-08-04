@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-04T06:21:50Z",
+  "lastUpdated": "2026-08-04T07:52:15Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -121,11 +121,11 @@
     "docker:latest": {
       "source": "docker:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/docker:latest",
-      "syncedAt": "2026-08-04T04:47:17Z",
+      "syncedAt": "2026-08-04T07:52:15Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:cebc379a615d8dec408ac36f8854bb5002dc83e64fc8bc6f35312130f898d0e0"
+      "sourceDigest": "sha256:e8faad5a8dc5279dff929afc5449f2791736912fff9f99351d742db2fad01b4c"
     },
     "jevolk/tuwunel:latest": {
       "source": "jevolk/tuwunel:latest",
@@ -247,11 +247,11 @@
     "docker:dind": {
       "source": "docker:dind",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/docker:dind",
-      "syncedAt": "2026-08-04T04:47:01Z",
+      "syncedAt": "2026-08-04T07:51:56Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:cebc379a615d8dec408ac36f8854bb5002dc83e64fc8bc6f35312130f898d0e0"
+      "sourceDigest": "sha256:e8faad5a8dc5279dff929afc5449f2791736912fff9f99351d742db2fad01b4c"
     },
     "kindest/node:v1.35.0": {
       "source": "kindest/node:v1.35.0",
@@ -820,33 +820,6 @@
       "error_msg": "",
       "sourceDigest": "sha256:d94907b0b6bf134fdc891c95f4d789cf4c5d9eaaf0a5a2003c19a6927a71a5d2"
     },
-    "docker.elastic.co/elasticsearch/elasticsearch:7.16.2": {
-      "source": "docker.elastic.co/elasticsearch/elasticsearch:7.16.2",
-      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/docker-elastic-co-elasticsearch-elasticsearch:7.16.2",
-      "syncedAt": "2026-08-04T06:10:40Z",
-      "status": "success",
-      "is_public": "true",
-      "error_msg": "",
-      "sourceDigest": "sha256:055ab3c3466c6bd72ef42f7773c5fa224db4fb7cd6a9a5588ebe46642a15abf5"
-    },
-    "influxdb:1.8.3": {
-      "source": "influxdb:1.8.3",
-      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/influxdb:1.8.3",
-      "syncedAt": "2026-08-04T06:11:28Z",
-      "status": "success",
-      "is_public": "true",
-      "error_msg": "",
-      "sourceDigest": "sha256:fe53382e9fa49dd1ac079143ac5b26bfb4fb0ba32ac9b4b61c859a16943b1bff"
-    },
-    "mongo:4.4.10": {
-      "source": "mongo:4.4.10",
-      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/mongo:4.4.10",
-      "syncedAt": "2026-08-04T06:21:50Z",
-      "status": "success",
-      "is_public": "true",
-      "error_msg": "",
-      "sourceDigest": "sha256:2821997cba3c26465b59cc2e863b940d21a58732434462100af10659fc0d164f"
-    },
     "nginx:1.21.1": {
       "source": "nginx:1.21.1",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/nginx:1.21.1",
@@ -864,6 +837,33 @@
       "is_public": "true",
       "error_msg": "",
       "sourceDigest": "sha256:e9fb216ace49dfa4a5983b183067e97496e7a8b307d2093f4278cd550c303899"
+    },
+    "bitnamilegacy/elasticsearch:9.1.2-debian-12-r0": {
+      "source": "bitnamilegacy/elasticsearch:9.1.2-debian-12-r0",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/bitnamilegacy-elasticsearch:9.1.2-debian-12-r0",
+      "syncedAt": "2026-08-04T07:49:18Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": "",
+      "sourceDigest": "sha256:00176a47afa0c0cfc9d11bdbafda13cbad7c9098ff1e6092112df2c751de301a"
+    },
+    "bitnamilegacy/influxdb:3.4.1-debian-12-r0": {
+      "source": "bitnamilegacy/influxdb:3.4.1-debian-12-r0",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/bitnamilegacy-influxdb:3.4.1-debian-12-r0",
+      "syncedAt": "2026-08-04T07:49:52Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": "",
+      "sourceDigest": "sha256:bc31e0d8d386bc1fa4f4be70b316038bc6c9f5839aee63ace33ce111f7ccb7d6"
+    },
+    "bitnamilegacy/mongodb:8.0.13-debian-12-r0": {
+      "source": "bitnamilegacy/mongodb:8.0.13-debian-12-r0",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/bitnamilegacy-mongodb:8.0.13-debian-12-r0",
+      "syncedAt": "2026-08-04T07:50:22Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": "",
+      "sourceDigest": "sha256:2579e968033ec9f97035e91a215a4fb3943eb706eb3871b3d0d1d072e2f45605"
     }
   }
 }
