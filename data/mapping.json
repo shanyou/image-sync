@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-07T04:33:37Z",
+  "lastUpdated": "2026-08-08T03:37:37Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -103,11 +103,11 @@
     "weishaw/sub2api:latest": {
       "source": "weishaw/sub2api:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/weishaw-sub2api:latest",
-      "syncedAt": "2026-08-05T05:35:24Z",
+      "syncedAt": "2026-08-08T03:37:37Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:0566f8150785ee7b0ef0e17e15c3cceab38d69f77dfb8120493b57eb746d29b5"
+      "sourceDigest": "sha256:22eeb8a26a75e92cab72488963605d4cd34edafcd164b34209c7140c9bcf457a"
     },
     "adrianmusante/pocketbase": {
       "source": "adrianmusante/pocketbase",
@@ -139,11 +139,11 @@
     "eceasy/cli-proxy-api:latest": {
       "source": "eceasy/cli-proxy-api:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/eceasy-cli-proxy-api:latest",
-      "syncedAt": "2026-08-07T04:28:43Z",
+      "syncedAt": "2026-08-08T03:31:16Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:ad5629a7db7bca80280aa99b9611308321856d7b1e578c8c054a4f4bd2eee6db"
+      "sourceDigest": "sha256:a6234015cd9e9429311356b7fa89c417041a4bb97286066d57012acd8cbb9798"
     },
     "jenkinsci/blueocean:latest": {
       "source": "jenkinsci/blueocean:latest",
@@ -166,11 +166,11 @@
     "bitnami/postgresql": {
       "source": "bitnami/postgresql",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/bitnami-postgresql:latest",
-      "syncedAt": "2026-08-04T06:09:46Z",
+      "syncedAt": "2026-08-08T03:28:57Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:03a2fc05c3b71a6fcc2e49c3f55f79767ca3bf32e6aa9b5dddc7901e02ffb923"
+      "sourceDigest": "sha256:e6463683ee29a3bbe00051cb28f5d7871f4dde9f07008ebe3c65c230d85d2eb9"
     },
     "bitnami/os-shell": {
       "source": "bitnami/os-shell",
@@ -211,11 +211,11 @@
     "kasmweb/ubuntu-noble-desktop:1.18.0-rolling-daily": {
       "source": "kasmweb/ubuntu-noble-desktop:1.18.0-rolling-daily",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/kasmweb-ubuntu-noble-desktop:1.18.0-rolling-daily",
-      "syncedAt": "2026-08-07T04:33:37Z",
+      "syncedAt": "2026-08-08T03:36:16Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:42717bf095cbca17f36e4d3a681d68bbb037715942d37d728ffab8d8bb73f185"
+      "sourceDigest": "sha256:176097943a22354ece89400d6f51d01f99c91fc86c625d09cc52ce1874b4783c"
     },
     "kasmweb/ubuntu-noble-desktop:1.18.0": {
       "source": "kasmweb/ubuntu-noble-desktop:1.18.0",
@@ -283,11 +283,11 @@
     "alpine/socat": {
       "source": "alpine/socat",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/alpine-socat:latest",
-      "syncedAt": "2026-08-01T05:30:08Z",
+      "syncedAt": "2026-08-08T03:28:16Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:e7b17711daaa7d49107a7193112689e91fb1a27bddd9cb0b32641b55b8e9e3b0"
+      "sourceDigest": "sha256:68b28fed1e6f5dc5cc7574315284573d89a655b0bc528720be4164f36b998680"
     },
     "ghcr.io/kubelauncher/redis:8.6.1": {
       "source": "ghcr.io/kubelauncher/redis:8.6.1",
@@ -319,11 +319,11 @@
     "calciumion/new-api:latest": {
       "source": "calciumion/new-api:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/calciumion-new-api:latest",
-      "syncedAt": "2026-08-02T05:30:28Z",
+      "syncedAt": "2026-08-08T03:29:54Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:bacbbfbed64b4579213316e0ed78415985223bb20c47fbc24572dd7be5aa1695"
+      "sourceDigest": "sha256:be4b1f3fb48687cab0e0ff921a1e4c69ae3738c0907ce05646ddc6da02cb35a5"
     },
     "certbot/certbot:latest": {
       "source": "certbot/certbot:latest",
