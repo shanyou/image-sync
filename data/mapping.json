@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-11T03:54:03Z",
+  "lastUpdated": "2026-08-12T04:21:24Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -67,11 +67,11 @@
     "forgejo.ellis.link/continuwuation/continuwuity:latest": {
       "source": "forgejo.ellis.link/continuwuation/continuwuity:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/forgejo-ellis-link-continuwuation-continuwuity:latest",
-      "syncedAt": "2026-07-31T05:42:40Z",
+      "syncedAt": "2026-08-12T04:14:29Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:b5f5d7454a3e8dda041fc82084088409f2c34905ff51274955d52050203a87af"
+      "sourceDigest": "sha256:70e53a7e169ef4611f44565504f63d2b1aa1c038541b7b7428af411d483d3662"
     },
     "vectorim/element-web:latest": {
       "source": "vectorim/element-web:latest",
@@ -139,11 +139,11 @@
     "eceasy/cli-proxy-api:latest": {
       "source": "eceasy/cli-proxy-api:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/eceasy-cli-proxy-api:latest",
-      "syncedAt": "2026-08-11T03:49:24Z",
+      "syncedAt": "2026-08-12T04:13:28Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:3f7a734784f4cc2c86f6268929caff1b0c178fe600fdaa12cefe884dc4cae841"
+      "sourceDigest": "sha256:d861107efba1e4c75acad43a221431b4d77061e0d23ce9f8faf1b606b9c74a71"
     },
     "jenkinsci/blueocean:latest": {
       "source": "jenkinsci/blueocean:latest",
@@ -166,11 +166,11 @@
     "bitnami/postgresql": {
       "source": "bitnami/postgresql",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/bitnami-postgresql:latest",
-      "syncedAt": "2026-08-09T03:47:10Z",
+      "syncedAt": "2026-08-12T04:11:16Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:09a0a8dc1c52c5a0c4ccc7febe3d4d4df1e5d50816e2312ef0e21d3c09084ec0"
+      "sourceDigest": "sha256:ac3fdcc36145212217d968ecdc84475749083a8c7f04723d40f7f7aa9ba3abda"
     },
     "bitnami/os-shell": {
       "source": "bitnami/os-shell",
@@ -211,11 +211,11 @@
     "kasmweb/ubuntu-noble-desktop:1.18.0-rolling-daily": {
       "source": "kasmweb/ubuntu-noble-desktop:1.18.0-rolling-daily",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/kasmweb-ubuntu-noble-desktop:1.18.0-rolling-daily",
-      "syncedAt": "2026-08-11T03:54:03Z",
+      "syncedAt": "2026-08-12T04:20:12Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:1d65800c8d82444c39bae5cff0aa4217f112e21963037ed7422f82483b493719"
+      "sourceDigest": "sha256:ebb931c3f24b1e9fedc79c08daefd65a7576a28a3f6d6d8d4f5ee940af9bbdce"
     },
     "kasmweb/ubuntu-noble-desktop:1.18.0": {
       "source": "kasmweb/ubuntu-noble-desktop:1.18.0",
@@ -661,20 +661,20 @@
     "litellm/litellm:latest": {
       "source": "litellm/litellm:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/litellm-litellm:latest",
-      "syncedAt": "2026-08-09T03:55:53Z",
+      "syncedAt": "2026-08-12T04:21:24Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:90d8de0ea6fbb3cad145d1019d00a0149ae400b1e18e2011a60f1988f143f672"
+      "sourceDigest": "sha256:154e23bb5f31b1f10e16392a8ef299bd2cde08de3a64a6849002cfcc25ce3c63"
     },
     "1dev/server:latest": {
       "source": "1dev/server:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/1dev-server:latest",
-      "syncedAt": "2026-08-10T03:59:10Z",
+      "syncedAt": "2026-08-12T04:10:32Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:0ca235f0b4c48b87ba210e7fb2da95bf95c42b2ef6f43befe1dedf27896e815c"
+      "sourceDigest": "sha256:26f1482723607b34f73ce6c05f80ff150a3b0bb21e036c804bd3bdb87c934bee"
     },
     "bkci/bkci-backend:v4.1.0": {
       "source": "bkci/bkci-backend:v4.1.0",
