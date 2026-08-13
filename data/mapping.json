@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-12T04:21:24Z",
+  "lastUpdated": "2026-08-13T04:22:09Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -103,11 +103,11 @@
     "weishaw/sub2api:latest": {
       "source": "weishaw/sub2api:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/weishaw-sub2api:latest",
-      "syncedAt": "2026-08-10T04:08:34Z",
+      "syncedAt": "2026-08-13T04:22:09Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:7a924a8ecd5ad103d7b2730a3e5f94db5d4f09bb8273f0298ac3e13380bdb3a1"
+      "sourceDigest": "sha256:905baf250580334dacd902471f61da7b8b1e5da57e3c8c1769489952d51771a1"
     },
     "adrianmusante/pocketbase": {
       "source": "adrianmusante/pocketbase",
@@ -139,11 +139,11 @@
     "eceasy/cli-proxy-api:latest": {
       "source": "eceasy/cli-proxy-api:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/eceasy-cli-proxy-api:latest",
-      "syncedAt": "2026-08-12T04:13:28Z",
+      "syncedAt": "2026-08-13T04:15:40Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:d861107efba1e4c75acad43a221431b4d77061e0d23ce9f8faf1b606b9c74a71"
+      "sourceDigest": "sha256:7fca20b67690f919d88a868e3dcfcba8bbda5f42fef9e5169c0b95853ff6fb8c"
     },
     "jenkinsci/blueocean:latest": {
       "source": "jenkinsci/blueocean:latest",
@@ -211,11 +211,11 @@
     "kasmweb/ubuntu-noble-desktop:1.18.0-rolling-daily": {
       "source": "kasmweb/ubuntu-noble-desktop:1.18.0-rolling-daily",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/kasmweb-ubuntu-noble-desktop:1.18.0-rolling-daily",
-      "syncedAt": "2026-08-12T04:20:12Z",
+      "syncedAt": "2026-08-13T04:20:19Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:ebb931c3f24b1e9fedc79c08daefd65a7576a28a3f6d6d8d4f5ee940af9bbdce"
+      "sourceDigest": "sha256:57f4f77329fd2435538524ddd0638fb320e3d900c9e7f8eb0cca82f349234938"
     },
     "kasmweb/ubuntu-noble-desktop:1.18.0": {
       "source": "kasmweb/ubuntu-noble-desktop:1.18.0",
