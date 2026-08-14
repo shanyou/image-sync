@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-13T04:22:09Z",
+  "lastUpdated": "2026-08-14T04:27:15Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -49,11 +49,11 @@
     "postgres:14": {
       "source": "postgres:14",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/postgres:14",
-      "syncedAt": "2026-08-06T05:25:18Z",
+      "syncedAt": "2026-08-14T04:21:41Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:2f439458ab6a57a925825ae14f9d06910e4fe4a41c8d4a0ae06397e65b707e1b"
+      "sourceDigest": "sha256:c2066c4a9e3abb59cba7cd43244ae93d5f2a7d56c330dd9c3548e884ac7f1896"
     },
     "goacme/lego:latest": {
       "source": "goacme/lego:latest",
@@ -85,11 +85,11 @@
     "postgres:18-alpine": {
       "source": "postgres:18-alpine",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/postgres:18-alpine",
-      "syncedAt": "2026-07-15T04:36:18Z",
+      "syncedAt": "2026-08-14T04:27:15Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:9a8afca54e7861fd90fab5fdf4c42477a6b1cb7d293595148e674e0a3181de15"
+      "sourceDigest": "sha256:a1d02e4bd40c94d3bf2bdd3678c137388e76d9efcd23c285e9429d336a834b44"
     },
     "redis:8-alpine": {
       "source": "redis:8-alpine",
@@ -139,11 +139,11 @@
     "eceasy/cli-proxy-api:latest": {
       "source": "eceasy/cli-proxy-api:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/eceasy-cli-proxy-api:latest",
-      "syncedAt": "2026-08-13T04:15:40Z",
+      "syncedAt": "2026-08-14T04:12:27Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:7fca20b67690f919d88a868e3dcfcba8bbda5f42fef9e5169c0b95853ff6fb8c"
+      "sourceDigest": "sha256:52282964dca47d4978aaffd7dd72d6ed5fb5e5b72acfcbcd1785cfb087d6bd8e"
     },
     "jenkinsci/blueocean:latest": {
       "source": "jenkinsci/blueocean:latest",
@@ -184,11 +184,11 @@
     "bitnami/postgres-exporter": {
       "source": "bitnami/postgres-exporter",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/bitnami-postgres-exporter:latest",
-      "syncedAt": "2026-08-09T03:46:32Z",
+      "syncedAt": "2026-08-14T04:10:49Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:c1d522b820c1f4e3220d6a279fcb6c37d6c04ad9951779f81084ea06a568c666"
+      "sourceDigest": "sha256:987e76e2fa38f8ba649c8ee30385024a9a34c51a9dfdaa77b26974124b00b280"
     },
     "harness/harness:latest": {
       "source": "harness/harness:latest",
@@ -211,11 +211,11 @@
     "kasmweb/ubuntu-noble-desktop:1.18.0-rolling-daily": {
       "source": "kasmweb/ubuntu-noble-desktop:1.18.0-rolling-daily",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/kasmweb-ubuntu-noble-desktop:1.18.0-rolling-daily",
-      "syncedAt": "2026-08-13T04:20:19Z",
+      "syncedAt": "2026-08-14T04:17:28Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:57f4f77329fd2435538524ddd0638fb320e3d900c9e7f8eb0cca82f349234938"
+      "sourceDigest": "sha256:ca1b6eb8aae012bffc80aa8cb92ae04c237191349baff104472800ed045721d1"
     },
     "kasmweb/ubuntu-noble-desktop:1.18.0": {
       "source": "kasmweb/ubuntu-noble-desktop:1.18.0",
@@ -517,20 +517,20 @@
     "pgvector/pgvector:pg16": {
       "source": "pgvector/pgvector:pg16",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/pgvector-pgvector:pg16",
-      "syncedAt": "2026-07-30T05:20:22Z",
+      "syncedAt": "2026-08-14T04:18:52Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:a36250871de0833b8757561c72f2477ef1ddd1101afa4e617fb552e0de514c6b"
+      "sourceDigest": "sha256:ccc6e83d6e35e931dc7c5def2022729d5a6c370318d099181995567ff1fb4d6b"
     },
     "postgres:15-alpine": {
       "source": "postgres:15-alpine",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/postgres:15-alpine",
-      "syncedAt": "2026-07-15T04:33:21Z",
+      "syncedAt": "2026-08-14T04:24:27Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:3d0f7584ed7d04e27fa050d6683a74746608faf21f202be78460d679cc56461f"
+      "sourceDigest": "sha256:4006528dcbdd9be8c1aaa50389caea4e93c46d6f54c3533bcd3253725e526e23"
     },
     "quay.io/coreos/etcd:v3.5.5": {
       "source": "quay.io/coreos/etcd:v3.5.5",
