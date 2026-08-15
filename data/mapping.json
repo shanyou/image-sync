@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-14T04:27:15Z",
+  "lastUpdated": "2026-08-15T03:00:52Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -112,11 +112,11 @@
     "adrianmusante/pocketbase": {
       "source": "adrianmusante/pocketbase",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/adrianmusante-pocketbase:latest",
-      "syncedAt": "2026-07-31T05:38:20Z",
+      "syncedAt": "2026-08-15T02:53:44Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:3ac27a009825df3a56750b9ff28df509522fcda832db5977720bf6e4e69d5545"
+      "sourceDigest": "sha256:aaf24ec541c58c71b10117cc029b778ea9e32ec80535c69b68c3cf5b5d07cac6"
     },
     "docker:latest": {
       "source": "docker:latest",
@@ -139,11 +139,11 @@
     "eceasy/cli-proxy-api:latest": {
       "source": "eceasy/cli-proxy-api:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/eceasy-cli-proxy-api:latest",
-      "syncedAt": "2026-08-14T04:12:27Z",
+      "syncedAt": "2026-08-15T02:55:54Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:52282964dca47d4978aaffd7dd72d6ed5fb5e5b72acfcbcd1785cfb087d6bd8e"
+      "sourceDigest": "sha256:2332098d014bd48ad638475caec283fe54f35ad7c0bdadfd18a4cd267bec18d8"
     },
     "jenkinsci/blueocean:latest": {
       "source": "jenkinsci/blueocean:latest",
@@ -175,11 +175,11 @@
     "bitnami/os-shell": {
       "source": "bitnami/os-shell",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/bitnami-os-shell:latest",
-      "syncedAt": "2026-08-09T03:46:03Z",
+      "syncedAt": "2026-08-15T02:54:14Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:2e8c230fc67796bd6c54a47d94ebe7f2b42b331858829d71d3b0fe0f8e9aabf6"
+      "sourceDigest": "sha256:475531b83cc9e79b0bacbb7b899f949e634490ec88267e6803184f8f2d54a549"
     },
     "bitnami/postgres-exporter": {
       "source": "bitnami/postgres-exporter",
@@ -211,11 +211,11 @@
     "kasmweb/ubuntu-noble-desktop:1.18.0-rolling-daily": {
       "source": "kasmweb/ubuntu-noble-desktop:1.18.0-rolling-daily",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/kasmweb-ubuntu-noble-desktop:1.18.0-rolling-daily",
-      "syncedAt": "2026-08-14T04:17:28Z",
+      "syncedAt": "2026-08-15T03:00:52Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:ca1b6eb8aae012bffc80aa8cb92ae04c237191349baff104472800ed045721d1"
+      "sourceDigest": "sha256:ce1e8b87e553b6cd64d86c9823c2a2571ceb59672f3fe314fb1d0837a8a63c2e"
     },
     "kasmweb/ubuntu-noble-desktop:1.18.0": {
       "source": "kasmweb/ubuntu-noble-desktop:1.18.0",
