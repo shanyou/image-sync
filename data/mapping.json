@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-15T03:00:52Z",
+  "lastUpdated": "2026-08-16T03:18:56Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -85,11 +85,11 @@
     "postgres:18-alpine": {
       "source": "postgres:18-alpine",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/postgres:18-alpine",
-      "syncedAt": "2026-08-14T04:27:15Z",
+      "syncedAt": "2026-08-16T03:18:06Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:a1d02e4bd40c94d3bf2bdd3678c137388e76d9efcd23c285e9429d336a834b44"
+      "sourceDigest": "sha256:d3e1620b530c944afa6e887d22eb899824da68e19c52024bf98f5220c88a65b2"
     },
     "redis:8-alpine": {
       "source": "redis:8-alpine",
@@ -103,11 +103,11 @@
     "weishaw/sub2api:latest": {
       "source": "weishaw/sub2api:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/weishaw-sub2api:latest",
-      "syncedAt": "2026-08-13T04:22:09Z",
+      "syncedAt": "2026-08-16T03:18:56Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:905baf250580334dacd902471f61da7b8b1e5da57e3c8c1769489952d51771a1"
+      "sourceDigest": "sha256:f0534541ab9a510b0d190e3fe25288b6b82fdcaea905634c38660c43fab1ff08"
     },
     "adrianmusante/pocketbase": {
       "source": "adrianmusante/pocketbase",
@@ -139,11 +139,11 @@
     "eceasy/cli-proxy-api:latest": {
       "source": "eceasy/cli-proxy-api:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/eceasy-cli-proxy-api:latest",
-      "syncedAt": "2026-08-15T02:55:54Z",
+      "syncedAt": "2026-08-16T03:10:15Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:2332098d014bd48ad638475caec283fe54f35ad7c0bdadfd18a4cd267bec18d8"
+      "sourceDigest": "sha256:944f8b1f5d23981244b5d482290d411d2623bf685749a74c5bca849c865c0ac8"
     },
     "jenkinsci/blueocean:latest": {
       "source": "jenkinsci/blueocean:latest",
@@ -211,11 +211,11 @@
     "kasmweb/ubuntu-noble-desktop:1.18.0-rolling-daily": {
       "source": "kasmweb/ubuntu-noble-desktop:1.18.0-rolling-daily",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/kasmweb-ubuntu-noble-desktop:1.18.0-rolling-daily",
-      "syncedAt": "2026-08-15T03:00:52Z",
+      "syncedAt": "2026-08-16T03:15:54Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:ce1e8b87e553b6cd64d86c9823c2a2571ceb59672f3fe314fb1d0837a8a63c2e"
+      "sourceDigest": "sha256:52d8f53c85a9688541fadda5190dd8e81b6d605bc5d8c29af98a7a49119c2bf3"
     },
     "kasmweb/ubuntu-noble-desktop:1.18.0": {
       "source": "kasmweb/ubuntu-noble-desktop:1.18.0",
@@ -283,11 +283,11 @@
     "alpine/socat": {
       "source": "alpine/socat",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/alpine-socat:latest",
-      "syncedAt": "2026-08-08T03:28:16Z",
+      "syncedAt": "2026-08-16T03:03:19Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:68b28fed1e6f5dc5cc7574315284573d89a655b0bc528720be4164f36b998680"
+      "sourceDigest": "sha256:3ed1cd38741bd445ebffa3aecb9d80c46a83db45f5b5ef03332976c7ca9814af"
     },
     "ghcr.io/kubelauncher/redis:8.6.1": {
       "source": "ghcr.io/kubelauncher/redis:8.6.1",
@@ -355,20 +355,20 @@
     "docker.elastic.co/elasticsearch/elasticsearch:8.14.3": {
       "source": "docker.elastic.co/elasticsearch/elasticsearch:8.14.3",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/docker-elastic-co-elasticsearch-elasticsearch:8.14.3",
-      "syncedAt": "2026-07-15T03:23:32Z",
-      "status": "success",
-      "is_public": "true",
-      "error_msg": "",
-      "sourceDigest": "sha256:96ae58e574cb40b2caf8bdebc6dda7b789e1fae7d56346cc83c288374e18b1c2"
+      "syncedAt": "2026-08-16T03:06:33Z",
+      "status": "failed",
+      "is_public": "false",
+      "error_msg": "time=\"2026-08-16T03:06:33Z\" level=fatal msg=\"initializing source docker://docker.elastic.co/elasticsearch/elasticsearch:8.14.3: pinging container registry docker.elastic.co: Get \\\"https://docker.elastic.co/v2/\\\": dial tcp 34.56.16.77:443: i/o timeout\"",
+      "sourceDigest": ""
     },
     "docker.elastic.co/kibana/kibana:8.14.3": {
       "source": "docker.elastic.co/kibana/kibana:8.14.3",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/docker-elastic-co-kibana-kibana:8.14.3",
-      "syncedAt": "2026-07-15T03:24:29Z",
-      "status": "success",
-      "is_public": "true",
-      "error_msg": "",
-      "sourceDigest": "sha256:70740c7735524d4df593d2ef209f7d51e870cac51dc7ec589dfaa8ea17e32e24"
+      "syncedAt": "2026-08-16T03:09:33Z",
+      "status": "failed",
+      "is_public": "false",
+      "error_msg": "time=\"2026-08-16T03:09:33Z\" level=fatal msg=\"initializing source docker://docker.elastic.co/kibana/kibana:8.14.3: pinging container registry docker.elastic.co: Get \\\"https://docker.elastic.co/v2/\\\": dial tcp 34.56.16.77:443: i/o timeout\"",
+      "sourceDigest": ""
     },
     "downloads.unstructured.io/unstructured-io/unstructured-api:latest": {
       "source": "downloads.unstructured.io/unstructured-io/unstructured-api:latest",
@@ -661,20 +661,20 @@
     "litellm/litellm:latest": {
       "source": "litellm/litellm:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/litellm-litellm:latest",
-      "syncedAt": "2026-08-12T04:21:24Z",
+      "syncedAt": "2026-08-16T03:17:04Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:154e23bb5f31b1f10e16392a8ef299bd2cde08de3a64a6849002cfcc25ce3c63"
+      "sourceDigest": "sha256:468c25f35f3e5ec4e414974f00deab93337b1b4d9953cabcfd3722e59415f834"
     },
     "1dev/server:latest": {
       "source": "1dev/server:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/1dev-server:latest",
-      "syncedAt": "2026-08-12T04:10:32Z",
+      "syncedAt": "2026-08-16T03:02:24Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:26f1482723607b34f73ce6c05f80ff150a3b0bb21e036c804bd3bdb87c934bee"
+      "sourceDigest": "sha256:c7a4aac1765dd12d006757e9dfe8cb4070e6d5bdabe3a0caa032a54276089cc9"
     },
     "bkci/bkci-backend:v4.1.0": {
       "source": "bkci/bkci-backend:v4.1.0",
@@ -760,11 +760,11 @@
     "gcr.io/kaniko-project/executor:v1.9.0": {
       "source": "gcr.io/kaniko-project/executor:v1.9.0",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/gcr-io-kaniko-project-executor:v1.9.0",
-      "syncedAt": "2026-08-04T03:23:44Z",
-      "status": "success",
-      "is_public": "true",
-      "error_msg": "",
-      "sourceDigest": "sha256:1f982af0b54be748221d9a35dcfa608660ab3d51229aa56bde5416f75aff7561"
+      "syncedAt": "2026-08-16T03:10:18Z",
+      "status": "failed",
+      "is_public": "false",
+      "error_msg": "time=\"2026-08-16T03:10:18Z\" level=fatal msg=\"initializing source docker://gcr.io/kaniko-project/executor:v1.9.0: pinging container registry gcr.io: StatusCode: 403, \\\"<!DOCTYPE html>\\\\n<html lang=en>\\\\n  <meta charset=utf...\\\"\"",
+      "sourceDigest": ""
     },
     "jenkins/jenkins:2.541.1-jdk21": {
       "source": "jenkins/jenkins:2.541.1-jdk21",
@@ -832,11 +832,11 @@
     "registry.k8s.io/ingress-nginx/controller:v0.48.1": {
       "source": "registry.k8s.io/ingress-nginx/controller:v0.48.1",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/registry-k8s-io-ingress-nginx-controller:v0.48.1",
-      "syncedAt": "2026-08-04T06:12:29Z",
-      "status": "success",
-      "is_public": "true",
-      "error_msg": "",
-      "sourceDigest": "sha256:e9fb216ace49dfa4a5983b183067e97496e7a8b307d2093f4278cd550c303899"
+      "syncedAt": "2026-08-16T03:18:11Z",
+      "status": "failed",
+      "is_public": "false",
+      "error_msg": "time=\"2026-08-16T03:18:11Z\" level=fatal msg=\"initializing source docker://registry.k8s.io/ingress-nginx/controller:v0.48.1: pinging container registry registry.k8s.io: StatusCode: 403, \\\"\\\\n<html><head>\\\\n<meta http-equiv=\\\\\\\"content-type\\\\\\\" cont...\\\"\"",
+      "sourceDigest": ""
     },
     "bitnamilegacy/elasticsearch:9.1.2-debian-12-r0": {
       "source": "bitnamilegacy/elasticsearch:9.1.2-debian-12-r0",
