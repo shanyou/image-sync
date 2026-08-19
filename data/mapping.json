@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-19T03:19:08Z",
+  "lastUpdated": "2026-08-19T07:20:39Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -337,11 +337,11 @@
     "container-registry.oracle.com/database/free:latest": {
       "source": "container-registry.oracle.com/database/free:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/container-registry-oracle-com-database-free:latest",
-      "syncedAt": "2026-07-15T03:12:08Z",
+      "syncedAt": "2026-08-19T07:18:25Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:696eee2ee8985af25ef0dc4cbcac14cdaadfd4545150a87d82d9724ce43c7a77"
+      "sourceDigest": "sha256:f988b0c04c4c386cd306a2a914c0d7a9702d83acc31b064a28ad8eb6278a8fba"
     },
     "containers.intersystems.com/intersystems/iris-community:2025.3": {
       "source": "containers.intersystems.com/intersystems/iris-community:2025.3",
@@ -864,6 +864,15 @@
       "is_public": "true",
       "error_msg": "",
       "sourceDigest": "sha256:2579e968033ec9f97035e91a215a4fb3943eb706eb3871b3d0d1d072e2f45605"
+    },
+    "easysoft/zentao:latest": {
+      "source": "easysoft/zentao:latest",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/easysoft-zentao:latest",
+      "syncedAt": "2026-08-19T07:20:39Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": "",
+      "sourceDigest": "sha256:24df94e903976044cc3210885ab02c4524c0f46d52d3cff5e9b8f6394a61d2b9"
     }
   }
 }
