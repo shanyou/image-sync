@@ -113,3 +113,4 @@ registry.k8s.io/ingress-nginx/controller:v0.48.1
 nginx:1.21.1
 bkci/bkci-turbo:0.0.21
 easysoft/zentao:latest
+codeberg.org/forgejo/forgejo:15
