@@ -24,7 +24,8 @@ on:
 
 jobs:
   sync:
-    runs-on: ubuntu-latest
+    # 固定 24.04：依赖镜像预装的 skopeo/jq，避免 ubuntu-latest 别名未来漂移
+    runs-on: ubuntu-24.04
 
     steps:
       - name: Checkout
@@ -33,10 +34,8 @@ jobs:
           fetch-depth: 0
           token: ${{ github.token }}
 
-      - name: Install Skopeo and jq
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y skopeo jq
+      # 注意：ubuntu-24.04 runner 镜像已预装 skopeo 与 jq（见 actions/runner-images 的 Ubuntu2404-Readme），
+      # 无需 apt 安装。apt-get update 在 runner 上可能因网络问题长时间卡住，故移除该步骤。
 
       - name: Setup Git Config
         run: |
