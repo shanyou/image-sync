@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-19T07:20:39Z",
+  "lastUpdated": "2026-08-19T09:34:18Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -873,6 +873,15 @@
       "is_public": "true",
       "error_msg": "",
       "sourceDigest": "sha256:24df94e903976044cc3210885ab02c4524c0f46d52d3cff5e9b8f6394a61d2b9"
+    },
+    "codeberg.org/forgejo/forgejo:15": {
+      "source": "codeberg.org/forgejo/forgejo:15",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/codeberg-org-forgejo-forgejo:15",
+      "syncedAt": "2026-08-19T09:34:18Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": "",
+      "sourceDigest": "sha256:7b25db4c437426c8ee049a64b54b28a5eedddf2d479c867f5a2150597a767b29"
     }
   }
 }
