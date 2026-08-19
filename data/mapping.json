@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-18T03:08:00Z",
+  "lastUpdated": "2026-08-19T03:19:08Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -76,11 +76,11 @@
     "vectorim/element-web:latest": {
       "source": "vectorim/element-web:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/vectorim-element-web:latest",
-      "syncedAt": "2026-08-06T05:26:39Z",
+      "syncedAt": "2026-08-19T03:18:37Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:ac50d4eebafd954d7d7e2887d4693bcc91c54c0d00546a3410eeae77e6b342d5"
+      "sourceDigest": "sha256:a9be04cef41ed94cba0dcaeca5a81f89826d4f8be3d57ba5a6fa988f34eda703"
     },
     "postgres:18-alpine": {
       "source": "postgres:18-alpine",
@@ -103,11 +103,11 @@
     "weishaw/sub2api:latest": {
       "source": "weishaw/sub2api:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/weishaw-sub2api:latest",
-      "syncedAt": "2026-08-16T03:18:56Z",
+      "syncedAt": "2026-08-19T03:19:08Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:f0534541ab9a510b0d190e3fe25288b6b82fdcaea905634c38660c43fab1ff08"
+      "sourceDigest": "sha256:e0f019383025679bd3b0f912c21fe7d8afdba8e42613391fa7fa208cc0762e60"
     },
     "adrianmusante/pocketbase": {
       "source": "adrianmusante/pocketbase",
@@ -130,20 +130,20 @@
     "jevolk/tuwunel:latest": {
       "source": "jevolk/tuwunel:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/jevolk-tuwunel:latest",
-      "syncedAt": "2026-08-06T05:22:50Z",
+      "syncedAt": "2026-08-19T03:07:52Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:699fa9971c174e01c884abad8d1a3cfb2fe518e1a71f1fa16ea9dedf11873d74"
+      "sourceDigest": "sha256:295a1ceedbfd7afce05c69a38efb246dd31fa810e5d352fc7a09b261853800ee"
     },
     "eceasy/cli-proxy-api:latest": {
       "source": "eceasy/cli-proxy-api:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/eceasy-cli-proxy-api:latest",
-      "syncedAt": "2026-08-18T02:59:58Z",
+      "syncedAt": "2026-08-19T03:06:36Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:53162ac4ebf4f399b729a80830ad13e992add2430e1387a54e09a192987f6df3"
+      "sourceDigest": "sha256:d32007c6327b5f9d78fe31280c2ab5d64adb234d1c64574efd87fba64e166b1a"
     },
     "jenkinsci/blueocean:latest": {
       "source": "jenkinsci/blueocean:latest",
@@ -166,29 +166,29 @@
     "bitnami/postgresql": {
       "source": "bitnami/postgresql",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/bitnami-postgresql:latest",
-      "syncedAt": "2026-08-18T02:58:24Z",
+      "syncedAt": "2026-08-19T03:02:33Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:d92a6bbf5184e327301856457e35cefcc32e19158e46a4012929e20daa9c178d"
+      "sourceDigest": "sha256:9a7d0a522a8658fecf55f269f05c0b29ebe88c4ad89d52fbde0f2c9cd8d2ca48"
     },
     "bitnami/os-shell": {
       "source": "bitnami/os-shell",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/bitnami-os-shell:latest",
-      "syncedAt": "2026-08-15T02:54:14Z",
+      "syncedAt": "2026-08-19T03:01:26Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:475531b83cc9e79b0bacbb7b899f949e634490ec88267e6803184f8f2d54a549"
+      "sourceDigest": "sha256:11f82ac6ffc9c02cec0e327e203e6b2d5686e462ebaec0cee7ef988bede365ea"
     },
     "bitnami/postgres-exporter": {
       "source": "bitnami/postgres-exporter",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/bitnami-postgres-exporter:latest",
-      "syncedAt": "2026-08-14T04:10:49Z",
+      "syncedAt": "2026-08-19T03:01:54Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:987e76e2fa38f8ba649c8ee30385024a9a34c51a9dfdaa77b26974124b00b280"
+      "sourceDigest": "sha256:2c6500c718ef4fdf3f4e51d613496c05afcab4497532218709391742df701384"
     },
     "harness/harness:latest": {
       "source": "harness/harness:latest",
@@ -211,11 +211,11 @@
     "kasmweb/ubuntu-noble-desktop:1.18.0-rolling-daily": {
       "source": "kasmweb/ubuntu-noble-desktop:1.18.0-rolling-daily",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/kasmweb-ubuntu-noble-desktop:1.18.0-rolling-daily",
-      "syncedAt": "2026-08-18T03:06:25Z",
+      "syncedAt": "2026-08-19T03:12:16Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:80c17cd7b59bcdf406628e383981b4de9616f19c63a4d148c940b2f0b3fdd792"
+      "sourceDigest": "sha256:91f29562e806c9cbadde448481d9916a86cead87a5b5b13dfcff3c08a94cabd6"
     },
     "kasmweb/ubuntu-noble-desktop:1.18.0": {
       "source": "kasmweb/ubuntu-noble-desktop:1.18.0",
@@ -238,11 +238,11 @@
     "ubuntu:24.04": {
       "source": "ubuntu:24.04",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/ubuntu:24.04",
-      "syncedAt": "2026-08-04T04:51:43Z",
+      "syncedAt": "2026-08-19T03:16:35Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:561618e2c15bf2397621dd04f96926663a3b5616c189cf7e38db7e82f5c538ea"
+      "sourceDigest": "sha256:d78ab76437b1afc5f01e223d6bf0172763f404bb166441328845adbef44518cb"
     },
     "docker:dind": {
       "source": "docker:dind",
@@ -319,11 +319,11 @@
     "calciumion/new-api:latest": {
       "source": "calciumion/new-api:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/calciumion-new-api:latest",
-      "syncedAt": "2026-08-08T03:29:54Z",
+      "syncedAt": "2026-08-19T03:03:30Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:be4b1f3fb48687cab0e0ff921a1e4c69ae3738c0907ce05646ddc6da02cb35a5"
+      "sourceDigest": "sha256:54a0b10924aa75fa5b5947208b820ced66b6ef4b445b35f122b31d80676aba2b"
     },
     "certbot/certbot:latest": {
       "source": "certbot/certbot:latest",
@@ -346,11 +346,11 @@
     "containers.intersystems.com/intersystems/iris-community:2025.3": {
       "source": "containers.intersystems.com/intersystems/iris-community:2025.3",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/containers-intersystems-com-intersystems-iris-community:2025.3",
-      "syncedAt": "2026-08-05T05:19:27Z",
+      "syncedAt": "2026-08-19T03:05:24Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:963975bc46ef8e8b95f0191c2d0cbac9fd775612dd90130c7ed81e93b87e3e25"
+      "sourceDigest": "sha256:784adbed18f79164fc43509d1c61ea2c51e566ce93f4fb2937c8e60d6d79fbd3"
     },
     "docker.elastic.co/elasticsearch/elasticsearch:8.14.3": {
       "source": "docker.elastic.co/elasticsearch/elasticsearch:8.14.3",
@@ -643,20 +643,20 @@
     "ubuntu:22.04": {
       "source": "ubuntu:22.04",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/ubuntu:22.04",
-      "syncedAt": "2026-08-18T03:08:00Z",
+      "syncedAt": "2026-08-19T03:15:00Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:941f1899488c45cd4657f7872ddec86b47907e3e2165b944a1219c80b63c283d"
+      "sourceDigest": "sha256:2edbbc5dc405e9612ba3584ce95480277e3eb374407b5505fe26f17df77c7dbc"
     },
     "ubuntu:26.04": {
       "source": "ubuntu:26.04",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/ubuntu:26.04",
-      "syncedAt": "2026-08-04T04:53:38Z",
+      "syncedAt": "2026-08-19T03:18:01Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:678c6550cc43645e08669028bc177f50be4e7c5b8cca677067b1914d4afc7a03"
+      "sourceDigest": "sha256:6df9e8dd1eac389ebfef692c9648449adeb815d01e16e29cd6f3e50fe64ba9a6"
     },
     "litellm/litellm:latest": {
       "source": "litellm/litellm:latest",
@@ -670,11 +670,11 @@
     "1dev/server:latest": {
       "source": "1dev/server:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/1dev-server:latest",
-      "syncedAt": "2026-08-18T02:57:39Z",
+      "syncedAt": "2026-08-19T03:00:50Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:7c7a4f755f09c3c1dbfeb3f65220efbbf26ddc950a1b9ca85ef2419e215e58a8"
+      "sourceDigest": "sha256:40c66d3ac4f12061541d7d2bcbe327bc4f9c90a5bc681a0c383dd39647fd0af9"
     },
     "bkci/bkci-backend:v4.1.0": {
       "source": "bkci/bkci-backend:v4.1.0",
