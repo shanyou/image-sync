@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-19T09:34:18Z",
+  "lastUpdated": "2026-08-19T10:47:16Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -882,6 +882,15 @@
       "is_public": "true",
       "error_msg": "",
       "sourceDigest": "sha256:7b25db4c437426c8ee049a64b54b28a5eedddf2d479c867f5a2150597a767b29"
+    },
+    "apache/apisix:latest": {
+      "source": "apache/apisix:latest",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/apache-apisix:latest",
+      "syncedAt": "2026-08-19T10:47:16Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": "",
+      "sourceDigest": "sha256:d369ead81f294b7ac49cde36119e5d0b45f451c4b66f120e35bbedb8f832a541"
     }
   }
 }
