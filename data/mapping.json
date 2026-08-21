@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-20T03:07:43Z",
+  "lastUpdated": "2026-08-21T03:18:58Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -94,20 +94,20 @@
     "redis:8-alpine": {
       "source": "redis:8-alpine",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/redis:8-alpine",
-      "syncedAt": "2026-08-02T05:38:21Z",
+      "syncedAt": "2026-08-21T03:18:05Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:978f0e01593e65eed801f2402944efcd936d43b5027e4908a7897baf88ed6241"
+      "sourceDigest": "sha256:becdda6c7f4b3fb42e42fd7f120bbf5c54c4caaaf16f26da24e4563d2c1f0576"
     },
     "weishaw/sub2api:latest": {
       "source": "weishaw/sub2api:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/weishaw-sub2api:latest",
-      "syncedAt": "2026-08-19T03:19:08Z",
+      "syncedAt": "2026-08-21T03:18:58Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:e0f019383025679bd3b0f912c21fe7d8afdba8e42613391fa7fa208cc0762e60"
+      "sourceDigest": "sha256:ecf9d61dbad7411e01be3a7e440a5895b0773456f5e602b5eff5fb252b67a68e"
     },
     "adrianmusante/pocketbase": {
       "source": "adrianmusante/pocketbase",
@@ -211,11 +211,11 @@
     "kasmweb/ubuntu-noble-desktop:1.18.0-rolling-daily": {
       "source": "kasmweb/ubuntu-noble-desktop:1.18.0-rolling-daily",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/kasmweb-ubuntu-noble-desktop:1.18.0-rolling-daily",
-      "syncedAt": "2026-08-19T03:12:16Z",
+      "syncedAt": "2026-08-21T03:13:04Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:91f29562e806c9cbadde448481d9916a86cead87a5b5b13dfcff3c08a94cabd6"
+      "sourceDigest": "sha256:c5dfa36a336f03b2e0b64b897ba62fdbcbee20e8d716fe68c8249f90cef92040"
     },
     "kasmweb/ubuntu-noble-desktop:1.18.0": {
       "source": "kasmweb/ubuntu-noble-desktop:1.18.0",
@@ -544,11 +544,11 @@
     "redis:6-alpine": {
       "source": "redis:6-alpine",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/redis:6-alpine",
-      "syncedAt": "2026-07-25T05:27:45Z",
+      "syncedAt": "2026-08-21T03:15:57Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:ec5e187c913d422cdf60f4216a5fdfb95246792c6de6fe21ff5bed75cbfc8c23"
+      "sourceDigest": "sha256:d0c875bdacfb5c4d2c2d9124de3f53cee1dc9ceff8936bd459fabc135cb33015"
     },
     "semitechnologies/weaviate:1.27.0": {
       "source": "semitechnologies/weaviate:1.27.0",
@@ -670,11 +670,11 @@
     "1dev/server:latest": {
       "source": "1dev/server:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/1dev-server:latest",
-      "syncedAt": "2026-08-19T03:00:50Z",
+      "syncedAt": "2026-08-21T03:05:05Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:40c66d3ac4f12061541d7d2bcbe327bc4f9c90a5bc681a0c383dd39647fd0af9"
+      "sourceDigest": "sha256:adf91afcb6f695a44dcf6f6ddcf8eea8747e5413a148b080080b3c79075e7769"
     },
     "bkci/bkci-backend:v4.1.0": {
       "source": "bkci/bkci-backend:v4.1.0",
@@ -868,20 +868,20 @@
     "easysoft/zentao:latest": {
       "source": "easysoft/zentao:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/easysoft-zentao:latest",
-      "syncedAt": "2026-08-20T03:01:05Z",
+      "syncedAt": "2026-08-21T03:08:14Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:6bd9ce8d03bfdeb484617fbd8e1907bcf690fe403694a9e5a2de36ebf4a9605c"
+      "sourceDigest": "sha256:4c54e8f9808390829c08a1509f74540d13c44313094a8b60cbe180a0c79b3704"
     },
     "codeberg.org/forgejo/forgejo:15": {
       "source": "codeberg.org/forgejo/forgejo:15",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/codeberg-org-forgejo-forgejo:15",
-      "syncedAt": "2026-08-19T09:34:18Z",
+      "syncedAt": "2026-08-21T03:06:49Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:7b25db4c437426c8ee049a64b54b28a5eedddf2d479c867f5a2150597a767b29"
+      "sourceDigest": "sha256:1f9c1a9880425614267832ce437f8ae5f5b69e1f3219f38fc468fc37e48c1919"
     },
     "apache/apisix:latest": {
       "source": "apache/apisix:latest",
