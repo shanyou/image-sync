@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-21T03:18:58Z",
+  "lastUpdated": "2026-08-22T03:03:40Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -58,20 +58,20 @@
     "goacme/lego:latest": {
       "source": "goacme/lego:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/goacme-lego:latest",
-      "syncedAt": "2026-08-04T03:24:05Z",
+      "syncedAt": "2026-08-22T03:03:40Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:f4fd80df0ef94d2f536cc2e7fb5bdbd090fb0aa81b3595226b9fe814bb9a2bfe"
+      "sourceDigest": "sha256:7cddf252ccf0ec00b71cbd4dcd548fdbc780006b05ae630e5fa4a981353c5728"
     },
     "forgejo.ellis.link/continuwuation/continuwuity:latest": {
       "source": "forgejo.ellis.link/continuwuation/continuwuity:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/forgejo-ellis-link-continuwuation-continuwuity:latest",
-      "syncedAt": "2026-08-12T04:14:29Z",
-      "status": "success",
-      "is_public": "true",
-      "error_msg": "",
-      "sourceDigest": "sha256:70e53a7e169ef4611f44565504f63d2b1aa1c038541b7b7428af411d483d3662"
+      "syncedAt": "2026-08-22T03:02:21Z",
+      "status": "failed",
+      "is_public": "false",
+      "error_msg": "time=\"2026-08-22T03:02:21Z\" level=fatal msg=\"initializing source docker://forgejo.ellis.link/continuwuation/continuwuity:latest: pinging container registry forgejo.ellis.link: Get \\\"https://forgejo.ellis.link/v2/\\\": dial tcp 213.32.25.24:443: i/o timeout\"",
+      "sourceDigest": ""
     },
     "vectorim/element-web:latest": {
       "source": "vectorim/element-web:latest",
@@ -139,11 +139,11 @@
     "eceasy/cli-proxy-api:latest": {
       "source": "eceasy/cli-proxy-api:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/eceasy-cli-proxy-api:latest",
-      "syncedAt": "2026-08-20T03:01:55Z",
+      "syncedAt": "2026-08-22T02:59:20Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:591a09c19de769be09a2e56277365cd568b83fc7d98c94d2e7e7bef7069f7422"
+      "sourceDigest": "sha256:7145258f0bec00e12d6fa19488baaa15768c0e234538ce80528d0da9bc6aef2b"
     },
     "jenkinsci/blueocean:latest": {
       "source": "jenkinsci/blueocean:latest",
@@ -184,11 +184,11 @@
     "bitnami/postgres-exporter": {
       "source": "bitnami/postgres-exporter",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/bitnami-postgres-exporter:latest",
-      "syncedAt": "2026-08-20T02:58:27Z",
+      "syncedAt": "2026-08-22T02:56:25Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:970927e0a6e68d93df95d50521f322161de80647c3d85f887a25c204c8ac16d1"
+      "sourceDigest": "sha256:ad9e39687db7d82d88ed557398d84fdb03bc88b19150bca63b83f312d662bba6"
     },
     "harness/harness:latest": {
       "source": "harness/harness:latest",
@@ -202,11 +202,11 @@
     "dockurr/windows:latest": {
       "source": "dockurr/windows:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/dockurr-windows:latest",
-      "syncedAt": "2026-08-09T03:48:58Z",
+      "syncedAt": "2026-08-22T02:58:06Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:9c00d13a5db3f671c8b292967e87b3ace813d4a656257c5bc945ccd2afe1558d"
+      "sourceDigest": "sha256:0cff9eb0e7aee9953e55bc682852ca4fdca233145a58ae1ec94f0b0c01a2ed30"
     },
     "kasmweb/ubuntu-noble-desktop:1.18.0-rolling-daily": {
       "source": "kasmweb/ubuntu-noble-desktop:1.18.0-rolling-daily",
@@ -868,11 +868,11 @@
     "easysoft/zentao:latest": {
       "source": "easysoft/zentao:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/easysoft-zentao:latest",
-      "syncedAt": "2026-08-21T03:08:14Z",
+      "syncedAt": "2026-08-22T02:58:46Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:4c54e8f9808390829c08a1509f74540d13c44313094a8b60cbe180a0c79b3704"
+      "sourceDigest": "sha256:86bcc60a6917bcbe940674a9aeb1a5cf5dba94262aa25d69959fb0ef14a0e845"
     },
     "codeberg.org/forgejo/forgejo:15": {
       "source": "codeberg.org/forgejo/forgejo:15",
@@ -886,11 +886,11 @@
     "apache/apisix:latest": {
       "source": "apache/apisix:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/apache-apisix:latest",
-      "syncedAt": "2026-08-19T10:47:16Z",
+      "syncedAt": "2026-08-22T02:55:54Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:d369ead81f294b7ac49cde36119e5d0b45f451c4b66f120e35bbedb8f832a541"
+      "sourceDigest": "sha256:f8c49ac6d712973546d30b3ac75c93c766e746a14b3ff2e14b6ce218a2daac3d"
     }
   }
 }
