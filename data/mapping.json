@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-23T03:14:53Z",
+  "lastUpdated": "2026-08-24T03:12:41Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -13,11 +13,11 @@
     "nginx:latest": {
       "source": "nginx:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/nginx:latest",
-      "syncedAt": "2026-08-20T03:04:32Z",
+      "syncedAt": "2026-08-24T03:12:41Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:8f029c543423e3eac6b08254718bc31eb75633b1e448026b6616927baa7d4bfe"
+      "sourceDigest": "sha256:0d4374c710a9649200e84f8ef8dbdd4fa76c0c107839cd50f1e42a63916b0f2e"
     },
     "mysql:latest": {
       "source": "mysql:latest",
@@ -112,11 +112,11 @@
     "adrianmusante/pocketbase": {
       "source": "adrianmusante/pocketbase",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/adrianmusante-pocketbase:latest",
-      "syncedAt": "2026-08-15T02:53:44Z",
+      "syncedAt": "2026-08-24T03:05:21Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:aaf24ec541c58c71b10117cc029b778ea9e32ec80535c69b68c3cf5b5d07cac6"
+      "sourceDigest": "sha256:c1ab3bad79a3304fb6601ea6d7622f33206cbbbee3a656c9f9176e57773106cc"
     },
     "docker:latest": {
       "source": "docker:latest",
@@ -211,11 +211,11 @@
     "kasmweb/ubuntu-noble-desktop:1.18.0-rolling-daily": {
       "source": "kasmweb/ubuntu-noble-desktop:1.18.0-rolling-daily",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/kasmweb-ubuntu-noble-desktop:1.18.0-rolling-daily",
-      "syncedAt": "2026-08-23T03:13:45Z",
+      "syncedAt": "2026-08-24T03:11:33Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:3496f619de63dd7653000151a2b8f2a65f923a064768375333010a638754d3ee"
+      "sourceDigest": "sha256:f8caa7b717f37353c9f532496ef5043de34c45965d5fae1632d193c0ad2fb869"
     },
     "kasmweb/ubuntu-noble-desktop:1.18.0": {
       "source": "kasmweb/ubuntu-noble-desktop:1.18.0",
