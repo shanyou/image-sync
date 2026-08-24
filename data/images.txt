@@ -115,3 +115,4 @@ bkci/bkci-turbo:0.0.21
 easysoft/zentao:latest
 codeberg.org/forgejo/forgejo:15
 apache/apisix:latest
+nacos/nacos-server:latest
