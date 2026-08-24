@@ -39,10 +39,12 @@ while [[ $# -gt 0 ]]; do
     esac
 done
 
-# 检查必需的环境变量
-: "${TARGET_REGISTRY:?TARGET_REGISTRY 环境变量未设置}"
-: "${REGISTRY_USERNAME:?REGISTRY_USERNAME 环境变量未设置}"
-: "${REGISTRY_PASSWORD:?REGISTRY_PASSWORD 环境变量未设置}"
+# 检查必需的环境变量（直接执行时；被 source 时跳过，便于测试）
+if [ "${BASH_SOURCE[0]}" = "$0" ]; then
+    : "${TARGET_REGISTRY:?TARGET_REGISTRY 环境变量未设置}"
+    : "${REGISTRY_USERNAME:?REGISTRY_USERNAME 环境变量未设置}"
+    : "${REGISTRY_PASSWORD:?REGISTRY_PASSWORD 环境变量未设置}"
+fi
 
 # 初始化 mapping.json
 init_mapping() {
@@ -170,6 +172,49 @@ sync_image() {
     return 0
 }
 
+# 提交并推送 mapping.json
+# push 被拒（远端领先）时：pull --rebase 后重试；
+# 若 mapping.json 发生 rebase 冲突，用语义合并自动解决（两边记录取并集，
+# 同一镜像保留较新记录），无需人工介入
+# 返回: 0 = push 成功; 1 = 重试耗尽或不可自动解决的冲突
+push_mapping() {
+    git add "$MAPPING_FILE"
+    git commit -m "chore: 更新镜像映射记录"
+
+    local attempt conflicted base incoming
+    for attempt in 1 2 3 4 5; do
+        if git push; then
+            echo "✓ mapping.json 已提交并推送"
+            return 0
+        fi
+        echo "git push 失败（第 ${attempt} 次尝试），rebase 远端后重试..."
+
+        if ! git pull --rebase; then
+            # rebase 冲突：列出冲突文件
+            conflicted=$(git diff --name-only --diff-filter=U)
+            if [ "$conflicted" = "$MAPPING_FILE" ]; then
+                # 仅 mapping.json 冲突：语义合并（rebase 中 HEAD 为远端版本，
+                # REBASE_HEAD 为本次运行的提交）
+                base=$(git show HEAD:"$MAPPING_FILE" 2>/dev/null) \
+                    && incoming=$(git show REBASE_HEAD:"$MAPPING_FILE" 2>/dev/null) \
+                    && merge_mappings "$base" "$incoming" > "$MAPPING_FILE" \
+                    && jq -e '.mappings' "$MAPPING_FILE" >/dev/null \
+                    || { echo "错误: mapping.json 自动合并失败"; git rebase --abort; return 1; }
+                git add "$MAPPING_FILE"
+                GIT_EDITOR=true git rebase --continue \
+                    || { git rebase --abort; return 1; }
+            else
+                # 无冲突文件 = 网络类瞬时错误：中止 rebase 后进入下轮重试
+                echo "⚠ pull --rebase 失败（无冲突文件，可能是网络错误），中止 rebase 后重试"
+                git rebase --abort 2>/dev/null || true
+            fi
+        fi
+        sleep 1
+    done
+    echo "错误: 5 次尝试后 git push 仍然失败"
+    return 1
+}
+
 # 主流程
 main() {
     echo "=== 开始镜像同步 ==="
@@ -213,19 +258,10 @@ main() {
     if git diff --quiet "$MAPPING_FILE"; then
         echo "没有变更需要提交"
     else
-        git add "$MAPPING_FILE"
-        git commit -m "chore: 更新镜像映射记录"
-        # pull --rebase + retry: 防止与并发运行的 CI 或中间推送冲突
-        for i in 1 2 3; do
-            if git pull --rebase && git push; then
-                break
-            fi
-            echo "git push 失败，第 ${i} 次重试..."
-            sleep 2
-        done
-        # 确保循环结束后 git push 确实成功了（否则 set -e 不捕获 for 的退出码）
-        git diff --quiet "@{u}..HEAD" || { echo "错误: 3 次重试后 git push 仍然失败"; exit 1; }
+        push_mapping
     fi
 }
 
-main
+if [ "${BASH_SOURCE[0]}" = "$0" ]; then
+    main
+fi

@@ -159,3 +159,25 @@ parse_target_image() {
 
     echo "${namespace}|${repository}|${tag}"
 }
+
+# 语义合并两份 mapping.json 内容（两边 mappings 取并集）
+# 同一 key 两边都有时，保留 syncedAt 较新的条目（ISO8601 时间戳按字典序比较即时序）
+# lastUpdated 取两边较新值。用于 rebase 冲突的自动解决
+merge_mappings() {
+    local base_json="$1"
+    local incoming_json="$2"
+
+    jq -n --argjson a "$base_json" --argjson b "$incoming_json" '
+        ($a.mappings // {}) as $ma | ($b.mappings // {}) as $mb |
+        ((($ma | keys) + ($mb | keys)) | unique) as $keys |
+        {
+            lastUpdated: ([$a.lastUpdated, $b.lastUpdated] | max),
+            mappings: (reduce $keys[] as $k ({}; .[$k] = (
+                if ($ma | has($k)) and ($mb | has($k)) then
+                    if ($ma[$k].syncedAt // "") >= ($mb[$k].syncedAt // "")
+                    then $ma[$k] else $mb[$k] end
+                elif ($ma | has($k)) then $ma[$k]
+                else $mb[$k] end
+            )))
+        }'
+}

@@ -3,6 +3,12 @@ name: Sync Docker Images
 permissions:
   contents: write
 
+# 同一 workflow 串行排队：定时任务与 push/手动触发同时运行时排队执行，
+# 避免两个 job 并发同步并先后提交 mapping.json 造成 rebase 冲突
+concurrency:
+  group: sync-images
+  cancel-in-progress: false
+
 on:
   push:
     paths:
