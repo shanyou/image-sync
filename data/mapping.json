@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-28T14:04:41Z",
+  "lastUpdated": "2026-08-29T08:51:16Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -211,11 +211,11 @@
     "kasmweb/ubuntu-noble-desktop:1.18.0-rolling-daily": {
       "source": "kasmweb/ubuntu-noble-desktop:1.18.0-rolling-daily",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/kasmweb-ubuntu-noble-desktop:1.18.0-rolling-daily",
-      "syncedAt": "2026-08-28T14:04:41Z",
+      "syncedAt": "2026-08-29T08:51:16Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:c50e5724c2bbb5cdd9b598457d94f714ab5f0c1964bab7fc886b2a811aab28ec"
+      "sourceDigest": "sha256:867941d341441822d5d93df46372450f2b44f7479790b90305090ffcf53f4a20"
     },
     "kasmweb/ubuntu-noble-desktop:1.18.0": {
       "source": "kasmweb/ubuntu-noble-desktop:1.18.0",
@@ -283,11 +283,11 @@
     "alpine/socat": {
       "source": "alpine/socat",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/alpine-socat:latest",
-      "syncedAt": "2026-08-23T03:04:27Z",
+      "syncedAt": "2026-08-29T08:44:11Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:3d9e7966201dd3a065df591020a09fd3c70845de7e7086e3531ea69db774406b"
+      "sourceDigest": "sha256:5f275aa1b6e9889c851f61097142ee050fc6ac4615b4ea64ac1f2b0e81ff8d7f"
     },
     "ghcr.io/kubelauncher/redis:8.6.1": {
       "source": "ghcr.io/kubelauncher/redis:8.6.1",
