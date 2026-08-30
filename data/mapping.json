@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-29T08:51:16Z",
+  "lastUpdated": "2026-08-30T08:08:29Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -211,11 +211,11 @@
     "kasmweb/ubuntu-noble-desktop:1.18.0-rolling-daily": {
       "source": "kasmweb/ubuntu-noble-desktop:1.18.0-rolling-daily",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/kasmweb-ubuntu-noble-desktop:1.18.0-rolling-daily",
-      "syncedAt": "2026-08-29T08:51:16Z",
+      "syncedAt": "2026-08-30T08:08:29Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:867941d341441822d5d93df46372450f2b44f7479790b90305090ffcf53f4a20"
+      "sourceDigest": "sha256:0493d25f17aac4a595ee5060b2e105f739e6cec038c0ae80b75cef4ee394e3fa"
     },
     "kasmweb/ubuntu-noble-desktop:1.18.0": {
       "source": "kasmweb/ubuntu-noble-desktop:1.18.0",
@@ -319,11 +319,11 @@
     "calciumion/new-api:latest": {
       "source": "calciumion/new-api:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/calciumion-new-api:latest",
-      "syncedAt": "2026-08-27T12:27:29Z",
+      "syncedAt": "2026-08-30T08:02:38Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:7b82c866e9c0fb02faca7d5068e9d1261e47edf52462d63d9db7b614e7f1027d"
+      "sourceDigest": "sha256:60e9c0b709d8e0d4fd768977b8992b64b90f6cbcceb02c85b54f0a8eba8b2610"
     },
     "certbot/certbot:latest": {
       "source": "certbot/certbot:latest",
@@ -670,11 +670,11 @@
     "1dev/server:latest": {
       "source": "1dev/server:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/1dev-server:latest",
-      "syncedAt": "2026-08-26T03:07:56Z",
+      "syncedAt": "2026-08-30T08:01:32Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:09c39994fd6572a79b10319c170afd04857849cc0f7993ec4614f584c58707f8"
+      "sourceDigest": "sha256:41b99cc7db6a73cff3188237fa0c2a294097a503bd3f907fea32d248f301c619"
     },
     "bkci/bkci-backend:v4.1.0": {
       "source": "bkci/bkci-backend:v4.1.0",
