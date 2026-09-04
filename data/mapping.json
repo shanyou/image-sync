@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-03T07:37:32Z",
+  "lastUpdated": "2026-09-04T07:50:21Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -13,11 +13,11 @@
     "nginx:latest": {
       "source": "nginx:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/nginx:latest",
-      "syncedAt": "2026-09-03T07:34:26Z",
+      "syncedAt": "2026-09-04T07:50:21Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:dd0e2565131859c7fefc0cc0cb90fd31e9cc3bfa39e4516e82c183ec1916d332"
+      "sourceDigest": "sha256:05b8cb60c354a44ab824ea6e7dc69b46d50762cdbe728a347a5b656e6fb3d7c4"
     },
     "mysql:latest": {
       "source": "mysql:latest",
@@ -139,11 +139,11 @@
     "eceasy/cli-proxy-api:latest": {
       "source": "eceasy/cli-proxy-api:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/eceasy-cli-proxy-api:latest",
-      "syncedAt": "2026-09-02T06:57:27Z",
+      "syncedAt": "2026-09-04T07:07:34Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:f077e153476466e0ea8355400e39bf1508e637585b661ed3991b7b8129ce054d"
+      "sourceDigest": "sha256:0b6ee7f6e871dbbaa9bb072352f48149b3be05078dc2812c67c4fe1871d7d6ce"
     },
     "jenkinsci/blueocean:latest": {
       "source": "jenkinsci/blueocean:latest",
@@ -166,29 +166,29 @@
     "bitnami/postgresql": {
       "source": "bitnami/postgresql",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/bitnami-postgresql:latest",
-      "syncedAt": "2026-09-03T07:02:02Z",
+      "syncedAt": "2026-09-04T07:04:51Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:7b9c5292a8e8b38e7172705cc6e49e34b9a8d9c297c4c7ae04130a3e6a28f3b0"
+      "sourceDigest": "sha256:5614f19e4a5077217e53b3bd7e7f69d06af6a02919af4b90a9702e3648190c8c"
     },
     "bitnami/os-shell": {
       "source": "bitnami/os-shell",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/bitnami-os-shell:latest",
-      "syncedAt": "2026-09-03T07:00:34Z",
+      "syncedAt": "2026-09-04T07:02:29Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:77c0d815b10d3dc280e9862ff207914ad6f9a2cd4578a5055c04d3beec69aef4"
+      "sourceDigest": "sha256:481601c7f12a169eb8bfedbb6e434b8641abd5422eacf695e0c0823f15a00afc"
     },
     "bitnami/postgres-exporter": {
       "source": "bitnami/postgres-exporter",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/bitnami-postgres-exporter:latest",
-      "syncedAt": "2026-09-02T06:54:54Z",
+      "syncedAt": "2026-09-04T07:03:49Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:b1abef4485e3985f5a5006250f42806d2822cf9eff019985652df11e115285a3"
+      "sourceDigest": "sha256:c6b5bd91427e5fad89c4995c198c9cf2851555cbc7d8f720d37f0ba201933a3b"
     },
     "harness/harness:latest": {
       "source": "harness/harness:latest",
@@ -211,11 +211,11 @@
     "kasmweb/ubuntu-noble-desktop:1.18.0-rolling-daily": {
       "source": "kasmweb/ubuntu-noble-desktop:1.18.0-rolling-daily",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/kasmweb-ubuntu-noble-desktop:1.18.0-rolling-daily",
-      "syncedAt": "2026-09-03T07:30:19Z",
+      "syncedAt": "2026-09-04T07:49:25Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:6b18c8e0f76d8d1096ed3ad572e247d12bace374595dbc00027bcaf9fe6e3125"
+      "sourceDigest": "sha256:87ecf3af56ade8acdeeca8bb3d34d1f083de3c1704ccc8888686a5881bc93c7f"
     },
     "kasmweb/ubuntu-noble-desktop:1.18.0": {
       "source": "kasmweb/ubuntu-noble-desktop:1.18.0",
@@ -319,11 +319,11 @@
     "calciumion/new-api:latest": {
       "source": "calciumion/new-api:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/calciumion-new-api:latest",
-      "syncedAt": "2026-08-31T08:17:29Z",
+      "syncedAt": "2026-09-04T07:06:09Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:94e853de615144b7dd809583ef96434b5539f52072b6e96c6e53354fa422a871"
+      "sourceDigest": "sha256:25f2e6528180675c3a6e68fb2e8d3f719321867cfd5ae8cf3ebd2f7c0a1d816e"
     },
     "certbot/certbot:latest": {
       "source": "certbot/certbot:latest",
