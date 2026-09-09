@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-08T07:10:21Z",
+  "lastUpdated": "2026-09-09T05:42:41Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -22,11 +22,11 @@
     "mysql:latest": {
       "source": "mysql:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/mysql:latest",
-      "syncedAt": "2026-07-28T05:26:30Z",
+      "syncedAt": "2026-09-09T05:42:41Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:66aec17cd21a956029b83f083b813073859e8355dc1a00e55df6ba02f0e32345"
+      "sourceDigest": "sha256:4b40b165f348c3a1d959a222bd6c7773503f202554fd140db3de74ed9136b7b8"
     },
     "busybox:latest": {
       "source": "busybox:latest",
@@ -139,11 +139,11 @@
     "eceasy/cli-proxy-api:latest": {
       "source": "eceasy/cli-proxy-api:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/eceasy-cli-proxy-api:latest",
-      "syncedAt": "2026-09-08T07:03:39Z",
+      "syncedAt": "2026-09-09T05:36:11Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:e93870454b282f260cd1587bcfb6a11c638915903647a1175f9b0915a865f66d"
+      "sourceDigest": "sha256:3990e4de484ac5caac80164ee3a60d0ba521320dcda193a2ef71a5ad2e2c768b"
     },
     "jenkinsci/blueocean:latest": {
       "source": "jenkinsci/blueocean:latest",
@@ -211,11 +211,11 @@
     "kasmweb/ubuntu-noble-desktop:1.18.0-rolling-daily": {
       "source": "kasmweb/ubuntu-noble-desktop:1.18.0-rolling-daily",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/kasmweb-ubuntu-noble-desktop:1.18.0-rolling-daily",
-      "syncedAt": "2026-09-08T07:08:54Z",
+      "syncedAt": "2026-09-09T05:41:22Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:25fdd40575979eddde24df3e33f715bd794746ed35ee1aaf1a6308070f6ab472"
+      "sourceDigest": "sha256:231da0e10c46ba26efe58dd580ba058912ae0aa1a519b3e84193e66b7d275dc4"
     },
     "kasmweb/ubuntu-noble-desktop:1.18.0": {
       "source": "kasmweb/ubuntu-noble-desktop:1.18.0",
@@ -319,11 +319,11 @@
     "calciumion/new-api:latest": {
       "source": "calciumion/new-api:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/calciumion-new-api:latest",
-      "syncedAt": "2026-09-08T07:02:17Z",
+      "syncedAt": "2026-09-09T05:32:45Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:2e2f2306efe8de8b79f2d13f81670f8610826a17ae2ac9d2dea0c05c14e263d2"
+      "sourceDigest": "sha256:53ca9103fa06e803577e4557901d63ed4e2aa22c5fee0242172c7e35283ef49c"
     },
     "certbot/certbot:latest": {
       "source": "certbot/certbot:latest",
@@ -346,11 +346,11 @@
     "containers.intersystems.com/intersystems/iris-community:2025.3": {
       "source": "containers.intersystems.com/intersystems/iris-community:2025.3",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/containers-intersystems-com-intersystems-iris-community:2025.3",
-      "syncedAt": "2026-08-26T03:11:11Z",
+      "syncedAt": "2026-09-09T05:34:58Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:4d4adabf1b5aca407a4d3477282820336a2743cdca7dd6852177689fe5958181"
+      "sourceDigest": "sha256:e4f9afc5c634115fd73c239d6fceefdadf21b14a2d0ba0ea478f808327c19be9"
     },
     "docker.elastic.co/elasticsearch/elasticsearch:8.14.3": {
       "source": "docker.elastic.co/elasticsearch/elasticsearch:8.14.3",
@@ -900,6 +900,15 @@
       "is_public": "true",
       "error_msg": "",
       "sourceDigest": "sha256:1c191c30c8cd5ff2a72bf576555dbaa57a616378c55168651a74aefadedf7708"
+    },
+    "apache/rocketmq": {
+      "source": "apache/rocketmq",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/apache-rocketmq:latest",
+      "syncedAt": "2026-09-09T05:31:49Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": "",
+      "sourceDigest": "sha256:7e8f6c9dbd9df742ed26ba69c00d4ad69e2f86a56f3ca7782ff8144dd0798132"
     }
   }
 }
