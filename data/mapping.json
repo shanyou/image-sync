@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-09T07:14:05Z",
+  "lastUpdated": "2026-09-10T07:31:56Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -139,11 +139,11 @@
     "eceasy/cli-proxy-api:latest": {
       "source": "eceasy/cli-proxy-api:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/eceasy-cli-proxy-api:latest",
-      "syncedAt": "2026-09-09T05:36:11Z",
+      "syncedAt": "2026-09-10T07:18:56Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:3990e4de484ac5caac80164ee3a60d0ba521320dcda193a2ef71a5ad2e2c768b"
+      "sourceDigest": "sha256:7f434559781aa011bbfa1061757fb5fbb4d44190e453f5bb1cb20076d9c6581e"
     },
     "jenkinsci/blueocean:latest": {
       "source": "jenkinsci/blueocean:latest",
@@ -211,11 +211,11 @@
     "kasmweb/ubuntu-noble-desktop:1.18.0-rolling-daily": {
       "source": "kasmweb/ubuntu-noble-desktop:1.18.0-rolling-daily",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/kasmweb-ubuntu-noble-desktop:1.18.0-rolling-daily",
-      "syncedAt": "2026-09-09T05:41:22Z",
+      "syncedAt": "2026-09-10T07:24:17Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:231da0e10c46ba26efe58dd580ba058912ae0aa1a519b3e84193e66b7d275dc4"
+      "sourceDigest": "sha256:84e13568b28a92f2978bb19368bffdcf8edaae1120176ea1b9bbfe0ade0b072c"
     },
     "kasmweb/ubuntu-noble-desktop:1.18.0": {
       "source": "kasmweb/ubuntu-noble-desktop:1.18.0",
@@ -238,11 +238,11 @@
     "ubuntu:24.04": {
       "source": "ubuntu:24.04",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/ubuntu:24.04",
-      "syncedAt": "2026-08-20T03:07:11Z",
+      "syncedAt": "2026-09-10T07:30:05Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:33ceb71981b602c1a7443a53469e4dba065f7503eab3078a2d7a57a2ab987517"
+      "sourceDigest": "sha256:224a1869083a311ef3f13648a154ba79832fbef6364d31493642ca03082da254"
     },
     "docker:dind": {
       "source": "docker:dind",
@@ -373,11 +373,11 @@
     "downloads.unstructured.io/unstructured-io/unstructured-api:latest": {
       "source": "downloads.unstructured.io/unstructured-io/unstructured-api:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/downloads-unstructured-io-unstructured-io-unstructured-api:latest",
-      "syncedAt": "2026-07-23T05:28:44Z",
+      "syncedAt": "2026-09-10T07:18:21Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:0df934a22e4e893cf15e7aeaf35c463ecc75937758a83099aefdc13041619a1d"
+      "sourceDigest": "sha256:dd3176b0f7f86734707664f0d3996764fcac0bffe1e03dec6a0194438285f1d5"
     },
     "ghcr.io/chroma-core/chroma:0.5.20": {
       "source": "ghcr.io/chroma-core/chroma:0.5.20",
@@ -643,29 +643,29 @@
     "ubuntu:22.04": {
       "source": "ubuntu:22.04",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/ubuntu:22.04",
-      "syncedAt": "2026-08-19T03:15:00Z",
+      "syncedAt": "2026-09-10T07:28:17Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:2edbbc5dc405e9612ba3584ce95480277e3eb374407b5505fe26f17df77c7dbc"
+      "sourceDigest": "sha256:829f6df217bcbae2b371026e81711d1a787c61b2967ad09d015063663ebafbf7"
     },
     "ubuntu:26.04": {
       "source": "ubuntu:26.04",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/ubuntu:26.04",
-      "syncedAt": "2026-08-20T03:07:43Z",
+      "syncedAt": "2026-09-10T07:31:56Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:2260313b31c8c011cd2eebe728008efac1b3982be73eb71348ea2648d2c0e09b"
+      "sourceDigest": "sha256:513c074113a871b51a8d16ab445c88779d6452d937a164fb5cc479f32668a41d"
     },
     "litellm/litellm:latest": {
       "source": "litellm/litellm:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/litellm-litellm:latest",
-      "syncedAt": "2026-09-06T07:09:47Z",
+      "syncedAt": "2026-09-10T07:25:33Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:c8756e7b9a61fe45df2ccb5b781d388c3b2f3a21ef9e4956630caef20f9f03aa"
+      "sourceDigest": "sha256:a3715fa7ad8387941ab697259bd2881d68931657247a41984f90fae6d11c62bf"
     },
     "1dev/server:latest": {
       "source": "1dev/server:latest",
