@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-10T07:31:56Z",
+  "lastUpdated": "2026-09-11T07:15:38Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -139,11 +139,11 @@
     "eceasy/cli-proxy-api:latest": {
       "source": "eceasy/cli-proxy-api:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/eceasy-cli-proxy-api:latest",
-      "syncedAt": "2026-09-10T07:18:56Z",
+      "syncedAt": "2026-09-11T07:10:01Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:7f434559781aa011bbfa1061757fb5fbb4d44190e453f5bb1cb20076d9c6581e"
+      "sourceDigest": "sha256:7ad14e95aa5347325a0f727cb9be30673f619369624b9fc89673da60736f7cb5"
     },
     "jenkinsci/blueocean:latest": {
       "source": "jenkinsci/blueocean:latest",
@@ -166,11 +166,11 @@
     "bitnami/postgresql": {
       "source": "bitnami/postgresql",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/bitnami-postgresql:latest",
-      "syncedAt": "2026-09-04T07:04:51Z",
+      "syncedAt": "2026-09-11T07:07:33Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:5614f19e4a5077217e53b3bd7e7f69d06af6a02919af4b90a9702e3648190c8c"
+      "sourceDigest": "sha256:65d7506622ce2649914947b698d822d56c208295ba7ee80c1b34e48b251ba0c1"
     },
     "bitnami/os-shell": {
       "source": "bitnami/os-shell",
@@ -211,11 +211,11 @@
     "kasmweb/ubuntu-noble-desktop:1.18.0-rolling-daily": {
       "source": "kasmweb/ubuntu-noble-desktop:1.18.0-rolling-daily",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/kasmweb-ubuntu-noble-desktop:1.18.0-rolling-daily",
-      "syncedAt": "2026-09-10T07:24:17Z",
+      "syncedAt": "2026-09-11T07:15:38Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:84e13568b28a92f2978bb19368bffdcf8edaae1120176ea1b9bbfe0ade0b072c"
+      "sourceDigest": "sha256:ac414f1fcd77383d0a2d00643597bf7dcc04ef27216b1052753766f56f60db4d"
     },
     "kasmweb/ubuntu-noble-desktop:1.18.0": {
       "source": "kasmweb/ubuntu-noble-desktop:1.18.0",
@@ -670,11 +670,11 @@
     "1dev/server:latest": {
       "source": "1dev/server:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/1dev-server:latest",
-      "syncedAt": "2026-09-07T07:07:21Z",
+      "syncedAt": "2026-09-11T07:06:48Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:9d9dc1afc6c54c6ee474163ed137b30d47d49535d8769caf601b55dc4a0d4204"
+      "sourceDigest": "sha256:62c1951e9c3d618287b3ea3dc0dfcefb6375aa462f613b54ae73557dd434acec"
     },
     "bkci/bkci-backend:v4.1.0": {
       "source": "bkci/bkci-backend:v4.1.0",
@@ -877,11 +877,11 @@
     "codeberg.org/forgejo/forgejo:15": {
       "source": "codeberg.org/forgejo/forgejo:15",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/codeberg-org-forgejo-forgejo:15",
-      "syncedAt": "2026-08-21T03:06:49Z",
+      "syncedAt": "2026-09-11T07:08:53Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:1f9c1a9880425614267832ce437f8ae5f5b69e1f3219f38fc468fc37e48c1919"
+      "sourceDigest": "sha256:0a2e377fd3c5af3451bfa1f44e6f198f322b6d5e03f04a028b8e672f1ccddc9f"
     },
     "apache/apisix:latest": {
       "source": "apache/apisix:latest",
