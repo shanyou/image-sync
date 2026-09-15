@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-14T07:49:11Z",
+  "lastUpdated": "2026-09-15T07:31:53Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -139,11 +139,11 @@
     "eceasy/cli-proxy-api:latest": {
       "source": "eceasy/cli-proxy-api:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/eceasy-cli-proxy-api:latest",
-      "syncedAt": "2026-09-14T07:41:56Z",
+      "syncedAt": "2026-09-15T07:25:24Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:783500b16bd526238ce940e33aaa6e9257f2f5f597f205277883c2eebbb0e024"
+      "sourceDigest": "sha256:f9abbf3fa5fed1ca5410cf207eeae6d7c3d7d1b5305397fc928d4d43d4474d15"
     },
     "jenkinsci/blueocean:latest": {
       "source": "jenkinsci/blueocean:latest",
@@ -166,11 +166,11 @@
     "bitnami/postgresql": {
       "source": "bitnami/postgresql",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/bitnami-postgresql:latest",
-      "syncedAt": "2026-09-11T07:07:33Z",
+      "syncedAt": "2026-09-15T07:23:20Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:65d7506622ce2649914947b698d822d56c208295ba7ee80c1b34e48b251ba0c1"
+      "sourceDigest": "sha256:b69d1fca390fb131639e86e820f248acfc5d911339dc884796f8009260c598d7"
     },
     "bitnami/os-shell": {
       "source": "bitnami/os-shell",
@@ -211,11 +211,11 @@
     "kasmweb/ubuntu-noble-desktop:1.18.0-rolling-daily": {
       "source": "kasmweb/ubuntu-noble-desktop:1.18.0-rolling-daily",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/kasmweb-ubuntu-noble-desktop:1.18.0-rolling-daily",
-      "syncedAt": "2026-09-14T07:46:55Z",
+      "syncedAt": "2026-09-15T07:30:50Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:b29a2a115fc9fc3f7605ca0a9d6b7b2fc704b8aa22939644ee23c6fc27c9589b"
+      "sourceDigest": "sha256:705bc7813cccdc9598bdfcdf7f6692e562e25ba20809b1155d72a138a73c2975"
     },
     "kasmweb/ubuntu-noble-desktop:1.18.0": {
       "source": "kasmweb/ubuntu-noble-desktop:1.18.0",
@@ -454,10 +454,10 @@
     "minio/minio:RELEASE.2023-03-20T20-16-18Z": {
       "source": "minio/minio:RELEASE.2023-03-20T20-16-18Z",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/minio-minio:RELEASE.2023-03-20T20-16-18Z",
-      "syncedAt": "2026-09-14T07:47:14Z",
+      "syncedAt": "2026-09-15T07:31:53Z",
       "status": "failed",
       "is_public": "false",
-      "error_msg": "time=\"2026-09-14T07:47:14Z\" level=fatal msg=\"initializing source docker://minio/minio:RELEASE.2023-03-20T20-16-18Z: reading manifest RELEASE.2023-03-20T20-16-18Z in docker.io/minio/minio: requested access to the resource is denied\"",
+      "error_msg": "time=\"2026-09-15T07:31:53Z\" level=fatal msg=\"initializing source docker://minio/minio:RELEASE.2023-03-20T20-16-18Z: reading manifest RELEASE.2023-03-20T20-16-18Z in docker.io/minio/minio: requested access to the resource is denied\"",
       "sourceDigest": ""
     },
     "mysql:8.0": {
@@ -661,11 +661,11 @@
     "litellm/litellm:latest": {
       "source": "litellm/litellm:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/litellm-litellm:latest",
-      "syncedAt": "2026-09-10T07:25:33Z",
+      "syncedAt": "2026-09-15T07:31:49Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:a3715fa7ad8387941ab697259bd2881d68931657247a41984f90fae6d11c62bf"
+      "sourceDigest": "sha256:d295634e09c648dcdb72c4cc2dd226f5fb87823a73e88cbbed6f205e4deb044b"
     },
     "1dev/server:latest": {
       "source": "1dev/server:latest",
@@ -868,11 +868,11 @@
     "easysoft/zentao:latest": {
       "source": "easysoft/zentao:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/easysoft-zentao:latest",
-      "syncedAt": "2026-08-22T02:58:46Z",
+      "syncedAt": "2026-09-15T07:24:55Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:86bcc60a6917bcbe940674a9aeb1a5cf5dba94262aa25d69959fb0ef14a0e845"
+      "sourceDigest": "sha256:e88bf10a5e4baa4a0c72a9b1b6fe1bb736c2cc70e138c8039c215b0c5348bb9b"
     },
     "codeberg.org/forgejo/forgejo:15": {
       "source": "codeberg.org/forgejo/forgejo:15",
