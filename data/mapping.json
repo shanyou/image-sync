@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-19T07:23:02Z",
+  "lastUpdated": "2026-09-20T07:40:14Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -139,11 +139,11 @@
     "eceasy/cli-proxy-api:latest": {
       "source": "eceasy/cli-proxy-api:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/eceasy-cli-proxy-api:latest",
-      "syncedAt": "2026-09-19T07:10:55Z",
+      "syncedAt": "2026-09-20T07:34:39Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:6c2c8a7904799bd29a3f7f92a598555d8321b6a5682000b87af4495c5704fa72"
+      "sourceDigest": "sha256:7347d268ba83c7f1b017d663fa8b77c9aba7e606dd2e0abb4b028323fe042eb6"
     },
     "jenkinsci/blueocean:latest": {
       "source": "jenkinsci/blueocean:latest",
@@ -175,20 +175,20 @@
     "bitnami/os-shell": {
       "source": "bitnami/os-shell",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/bitnami-os-shell:latest",
-      "syncedAt": "2026-09-04T07:02:29Z",
+      "syncedAt": "2026-09-20T07:32:58Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:481601c7f12a169eb8bfedbb6e434b8641abd5422eacf695e0c0823f15a00afc"
+      "sourceDigest": "sha256:307ffbb10fe3b41ee00ff14bce903f00b7debf02bdd4bb50a1eb310f7b878064"
     },
     "bitnami/postgres-exporter": {
       "source": "bitnami/postgres-exporter",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/bitnami-postgres-exporter:latest",
-      "syncedAt": "2026-09-04T07:03:49Z",
+      "syncedAt": "2026-09-20T07:33:23Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:c6b5bd91427e5fad89c4995c198c9cf2851555cbc7d8f720d37f0ba201933a3b"
+      "sourceDigest": "sha256:4f34730416ddcb521e1b8d0b71b09ef8503b7fdd3f7886fa2c4bf3a33d665254"
     },
     "harness/harness:latest": {
       "source": "harness/harness:latest",
@@ -211,11 +211,11 @@
     "kasmweb/ubuntu-noble-desktop:1.18.0-rolling-daily": {
       "source": "kasmweb/ubuntu-noble-desktop:1.18.0-rolling-daily",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/kasmweb-ubuntu-noble-desktop:1.18.0-rolling-daily",
-      "syncedAt": "2026-09-19T07:15:43Z",
+      "syncedAt": "2026-09-20T07:39:13Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:f3332d4e8efb3706b7257ef1e57b05d6663aff0e2cc7bf4700766b5edac383ee"
+      "sourceDigest": "sha256:bef31636555d36d1b0e94a959e07a9a4fe98a6acc3469ed898fc5fc251a356e4"
     },
     "kasmweb/ubuntu-noble-desktop:1.18.0": {
       "source": "kasmweb/ubuntu-noble-desktop:1.18.0",
@@ -454,10 +454,10 @@
     "minio/minio:RELEASE.2023-03-20T20-16-18Z": {
       "source": "minio/minio:RELEASE.2023-03-20T20-16-18Z",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/minio-minio:RELEASE.2023-03-20T20-16-18Z",
-      "syncedAt": "2026-09-19T07:15:54Z",
+      "syncedAt": "2026-09-20T07:40:14Z",
       "status": "failed",
       "is_public": "false",
-      "error_msg": "time=\"2026-09-19T07:15:54Z\" level=fatal msg=\"initializing source docker://minio/minio:RELEASE.2023-03-20T20-16-18Z: reading manifest RELEASE.2023-03-20T20-16-18Z in docker.io/minio/minio: requested access to the resource is denied\"",
+      "error_msg": "time=\"2026-09-20T07:40:14Z\" level=fatal msg=\"initializing source docker://minio/minio:RELEASE.2023-03-20T20-16-18Z: reading manifest RELEASE.2023-03-20T20-16-18Z in docker.io/minio/minio: requested access to the resource is denied\"",
       "sourceDigest": ""
     },
     "mysql:8.0": {
@@ -661,11 +661,11 @@
     "litellm/litellm:latest": {
       "source": "litellm/litellm:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/litellm-litellm:latest",
-      "syncedAt": "2026-09-15T07:31:49Z",
+      "syncedAt": "2026-09-20T07:40:12Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:d295634e09c648dcdb72c4cc2dd226f5fb87823a73e88cbbed6f205e4deb044b"
+      "sourceDigest": "sha256:32cfd7a427f6470033b4dcc9e75dfbea2aa32dbc298b0b511a40e962ce818362"
     },
     "1dev/server:latest": {
       "source": "1dev/server:latest",
