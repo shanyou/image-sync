@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-21T07:57:09Z",
+  "lastUpdated": "2026-09-22T10:23:46Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -22,11 +22,11 @@
     "mysql:latest": {
       "source": "mysql:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/mysql:latest",
-      "syncedAt": "2026-09-12T07:21:28Z",
+      "syncedAt": "2026-09-22T10:20:01Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:45abdd9b4144660b5c93a5b7d0ebb21e024f0ba9851ecb4ab43bf83c6bf83592"
+      "sourceDigest": "sha256:ade067ae2fb15eeb6143e81185afe22573e3b3addc58aaf90c41999fa6883991"
     },
     "busybox:latest": {
       "source": "busybox:latest",
@@ -94,11 +94,11 @@
     "redis:8-alpine": {
       "source": "redis:8-alpine",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/redis:8-alpine",
-      "syncedAt": "2026-09-18T07:33:45Z",
+      "syncedAt": "2026-09-22T10:23:46Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:bd999b5cfee25fb24b8320a31fddbd69f462df44c8138c66e369582937beebc0"
+      "sourceDigest": "sha256:ba6e394f6acc2a695ef1b6944f161b9ca813711739be68319fa0db3470673f1d"
     },
     "weishaw/sub2api:latest": {
       "source": "weishaw/sub2api:latest",
@@ -130,20 +130,20 @@
     "jevolk/tuwunel:latest": {
       "source": "jevolk/tuwunel:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/jevolk-tuwunel:latest",
-      "syncedAt": "2026-09-13T07:21:00Z",
+      "syncedAt": "2026-09-22T09:37:11Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:634609b554f05d90960ce096dda13e39cf45b692518e8cf734e255e1b9bddbe5"
+      "sourceDigest": "sha256:a354976db35cb6e3f8c0b801f266592571af898554d78fc6e2137f14e02a7d3e"
     },
     "eceasy/cli-proxy-api:latest": {
       "source": "eceasy/cli-proxy-api:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/eceasy-cli-proxy-api:latest",
-      "syncedAt": "2026-09-21T07:48:10Z",
+      "syncedAt": "2026-09-22T09:27:57Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:ee21d2cc4b8f89d0df142724479e6d8107e69ea91c5dc6c14abfd837e42c2422"
+      "sourceDigest": "sha256:cba3af35ed147ffca3ac10bc5a743d4369ce5e4e9b59c86ff9d980d51323875d"
     },
     "jenkinsci/blueocean:latest": {
       "source": "jenkinsci/blueocean:latest",
@@ -211,11 +211,11 @@
     "kasmweb/ubuntu-noble-desktop:1.18.0-rolling-daily": {
       "source": "kasmweb/ubuntu-noble-desktop:1.18.0-rolling-daily",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/kasmweb-ubuntu-noble-desktop:1.18.0-rolling-daily",
-      "syncedAt": "2026-09-21T07:53:10Z",
+      "syncedAt": "2026-09-22T10:18:27Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:85f739c9e5aeeb8ec2fbbcf8fb0ee614693ae78c21e4785479336c8f4128f08c"
+      "sourceDigest": "sha256:3304e7ee540e34f398285b9c882f7655a0eaa3e7b573e003329eaa0ba3ecabe1"
     },
     "kasmweb/ubuntu-noble-desktop:1.18.0": {
       "source": "kasmweb/ubuntu-noble-desktop:1.18.0",
@@ -319,11 +319,11 @@
     "calciumion/new-api:latest": {
       "source": "calciumion/new-api:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/calciumion-new-api:latest",
-      "syncedAt": "2026-09-21T07:46:48Z",
+      "syncedAt": "2026-09-22T09:25:14Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:219b0cecfd7d1aaeacc1d1d0f4bf51615b64260ac1fe73b89937efa469a6d57f"
+      "sourceDigest": "sha256:37c0f99a76ed0a5d5b376b8486173415efd1ec416042b392bd564eb0ae6a55ef"
     },
     "certbot/certbot:latest": {
       "source": "certbot/certbot:latest",
@@ -454,10 +454,10 @@
     "minio/minio:RELEASE.2023-03-20T20-16-18Z": {
       "source": "minio/minio:RELEASE.2023-03-20T20-16-18Z",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/minio-minio:RELEASE.2023-03-20T20-16-18Z",
-      "syncedAt": "2026-09-21T07:53:29Z",
+      "syncedAt": "2026-09-22T10:18:46Z",
       "status": "failed",
       "is_public": "false",
-      "error_msg": "time=\"2026-09-21T07:53:29Z\" level=fatal msg=\"initializing source docker://minio/minio:RELEASE.2023-03-20T20-16-18Z: reading manifest RELEASE.2023-03-20T20-16-18Z in docker.io/minio/minio: requested access to the resource is denied\"",
+      "error_msg": "time=\"2026-09-22T10:18:46Z\" level=fatal msg=\"initializing source docker://minio/minio:RELEASE.2023-03-20T20-16-18Z: reading manifest RELEASE.2023-03-20T20-16-18Z in docker.io/minio/minio: requested access to the resource is denied\"",
       "sourceDigest": ""
     },
     "mysql:8.0": {
@@ -544,11 +544,11 @@
     "redis:6-alpine": {
       "source": "redis:6-alpine",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/redis:6-alpine",
-      "syncedAt": "2026-09-18T07:31:30Z",
+      "syncedAt": "2026-09-22T10:21:15Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:ad151300731763a711bf517916519e5cc8f035c95139aa1750836048390439d0"
+      "sourceDigest": "sha256:b362b5dff9d14d961dc3352db4776aba6a8c53ca2661d7c74ad2c121f82cdaea"
     },
     "semitechnologies/weaviate:1.27.0": {
       "source": "semitechnologies/weaviate:1.27.0",
@@ -670,11 +670,11 @@
     "1dev/server:latest": {
       "source": "1dev/server:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/1dev-server:latest",
-      "syncedAt": "2026-09-21T07:45:02Z",
+      "syncedAt": "2026-09-22T09:13:14Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:ace12db0a5c08630bf164f0aa022464e08855783bc92b78478957bf851984dcb"
+      "sourceDigest": "sha256:01be274ab387203b4de275cc85c2e61a0c99aa79fbaa157f55ac2288503fd98d"
     },
     "bkci/bkci-backend:v4.1.0": {
       "source": "bkci/bkci-backend:v4.1.0",
