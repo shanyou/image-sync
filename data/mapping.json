@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-22T10:23:46Z",
+  "lastUpdated": "2026-09-23T10:50:29Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -31,11 +31,11 @@
     "busybox:latest": {
       "source": "busybox:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/busybox:latest",
-      "syncedAt": "2026-08-01T05:31:53Z",
+      "syncedAt": "2026-09-23T09:38:45Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:dc2d74b28e4cf8984fa52af1f39bc7c3d9c73760b41a74d629f5d11b1ab28616"
+      "sourceDigest": "sha256:fd7dc98638c8e305f4dc34e979f1c0fdfdcaeb0fbf8fcff77ae834b6da3d7e6e"
     },
     "codeberg.org/forgejo/forgejo:14": {
       "source": "codeberg.org/forgejo/forgejo:14",
@@ -76,11 +76,11 @@
     "vectorim/element-web:latest": {
       "source": "vectorim/element-web:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/vectorim-element-web:latest",
-      "syncedAt": "2026-09-17T07:27:54Z",
+      "syncedAt": "2026-09-23T10:49:46Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:a8f415462ab8d2600a592ba1b92bea51efe5a4d10eb738aab9bed769f7099613"
+      "sourceDigest": "sha256:da32e88c8dafe2c3d4f40ca5e90ab2f43a7c9ac35f0977ec7662dcb4fdcd56d8"
     },
     "postgres:18-alpine": {
       "source": "postgres:18-alpine",
@@ -103,11 +103,11 @@
     "weishaw/sub2api:latest": {
       "source": "weishaw/sub2api:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/weishaw-sub2api:latest",
-      "syncedAt": "2026-09-19T07:23:02Z",
+      "syncedAt": "2026-09-23T10:50:29Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:411d9ca53be0dded773f7418e570bbdc4834c2cf6ff4ecad4e5347f882b6e79b"
+      "sourceDigest": "sha256:9bad8d33cd81813f574cd2b2132fca40cdfcaab8572027cf7131104a1dafec60"
     },
     "adrianmusante/pocketbase": {
       "source": "adrianmusante/pocketbase",
@@ -139,11 +139,11 @@
     "eceasy/cli-proxy-api:latest": {
       "source": "eceasy/cli-proxy-api:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/eceasy-cli-proxy-api:latest",
-      "syncedAt": "2026-09-22T09:27:57Z",
+      "syncedAt": "2026-09-23T10:37:40Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:cba3af35ed147ffca3ac10bc5a743d4369ce5e4e9b59c86ff9d980d51323875d"
+      "sourceDigest": "sha256:86032129fa65496428752ec6e5c7480f07fde137160b728cd850cc65e9eaa391"
     },
     "jenkinsci/blueocean:latest": {
       "source": "jenkinsci/blueocean:latest",
@@ -211,11 +211,11 @@
     "kasmweb/ubuntu-noble-desktop:1.18.0-rolling-daily": {
       "source": "kasmweb/ubuntu-noble-desktop:1.18.0-rolling-daily",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/kasmweb-ubuntu-noble-desktop:1.18.0-rolling-daily",
-      "syncedAt": "2026-09-22T10:18:27Z",
+      "syncedAt": "2026-09-23T10:44:38Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:3304e7ee540e34f398285b9c882f7655a0eaa3e7b573e003329eaa0ba3ecabe1"
+      "sourceDigest": "sha256:6d13a3c0f6655e5bea1d977aedbe0d5f0ef8b3aa8f52f3ddbca7dd5a188cd92c"
     },
     "kasmweb/ubuntu-noble-desktop:1.18.0": {
       "source": "kasmweb/ubuntu-noble-desktop:1.18.0",
@@ -346,11 +346,11 @@
     "containers.intersystems.com/intersystems/iris-community:2025.3": {
       "source": "containers.intersystems.com/intersystems/iris-community:2025.3",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/containers-intersystems-com-intersystems-iris-community:2025.3",
-      "syncedAt": "2026-09-16T07:26:17Z",
+      "syncedAt": "2026-09-23T10:36:27Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:546eda7ea9f5d92dd6b6dadf6904d7d92b4c6bd7b52298c0b073507f7a470450"
+      "sourceDigest": "sha256:520c2b8f9a518cd0bc6a6a288f30528356fa0d52193e4ab162367932fe740f36"
     },
     "docker.elastic.co/elasticsearch/elasticsearch:8.14.3": {
       "source": "docker.elastic.co/elasticsearch/elasticsearch:8.14.3",
@@ -454,10 +454,10 @@
     "minio/minio:RELEASE.2023-03-20T20-16-18Z": {
       "source": "minio/minio:RELEASE.2023-03-20T20-16-18Z",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/minio-minio:RELEASE.2023-03-20T20-16-18Z",
-      "syncedAt": "2026-09-22T10:18:46Z",
+      "syncedAt": "2026-09-23T10:48:14Z",
       "status": "failed",
       "is_public": "false",
-      "error_msg": "time=\"2026-09-22T10:18:46Z\" level=fatal msg=\"initializing source docker://minio/minio:RELEASE.2023-03-20T20-16-18Z: reading manifest RELEASE.2023-03-20T20-16-18Z in docker.io/minio/minio: requested access to the resource is denied\"",
+      "error_msg": "time=\"2026-09-23T10:48:14Z\" level=fatal msg=\"initializing source docker://minio/minio:RELEASE.2023-03-20T20-16-18Z: reading manifest RELEASE.2023-03-20T20-16-18Z in docker.io/minio/minio: requested access to the resource is denied\"",
       "sourceDigest": ""
     },
     "mysql:8.0": {
@@ -661,20 +661,20 @@
     "litellm/litellm:latest": {
       "source": "litellm/litellm:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/litellm-litellm:latest",
-      "syncedAt": "2026-09-20T07:40:12Z",
+      "syncedAt": "2026-09-23T10:48:09Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:32cfd7a427f6470033b4dcc9e75dfbea2aa32dbc298b0b511a40e962ce818362"
+      "sourceDigest": "sha256:87f34979b9f8cb274fac90ca8a4fdda07d8480de22755562a26adeb95ce20d02"
     },
     "1dev/server:latest": {
       "source": "1dev/server:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/1dev-server:latest",
-      "syncedAt": "2026-09-22T09:13:14Z",
+      "syncedAt": "2026-09-23T09:35:12Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:01be274ab387203b4de275cc85c2e61a0c99aa79fbaa157f55ac2288503fd98d"
+      "sourceDigest": "sha256:cabf2083ba7b1d8359bb04049d2fe4a9bf2c8a3fb7f3955059adb1ae405a5707"
     },
     "bkci/bkci-backend:v4.1.0": {
       "source": "bkci/bkci-backend:v4.1.0",
