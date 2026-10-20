@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-20T07:33:24Z",
+  "lastUpdated": "2026-10-20T13:12:34Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -184,11 +184,11 @@
     "bitnami/postgres-exporter": {
       "source": "bitnami/postgres-exporter",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/bitnami-postgres-exporter:latest",
-      "syncedAt": "2026-10-14T07:15:04Z",
+      "syncedAt": "2026-10-20T13:00:01Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:7c143707177bbbc698abc03d5414b0ad95aa388a2354ffe8a38181672354a2a5"
+      "sourceDigest": "sha256:2e2b34eac8d5d5f0ea2b12a2077a98d758c1e3bf79f1c6f8279c8194e7c65e2b"
     },
     "harness/harness:latest": {
       "source": "harness/harness:latest",
@@ -454,10 +454,10 @@
     "minio/minio:RELEASE.2023-03-20T20-16-18Z": {
       "source": "minio/minio:RELEASE.2023-03-20T20-16-18Z",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/minio-minio:RELEASE.2023-03-20T20-16-18Z",
-      "syncedAt": "2026-10-20T07:27:59Z",
+      "syncedAt": "2026-10-20T13:12:04Z",
       "status": "failed",
       "is_public": "false",
-      "error_msg": "time=\"2026-10-20T07:27:59Z\" level=fatal msg=\"initializing source docker://minio/minio:RELEASE.2023-03-20T20-16-18Z: reading manifest RELEASE.2023-03-20T20-16-18Z in docker.io/minio/minio: requested access to the resource is denied\"",
+      "error_msg": "time=\"2026-10-20T13:12:04Z\" level=fatal msg=\"initializing source docker://minio/minio:RELEASE.2023-03-20T20-16-18Z: reading manifest RELEASE.2023-03-20T20-16-18Z in docker.io/minio/minio: requested access to the resource is denied\"",
       "sourceDigest": ""
     },
     "mysql:8.0": {
@@ -598,19 +598,19 @@
     "quay.io/minio/minio:RELEASE.2024-12-18T13-15-44Z": {
       "source": "quay.io/minio/minio:RELEASE.2024-12-18T13-15-44Z",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/quay-io-minio-minio:RELEASE.2024-12-18T13-15-44Z",
-      "syncedAt": "2026-10-20T07:33:24Z",
+      "syncedAt": "2026-10-20T13:12:34Z",
       "status": "failed",
       "is_public": "false",
-      "error_msg": "time=\"2026-10-20T07:33:24Z\" level=fatal msg=\"initializing source docker://quay.io/minio/minio:RELEASE.2024-12-18T13-15-44Z: reading manifest RELEASE.2024-12-18T13-15-44Z in quay.io/minio/minio: unauthorized: access to the requested resource is not authorized\"",
+      "error_msg": "time=\"2026-10-20T13:12:34Z\" level=fatal msg=\"initializing source docker://quay.io/minio/minio:RELEASE.2024-12-18T13-15-44Z: reading manifest RELEASE.2024-12-18T13-15-44Z in quay.io/minio/minio: unauthorized: access to the requested resource is not authorized\"",
       "sourceDigest": ""
     },
     "quay.io/minio/mc:RELEASE.2024-11-21T17-21-54Z": {
       "source": "quay.io/minio/mc:RELEASE.2024-11-21T17-21-54Z",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/quay-io-minio-mc:RELEASE.2024-11-21T17-21-54Z",
-      "syncedAt": "2026-10-20T07:33:24Z",
+      "syncedAt": "2026-10-20T13:12:33Z",
       "status": "failed",
       "is_public": "false",
-      "error_msg": "time=\"2026-10-20T07:33:24Z\" level=fatal msg=\"initializing source docker://quay.io/minio/mc:RELEASE.2024-11-21T17-21-54Z: reading manifest RELEASE.2024-11-21T17-21-54Z in quay.io/minio/mc: unauthorized: access to the requested resource is not authorized\"",
+      "error_msg": "time=\"2026-10-20T13:12:33Z\" level=fatal msg=\"initializing source docker://quay.io/minio/mc:RELEASE.2024-11-21T17-21-54Z: reading manifest RELEASE.2024-11-21T17-21-54Z in quay.io/minio/mc: unauthorized: access to the requested resource is not authorized\"",
       "sourceDigest": ""
     },
     "centos:7": {
@@ -927,6 +927,24 @@
       "is_public": "true",
       "error_msg": "",
       "sourceDigest": "sha256:96223bfbb4def3101dbcc1720688b47a33ff745ae9053448e8083dba7063f914"
+    },
+    "elasticsearch:8.17.10": {
+      "source": "elasticsearch:8.17.10",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/elasticsearch:8.17.10",
+      "syncedAt": "2026-10-20T13:09:11Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": "",
+      "sourceDigest": "sha256:b3de9d0a05f0839c9f3d6881429bf0b6c3bef0a2ca0c3df80fa819d1f4d10be4"
+    },
+    "kibana:8.17.10": {
+      "source": "kibana:8.17.10",
+      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/kibana:8.17.10",
+      "syncedAt": "2026-10-20T13:11:43Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": "",
+      "sourceDigest": "sha256:9ad0bb5642d555ed98a7c4dac96b932c0d2cf9d69261503018d96c10723f5a6e"
     }
   }
 }
