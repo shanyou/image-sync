@@ -119,3 +119,5 @@ apache/apisix:latest
 nacos/nacos-server:latest
 apache/rocketmq
 mysql:5.7.44
+elasticsearch:8.17.10
+kibana:8.17.10
