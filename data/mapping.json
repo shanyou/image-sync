@@ -370,15 +370,6 @@
       "error_msg": "",
       "sourceDigest": "sha256:70740c7735524d4df593d2ef209f7d51e870cac51dc7ec589dfaa8ea17e32e24"
     },
-    "downloads.unstructured.io/unstructured-io/unstructured-api:latest": {
-      "source": "downloads.unstructured.io/unstructured-io/unstructured-api:latest",
-      "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/downloads-unstructured-io-unstructured-io-unstructured-api:latest",
-      "syncedAt": "2026-10-08T08:49:06Z",
-      "status": "success",
-      "is_public": "true",
-      "error_msg": "",
-      "sourceDigest": "sha256:9d4496a7312c6c17490231cd9d7e5592a1edbe83a0098ce52ec8a88cdcb12235"
-    },
     "ghcr.io/chroma-core/chroma:0.5.20": {
       "source": "ghcr.io/chroma-core/chroma:0.5.20",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/ghcr-io-chroma-core-chroma:0.5.20",
