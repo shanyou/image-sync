@@ -112,6 +112,7 @@ gcr.io/kaniko-project/executor:v1.9.0
 bitnamilegacy/mongodb:8.0.13-debian-12-r0
 registry.k8s.io/ingress-nginx/controller:v0.48.1
 nginx:1.21.1
+nginx:1.30.6
 bkci/bkci-turbo:0.0.21
 easysoft/zentao:latest
 codeberg.org/forgejo/forgejo:15
