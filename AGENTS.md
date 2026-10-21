@@ -56,7 +56,7 @@ image-sync/
 - `init_mapping()`: 初始化 mapping.json 文件
 - `add_mapping()`: 添加同步记录到 mapping.json（含 `sourceDigest` 字段，成功时记录源镜像 manifest digest）
 - `sync_image()`: 同步单个镜像（`--all` multi-arch，失败降级 Linux 单平台重试，如 Windows 变体过大被 SWR 拒收；失败记录写入真实 skopeo 错误）并设置 public
-- `main()`: 主流程控制（默认基于 manifest digest 比对，`--force` 全量，`--check-drift` 额外校验 SWR 端）
+- `main()`: 主流程控制（默认基于 manifest digest 比对，`--force` 全量，`--check-drift` 额外校验 SWR 端）；每个镜像处理完立即提交 mapping.json，单个镜像超时/异常不会丢掉整轮成果
 
 **依赖**：utils.sh, swr-api.sh
 

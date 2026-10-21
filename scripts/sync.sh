@@ -191,8 +191,9 @@ sync_image() {
 # 同一镜像保留较新记录），无需人工介入
 # 返回: 0 = push 成功; 1 = 重试耗尽或不可自动解决的冲突
 push_mapping() {
+    local commit_msg="${1:-chore: 更新镜像映射记录}"
     git add "$MAPPING_FILE"
-    git commit -m "chore: 更新镜像映射记录"
+    git commit -m "$commit_msg"
 
     local attempt conflicted base incoming
     for attempt in 1 2 3 4 5; do
@@ -257,6 +258,11 @@ main() {
             sync_count=$((sync_count + 1))
         else
             error_count=$((error_count + 1))
+        fi
+
+        # 每个镜像处理完立即提交 mapping：单个镜像拖到超时/被取消也不会丢掉整轮成果
+        if ! git diff --quiet "$MAPPING_FILE"; then
+            push_mapping "chore: 更新镜像映射记录（$image）"
         fi
 
     done < <(deduplicate_images "$INPUT_FILE")
