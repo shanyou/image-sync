@@ -79,7 +79,8 @@ certbot/certbot:latest
 mysql:8.0
 docker.elastic.co/elasticsearch/elasticsearch:8.14.3
 docker.elastic.co/kibana/kibana:8.14.3
-downloads.unstructured.io/unstructured-io/unstructured-api:latest
+# 超大镜像（13.4GB，单层 9GB，源站 ~1.5MB/s 且频繁断流，单次同步需 2.5h+）暂缓同步
+# downloads.unstructured.io/unstructured-io/unstructured-api:latest
 tmate/tmate-ssh-server:latest
 tomcat:9.0.118-jdk8-temurin-noble
 tomcat:9.0.122-jdk8-temurin-noble
