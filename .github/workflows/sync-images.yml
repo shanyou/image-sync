@@ -32,6 +32,8 @@ jobs:
   sync:
     # 固定 24.04：依赖镜像预装的 skopeo/jq，避免 ubuntu-latest 别名未来漂移
     runs-on: ubuntu-24.04
+    # 兜底：脚本内已有单次操作超时，这里防止任何未预见阻塞耗尽 6 小时默认上限
+    timeout-minutes: 180
 
     steps:
       - name: Checkout

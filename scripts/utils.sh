@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# 网络操作超时（秒）：注册源/目标端静默断流时 skopeo 会无限等待，必须设上界
+# 可用环境变量覆盖
+SKOPEO_INSPECT_TIMEOUT="${SKOPEO_INSPECT_TIMEOUT:-120}"
+
 # 镜像名转换: gcr.io/xxx/yyy -> swr.cn-north-1.myhuaweicloud.com/<组织名>/gcr-io-xxx-yyy
 convert_image_name() {
     local source_image="$1"
@@ -42,9 +46,11 @@ get_source_digest() {
     local source_image="$1"
     local creds; creds=$(get_source_creds_value "$source_image")
     if [ -n "$creds" ]; then
-        skopeo inspect --format '{{.Digest}}' --creds "$creds" "docker://${source_image}" 2>/dev/null
+        timeout --kill-after=10 "$SKOPEO_INSPECT_TIMEOUT" \
+            skopeo inspect --format '{{.Digest}}' --creds "$creds" "docker://${source_image}" 2>/dev/null
     else
-        skopeo inspect --format '{{.Digest}}' "docker://${source_image}" 2>/dev/null
+        timeout --kill-after=10 "$SKOPEO_INSPECT_TIMEOUT" \
+            skopeo inspect --format '{{.Digest}}' "docker://${source_image}" 2>/dev/null
     fi
 }
 
@@ -52,7 +58,8 @@ get_source_digest() {
 # 失败返回空字符串
 get_target_digest() {
     local target_image="$1"
-    skopeo inspect --format '{{.Digest}}' \
+    timeout --kill-after=10 "$SKOPEO_INSPECT_TIMEOUT" \
+        skopeo inspect --format '{{.Digest}}' \
         --creds "${REGISTRY_USERNAME}:${REGISTRY_PASSWORD}" \
         "docker://${target_image}" 2>/dev/null
 }

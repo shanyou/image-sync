@@ -169,6 +169,16 @@ quay.io/coreos/etcd:v3.5.9
 
 未配置时降级为匿名拉取，docker.io 镜像较多时可能触发限流（CI 表现为 `denied` 或 `502`）。
 
+### 网络超时（可选，脚本级环境变量）
+
+skopeo/curl/git 默认没有整体超时，注册源或 SWR 静默断流时任务会永久阻塞。脚本已为每类操作设置上界，超时按该镜像失败记录并继续下一个：
+
+|变量名|默认值|作用|
+|---|---|---|
+|`SKOPEO_INSPECT_TIMEOUT`|120s|单次 `skopeo inspect`（digest 比对）超时|
+|`SKOPEO_COPY_TIMEOUT`|3600s|单次 `skopeo copy` 超时；大镜像（10GB+）慢链路可调大|
+|`GIT_NET_TIMEOUT`|180s|单次 `git push`/`git pull --rebase` 超时|
+
 ### 本地开发环境配置 (.env)
 
 ```bash

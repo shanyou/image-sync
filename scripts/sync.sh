@@ -20,6 +20,13 @@ NAMESPACE="${SWR_ORG_NAME:-shanyou}"
 FORCE_SYNC=false
 CHECK_DRIFT=false
 
+# 单次 skopeo copy 超时（秒）：注册源/目标端静默断流时 skopeo 不会自己退出，
+# 会永久阻塞整个任务。超时视为该镜像失败，记录后继续处理下一个镜像。
+# 大镜像（10GB+）在慢链路上可能需要数十分钟，可用环境变量调大。
+SKOPEO_COPY_TIMEOUT="${SKOPEO_COPY_TIMEOUT:-3600}"
+# git push/pull 网络超时（秒），单次尝试超时后进入重试
+GIT_NET_TIMEOUT="${GIT_NET_TIMEOUT:-180}"
+
 # 解析命令行参数
 while [[ $# -gt 0 ]]; do
     case $1 in
@@ -104,15 +111,17 @@ sync_image() {
     err_file=$(mktemp)
     local copy_ok=true
     local fallback_note=""
+    local copy_rc=0
 
-    if ! skopeo copy --all \
+    if ! timeout --kill-after=30 "$SKOPEO_COPY_TIMEOUT" skopeo copy --all \
         "${src_args[@]}" \
         --dest-creds "${REGISTRY_USERNAME}:${REGISTRY_PASSWORD}" \
         "docker://${source_image}" \
         "docker://${target_image}" 2>&1 | tee "$err_file"; then
+        copy_rc=${PIPESTATUS[0]}
 
         echo "⚠ 全平台同步失败，降级为 Linux 单平台重试..."
-        if skopeo copy \
+        if timeout --kill-after=30 "$SKOPEO_COPY_TIMEOUT" skopeo copy \
             --override-os linux \
             "${src_args[@]}" \
             --dest-creds "${REGISTRY_USERNAME}:${REGISTRY_PASSWORD}" \
@@ -120,6 +129,7 @@ sync_image() {
             "docker://${target_image}" 2>&1 | tee "$err_file"; then
             fallback_note="（仅 Linux 单平台）"
         else
+            copy_rc=${PIPESTATUS[0]}
             copy_ok=false
         fi
     fi
@@ -127,7 +137,10 @@ sync_image() {
     if [ "$copy_ok" = false ]; then
         # 提取 fatal 错误行写入 mapping 记录，替代泛化的 "skopeo copy 失败"
         local err_msg
-        err_msg=$(grep 'level=fatal' "$err_file" | tail -n1 | cut -c1-280)
+        if [ "$copy_rc" -eq 124 ] || [ "$copy_rc" -eq 137 ]; then
+            err_msg="skopeo copy 超时（${SKOPEO_COPY_TIMEOUT}s 无完成），已中止"
+        fi
+        [ -z "$err_msg" ] && err_msg=$(grep 'level=fatal' "$err_file" | tail -n1 | cut -c1-280)
         [ -z "$err_msg" ] && err_msg=$(tail -n1 "$err_file" | cut -c1-280)
         [ -z "$err_msg" ] && err_msg="skopeo copy 失败"
         rm -f "$err_file"
@@ -183,13 +196,13 @@ push_mapping() {
 
     local attempt conflicted base incoming
     for attempt in 1 2 3 4 5; do
-        if git push; then
+        if timeout --kill-after=10 "$GIT_NET_TIMEOUT" git push; then
             echo "✓ mapping.json 已提交并推送"
             return 0
         fi
         echo "git push 失败（第 ${attempt} 次尝试），rebase 远端后重试..."
 
-        if ! git pull --rebase; then
+        if ! timeout --kill-after=10 "$GIT_NET_TIMEOUT" git pull --rebase; then
             # rebase 冲突：列出冲突文件
             conflicted=$(git diff --name-only --diff-filter=U)
             if [ "$conflicted" = "$MAPPING_FILE" ]; then

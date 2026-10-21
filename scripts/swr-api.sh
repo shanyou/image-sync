@@ -37,7 +37,7 @@ EOF
     local body_file=$(mktemp)
     
     # 使用 -D 将响应头保存到文件
-    curl -sS -D "$header_file" -o "$body_file" -w "%{http_code}" \
+    curl -sS --connect-timeout 10 --max-time 60 -D "$header_file" -o "$body_file" -w "%{http_code}" \
         -X POST "https://${IAM_ENDPOINT}/v3/auth/tokens" \
         -H "Content-Type: application/json" \
         -d "$token_body" > /tmp/http_code.txt 2>&1
@@ -72,7 +72,7 @@ set_repo_public() {
     local repo_escaped="${repository//\//\$}"
 
     local response
-    response=$(curl -sS -w "\n%{http_code}" \
+    response=$(curl -sS --connect-timeout 10 --max-time 60 -w "\n%{http_code}" \
         -X PATCH "https://${SWR_API_ENDPOINT}/v2/manage/namespaces/${namespace}/repos/${repo_escaped}" \
         -H "X-Auth-Token: $token" \
         -H "Content-Type: application/json" \
