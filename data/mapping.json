@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-21T08:58:21Z",
+  "lastUpdated": "2026-10-21T08:59:11Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -346,11 +346,11 @@
     "containers.intersystems.com/intersystems/iris-community:2025.3": {
       "source": "containers.intersystems.com/intersystems/iris-community:2025.3",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/containers-intersystems-com-intersystems-iris-community:2025.3",
-      "syncedAt": "2026-10-14T08:02:31Z",
+      "syncedAt": "2026-10-21T08:59:11Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:1b74ae8a1c56da44e47168a77a92ce8698d79ff47d19ed1e9edaf273fa70d09d"
+      "sourceDigest": "sha256:cb295d9655d97e653d8bfe7e2123d33e9c6ddcf52a7174ea4420a7705e24511a"
     },
     "docker.elastic.co/elasticsearch/elasticsearch:8.14.3": {
       "source": "docker.elastic.co/elasticsearch/elasticsearch:8.14.3",
