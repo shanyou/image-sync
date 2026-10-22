@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-22T07:27:20Z",
+  "lastUpdated": "2026-10-22T07:29:27Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -49,11 +49,11 @@
     "postgres:14": {
       "source": "postgres:14",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/postgres:14",
-      "syncedAt": "2026-10-21T09:19:08Z",
+      "syncedAt": "2026-10-22T07:29:27Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:cf736c1b9bd4ef55e74b7b7a21747d6b01b6451bf3284adce27237c98fe2cbbf"
+      "sourceDigest": "sha256:8ab94f61668dc73bbab4dc13273ff2fc37e635536af62aef5306a49a9682a446"
     },
     "goacme/lego:latest": {
       "source": "goacme/lego:latest",
