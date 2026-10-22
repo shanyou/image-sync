@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-22T07:17:48Z",
+  "lastUpdated": "2026-10-22T07:20:09Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -247,11 +247,11 @@
     "docker:dind": {
       "source": "docker:dind",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/docker:dind",
-      "syncedAt": "2026-10-17T06:58:36Z",
+      "syncedAt": "2026-10-22T07:20:09Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:3e5756e2b6dad6a5f1f5deacf0a19f9eaa2581b76ae092b2d4a118162e1d4d4e"
+      "sourceDigest": "sha256:9e79b879b177fbd72c34376a3dd3d91747da5db49e1f560f76aea59561471977"
     },
     "kindest/node:v1.35.0": {
       "source": "kindest/node:v1.35.0",
