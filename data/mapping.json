@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-22T07:16:44Z",
+  "lastUpdated": "2026-10-22T07:17:48Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -319,11 +319,11 @@
     "calciumion/new-api:latest": {
       "source": "calciumion/new-api:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/calciumion-new-api:latest",
-      "syncedAt": "2026-10-18T07:03:23Z",
+      "syncedAt": "2026-10-22T07:17:48Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:6c63c7ee9cd5bf7880df3984e99dd3ef07992d7a97538cfb2719adf9d87bc3f9"
+      "sourceDigest": "sha256:abf1f675efa1847b90c049c03766e2daaf62a78998aae3625cf34b6a045b1b97"
     },
     "certbot/certbot:latest": {
       "source": "certbot/certbot:latest",
