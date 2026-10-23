@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-23T07:59:04Z",
+  "lastUpdated": "2026-10-23T08:00:10Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -103,11 +103,11 @@
     "weishaw/sub2api:latest": {
       "source": "weishaw/sub2api:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/weishaw-sub2api:latest",
-      "syncedAt": "2026-10-16T07:06:33Z",
+      "syncedAt": "2026-10-23T08:00:10Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:44b59fc74b0b582750ef5f38146782db177767ef9d3f34351f1c75c157b1bb88"
+      "sourceDigest": "sha256:468a0b0e541e4becc05f1cf57826159235ea27a49a09f3dc2da6a43fcc05a22d"
     },
     "adrianmusante/pocketbase": {
       "source": "adrianmusante/pocketbase",
