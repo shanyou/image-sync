@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-24T06:58:39Z",
+  "lastUpdated": "2026-10-24T06:59:35Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -283,11 +283,11 @@
     "alpine/socat": {
       "source": "alpine/socat",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/alpine-socat:latest",
-      "syncedAt": "2026-10-17T06:53:47Z",
+      "syncedAt": "2026-10-24T06:59:35Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:22d77becaeeea8ef56b8c4bb2312323acafe85354be6a85714ff5050e3537842"
+      "sourceDigest": "sha256:603174b77eebaba25ba8f8ebb15e1234d6600409554e95d6fb203fd106150287"
     },
     "ghcr.io/kubelauncher/redis:8.6.1": {
       "source": "ghcr.io/kubelauncher/redis:8.6.1",
