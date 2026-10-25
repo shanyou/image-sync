@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-25T07:23:45Z",
+  "lastUpdated": "2026-10-25T07:24:42Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -157,11 +157,11 @@
     "headscale/headscale:latest": {
       "source": "headscale/headscale:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/headscale-headscale:latest",
-      "syncedAt": "2026-10-14T08:04:23Z",
+      "syncedAt": "2026-10-25T07:24:42Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:780ed2f9e85719a2211277433f2c8afb45105d0d25031949a6848a485f9e216d"
+      "sourceDigest": "sha256:cabe84f0699913dbca9320f0883dca7565dd08df3c5be29edfabbebeff763966"
     },
     "bitnami/postgresql": {
       "source": "bitnami/postgresql",
