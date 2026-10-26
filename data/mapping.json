@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-26T07:49:58Z",
+  "lastUpdated": "2026-10-26T07:51:52Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -859,11 +859,11 @@
     "easysoft/zentao:latest": {
       "source": "easysoft/zentao:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/easysoft-zentao:latest",
-      "syncedAt": "2026-10-15T07:08:08Z",
+      "syncedAt": "2026-10-26T07:51:52Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:41f58c152ba41f12326459a90a3f2e20f9200e23445528dbbb923e024eb9f311"
+      "sourceDigest": "sha256:01fe3eeaa4c174c12bcbd3a6a969bf7bc4283c2adc5ab0c6f64fd69dc38e3204"
     },
     "codeberg.org/forgejo/forgejo:15": {
       "source": "codeberg.org/forgejo/forgejo:15",
