@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-25T07:41:28Z",
+  "lastUpdated": "2026-10-26T07:43:45Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -661,11 +661,11 @@
     "1dev/server:latest": {
       "source": "1dev/server:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/1dev-server:latest",
-      "syncedAt": "2026-10-23T07:12:41Z",
+      "syncedAt": "2026-10-26T07:43:45Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:114926cff102b98e54138093e57c2de24b7e9b783b99e8834634fdec1e218a50"
+      "sourceDigest": "sha256:d6f2b5b53d85bb3a6dd9c7ac470dcdb5defa3aeaa4e3b8d4b411a984f5831f10"
     },
     "bkci/bkci-backend:v4.1.0": {
       "source": "bkci/bkci-backend:v4.1.0",
