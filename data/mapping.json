@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-27T07:34:51Z",
+  "lastUpdated": "2026-10-27T07:37:12Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -868,11 +868,11 @@
     "codeberg.org/forgejo/forgejo:15": {
       "source": "codeberg.org/forgejo/forgejo:15",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/codeberg-org-forgejo-forgejo:15",
-      "syncedAt": "2026-10-13T09:07:46Z",
+      "syncedAt": "2026-10-27T07:37:12Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:7b2f61163ff1d19f2aaf62d37ae4e805e822c2f86d6628b2bd468470929beacb"
+      "sourceDigest": "sha256:5d050e6d623e540923ff54b1c0c7acf41c3f9174a6c7ad515cc0c63d703fcd22"
     },
     "apache/apisix:latest": {
       "source": "apache/apisix:latest",
