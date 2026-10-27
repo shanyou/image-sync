@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-27T08:55:41Z",
+  "lastUpdated": "2026-10-27T08:57:29Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -643,11 +643,11 @@
     "ubuntu:26.04": {
       "source": "ubuntu:26.04",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/ubuntu:26.04",
-      "syncedAt": "2026-10-17T07:07:27Z",
+      "syncedAt": "2026-10-27T08:57:29Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:c098726dd9b9733f3e885f8de0ef375206a311b0a317eadc40d347b1115fb944"
+      "sourceDigest": "sha256:19fcd1bf268f02b60aca3bd30bd8a6d9a11759a430e32921833e65f16d87348a"
     },
     "litellm/litellm:latest": {
       "source": "litellm/litellm:latest",
