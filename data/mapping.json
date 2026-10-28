@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-28T10:14:58Z",
+  "lastUpdated": "2026-10-28T10:15:41Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -76,11 +76,11 @@
     "vectorim/element-web:latest": {
       "source": "vectorim/element-web:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/vectorim-element-web:latest",
-      "syncedAt": "2026-10-17T07:08:04Z",
+      "syncedAt": "2026-10-28T10:15:41Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:f8700633d4336258af7a05b53865a4f479e0d628cf2d9ca83d28b5939314d4ce"
+      "sourceDigest": "sha256:b0aa4b5a4fc1afaaff62e2dbd0c92d57e2b20724f3ccb2fef53aae949088c3d2"
     },
     "postgres:18-alpine": {
       "source": "postgres:18-alpine",
