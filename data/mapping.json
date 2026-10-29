@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-29T08:18:28Z",
+  "lastUpdated": "2026-10-29T08:20:25Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -328,11 +328,11 @@
     "certbot/certbot:latest": {
       "source": "certbot/certbot:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/certbot-certbot:latest",
-      "syncedAt": "2026-09-02T06:56:08Z",
+      "syncedAt": "2026-10-29T08:20:25Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:f70ad0adbb7e117f0fe42a63c553f28ea451edabc0148757b6efcd9735acaa20"
+      "sourceDigest": "sha256:bc93cb710b413e6b456d622f9b0133b3e109c0a78c2ed9976af43d209b0a1805"
     },
     "container-registry.oracle.com/database/free:latest": {
       "source": "container-registry.oracle.com/database/free:latest",
