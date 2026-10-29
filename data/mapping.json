@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-29T08:44:07Z",
+  "lastUpdated": "2026-10-29T08:54:43Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -652,11 +652,11 @@
     "litellm/litellm:latest": {
       "source": "litellm/litellm:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/litellm-litellm:latest",
-      "syncedAt": "2026-10-28T10:04:43Z",
+      "syncedAt": "2026-10-29T08:54:43Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:7d6ae6c8d73d1b6aea4cb75d07c4a8a953f0809b0764522b8eab693734c5e905"
+      "sourceDigest": "sha256:37e2dafb088a7723beb998590682957386dfc83ffea1848486f8e0e5cfac0b06"
     },
     "1dev/server:latest": {
       "source": "1dev/server:latest",
