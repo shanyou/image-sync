@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-29T08:55:20Z",
+  "lastUpdated": "2026-10-29T08:56:08Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -94,11 +94,11 @@
     "redis:8-alpine": {
       "source": "redis:8-alpine",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/redis:8-alpine",
-      "syncedAt": "2026-10-27T08:50:27Z",
+      "syncedAt": "2026-10-29T08:56:08Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:47b08295737773de3b711fb86f13ae802f5074e96a9a2d29f5f80164ac08c046"
+      "sourceDigest": "sha256:21090af93f8324db2f0f0f4f38a7c60369d47d917e000c3423d89d2ae2883537"
     },
     "weishaw/sub2api:latest": {
       "source": "weishaw/sub2api:latest",
