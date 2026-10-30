@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-30T08:25:06Z",
+  "lastUpdated": "2026-10-30T08:38:00Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -886,11 +886,11 @@
     "nacos/nacos-server:latest": {
       "source": "nacos/nacos-server:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/nacos-nacos-server:latest",
-      "syncedAt": "2026-08-27T12:53:26Z",
+      "syncedAt": "2026-10-30T08:38:00Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:1c191c30c8cd5ff2a72bf576555dbaa57a616378c55168651a74aefadedf7708"
+      "sourceDigest": "sha256:bf18e41d09efd4e72edc46b010d42dca49f776421413cb2637be1fff0d6ef90f"
     },
     "apache/rocketmq": {
       "source": "apache/rocketmq",
