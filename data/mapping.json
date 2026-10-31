@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-31T08:09:27Z",
+  "lastUpdated": "2026-10-31T08:14:31Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -211,11 +211,11 @@
     "kasmweb/ubuntu-noble-desktop:1.18.0-rolling-daily": {
       "source": "kasmweb/ubuntu-noble-desktop:1.18.0-rolling-daily",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/kasmweb-ubuntu-noble-desktop:1.18.0-rolling-daily",
-      "syncedAt": "2026-10-30T08:24:52Z",
+      "syncedAt": "2026-10-31T08:14:31Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:fd89563f7c3e3c90481957257d0372d9509f665d026215e34352c66cc43bb2d4"
+      "sourceDigest": "sha256:fada32171c4774ed0ffce2e76415430760a2bd83ee8aac1d760c9a8b989557a2"
     },
     "kasmweb/ubuntu-noble-desktop:1.18.0": {
       "source": "kasmweb/ubuntu-noble-desktop:1.18.0",
