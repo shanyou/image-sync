@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-31T08:17:31Z",
+  "lastUpdated": "2026-10-31T08:18:17Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -13,11 +13,11 @@
     "nginx:latest": {
       "source": "nginx:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/nginx:latest",
-      "syncedAt": "2026-10-28T10:10:43Z",
+      "syncedAt": "2026-10-31T08:18:17Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:600f7cd45e27aa13e9304c834ab7c1b0ff39df85ee1dcc5087955455d77bc83b"
+      "sourceDigest": "sha256:5ab5b0b01097420873a3f3330f44248e34a3c2a3e8d5ee30658aeae8cb7435da"
     },
     "mysql:latest": {
       "source": "mysql:latest",
