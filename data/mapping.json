@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-05T09:07:43Z",
+  "lastUpdated": "2026-11-05T09:08:14Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -184,11 +184,11 @@
     "bitnami/postgres-exporter": {
       "source": "bitnami/postgres-exporter",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/bitnami-postgres-exporter:latest",
-      "syncedAt": "2026-10-27T07:32:25Z",
+      "syncedAt": "2026-11-05T09:08:14Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:472dab58c8180d395bc3f57ee1f134b1e9f9500a0d5c3e9be1954fdb5c37a244"
+      "sourceDigest": "sha256:d196b49967ab556479842900927c87ece1333dfe74b964693c098a25f6d0f1b5"
     },
     "harness/harness:latest": {
       "source": "harness/harness:latest",
