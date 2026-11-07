@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-06T09:26:45Z",
+  "lastUpdated": "2026-11-07T08:29:37Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -112,11 +112,11 @@
     "adrianmusante/pocketbase": {
       "source": "adrianmusante/pocketbase",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/adrianmusante-pocketbase:latest",
-      "syncedAt": "2026-10-24T06:58:39Z",
+      "syncedAt": "2026-11-07T08:29:37Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:ff92ac58a896edf0c3754475f687252f34bc1bf098bc653b00864e887930b34a"
+      "sourceDigest": "sha256:10ddd29012230af6c4fb2a1f38aa2e214a4654f68730cff05cd7d57f68e588ce"
     },
     "docker:latest": {
       "source": "docker:latest",
