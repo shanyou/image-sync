@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-10T09:31:56Z",
+  "lastUpdated": "2026-11-10T09:34:06Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -535,11 +535,11 @@
     "redis:6-alpine": {
       "source": "redis:6-alpine",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/redis:6-alpine",
-      "syncedAt": "2026-11-06T09:24:48Z",
+      "syncedAt": "2026-11-10T09:34:06Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:5e38c443bd83d7d5214648d5de0a7d47f72cbb5141c50dcabcfc40f191b5b369"
+      "sourceDigest": "sha256:bb3686b504e6780e6878f187f1b8275236183d7ef514a248802f60106adf571a"
     },
     "semitechnologies/weaviate:1.27.0": {
       "source": "semitechnologies/weaviate:1.27.0",
