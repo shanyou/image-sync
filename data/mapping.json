@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-11T09:03:29Z",
+  "lastUpdated": "2026-11-11T09:04:17Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -67,11 +67,11 @@
     "forgejo.ellis.link/continuwuation/continuwuity:latest": {
       "source": "forgejo.ellis.link/continuwuation/continuwuity:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/forgejo-ellis-link-continuwuation-continuwuity:latest",
-      "syncedAt": "2026-09-28T09:41:13Z",
+      "syncedAt": "2026-11-11T09:04:17Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:c9c62bc5c0a641f3f713945c701b069c7bc30d2612b54d4a5de80a5be19d5420"
+      "sourceDigest": "sha256:a177e08ab62e3d5bc60e4b8cea0a2ea9d18d4cb2bf8a6138cb0392a423c575a8"
     },
     "vectorim/element-web:latest": {
       "source": "vectorim/element-web:latest",
