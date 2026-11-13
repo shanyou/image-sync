@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-13T09:30:10Z",
+  "lastUpdated": "2026-11-13T09:33:18Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -85,11 +85,11 @@
     "postgres:18-alpine": {
       "source": "postgres:18-alpine",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/postgres:18-alpine",
-      "syncedAt": "2026-11-12T09:31:09Z",
+      "syncedAt": "2026-11-13T09:33:18Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:9ba53c7d41ea093baf5c1ba635ba5434c4f979880527d49bb7d9237d3193085b"
+      "sourceDigest": "sha256:1018733457011bf88d81db98cf43aac6d5150afc18787dbe204771fedf80ff95"
     },
     "redis:8-alpine": {
       "source": "redis:8-alpine",
