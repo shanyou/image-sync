@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-14T08:52:23Z",
+  "lastUpdated": "2026-11-14T08:52:50Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -553,7 +553,7 @@
     "tensorchord/pgvecto-rs:pg16-v0.3.0": {
       "source": "tensorchord/pgvecto-rs:pg16-v0.3.0",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/tensorchord-pgvecto-rs:pg16-v0.3.0",
-      "syncedAt": "2026-08-04T03:30:13Z",
+      "syncedAt": "2026-11-14T08:52:50Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
