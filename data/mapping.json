@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-16T09:17:46Z",
+  "lastUpdated": "2026-11-16T09:18:29Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -517,11 +517,11 @@
     "postgres:15-alpine": {
       "source": "postgres:15-alpine",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/postgres:15-alpine",
-      "syncedAt": "2026-11-13T09:30:10Z",
+      "syncedAt": "2026-11-16T09:18:29Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:fc41cfa8a90c09e84dd723ee764be4b2f59ba6c98b1e5b3fca540adddf68a5ba"
+      "sourceDigest": "sha256:23799e521dee9265a8b388ecf3bc0f1eaa34b95be67f5a76af4f8f6adb44c720"
     },
     "quay.io/coreos/etcd:v3.5.5": {
       "source": "quay.io/coreos/etcd:v3.5.5",
