@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-15T11:18:44Z",
+  "lastUpdated": "2026-11-16T09:08:51Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -139,11 +139,11 @@
     "eceasy/cli-proxy-api:latest": {
       "source": "eceasy/cli-proxy-api:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/eceasy-cli-proxy-api:latest",
-      "syncedAt": "2026-11-15T09:42:02Z",
+      "syncedAt": "2026-11-16T09:08:51Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:7cac48fd7f3ac0b7b6b73508d92179e29454087d9af81eb9a5c9fb50cdd87bc8"
+      "sourceDigest": "sha256:282c9b59111743b4dea606841d2508300bc8649be006c26b17ddcd18d76b9387"
     },
     "jenkinsci/blueocean:latest": {
       "source": "jenkinsci/blueocean:latest",
