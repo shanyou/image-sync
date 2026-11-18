@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-18T10:09:18Z",
+  "lastUpdated": "2026-11-18T10:11:35Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -499,11 +499,11 @@
     "opensearchproject/opensearch:latest": {
       "source": "opensearchproject/opensearch:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/opensearchproject-opensearch:latest",
-      "syncedAt": "2026-11-16T09:17:00Z",
+      "syncedAt": "2026-11-18T10:11:35Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:3bf4fe26aeb9f7b03c0ebcb1302bb24e855ee6b89fd926d26a71a83ef6f7e076"
+      "sourceDigest": "sha256:02d6d6e40c820ae08233b60540aa5d3d9364d64e2dc724e38d6c8c794879b2a0"
     },
     "pgvector/pgvector:pg16": {
       "source": "pgvector/pgvector:pg16",
