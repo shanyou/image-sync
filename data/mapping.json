@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-21T09:20:53Z",
+  "lastUpdated": "2026-11-21T09:21:38Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -877,11 +877,11 @@
     "apache/apisix:latest": {
       "source": "apache/apisix:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/apache-apisix:latest",
-      "syncedAt": "2026-11-20T11:47:31Z",
-      "status": "failed",
-      "is_public": "false",
-      "error_msg": "skopeo copy 超时（3600s 无完成），已中止",
-      "sourceDigest": ""
+      "syncedAt": "2026-11-21T09:21:38Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": "",
+      "sourceDigest": "sha256:b26691e4862d48cc8a01707391e5a3cd134b0373a711d2f2f85cef84e77be79e"
     },
     "nacos/nacos-server:latest": {
       "source": "nacos/nacos-server:latest",
