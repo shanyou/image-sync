@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-21T09:38:07Z",
+  "lastUpdated": "2026-11-21T09:40:09Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -634,11 +634,11 @@
     "ubuntu:22.04": {
       "source": "ubuntu:22.04",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/ubuntu:22.04",
-      "syncedAt": "2026-11-16T09:20:16Z",
+      "syncedAt": "2026-11-21T09:40:09Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:9abcaffc92a5279fff3a6a41635c0800ea33e528425fb389658806476e7defde"
+      "sourceDigest": "sha256:f64b2ffc2f10ab8f8505aa56b2664bd846cbb9df87c7e2532e30f7667021c0e6"
     },
     "ubuntu:26.04": {
       "source": "ubuntu:26.04",
