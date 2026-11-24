@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-24T13:07:19Z",
+  "lastUpdated": "2026-11-24T14:03:57Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -166,11 +166,11 @@
     "bitnami/postgresql": {
       "source": "bitnami/postgresql",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/bitnami-postgresql:latest",
-      "syncedAt": "2026-11-23T13:15:44Z",
-      "status": "failed",
-      "is_public": "false",
-      "error_msg": "skopeo copy 超时（3600s 无完成），已中止",
-      "sourceDigest": ""
+      "syncedAt": "2026-11-24T14:03:57Z",
+      "status": "success",
+      "is_public": "true",
+      "error_msg": "",
+      "sourceDigest": "sha256:046418017a65bb5f14cbaf139af23542a1cdc94cc535fb6c84c5731502e21caf"
     },
     "bitnami/os-shell": {
       "source": "bitnami/os-shell",
