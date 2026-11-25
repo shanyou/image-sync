@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-24T14:48:46Z",
+  "lastUpdated": "2026-11-25T12:57:36Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -661,11 +661,11 @@
     "1dev/server:latest": {
       "source": "1dev/server:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/1dev-server:latest",
-      "syncedAt": "2026-11-24T13:07:19Z",
-      "status": "success",
-      "is_public": "true",
-      "error_msg": "",
-      "sourceDigest": "sha256:e151711e9825d2fa68d43ed360d3f869fa52a305bb8acf6547fa6cc2bcc30ab1"
+      "syncedAt": "2026-11-25T12:57:36Z",
+      "status": "failed",
+      "is_public": "false",
+      "error_msg": "skopeo copy 超时（3600s 无完成），已中止",
+      "sourceDigest": ""
     },
     "bkci/bkci-backend:v4.1.0": {
       "source": "bkci/bkci-backend:v4.1.0",
