@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-26T10:54:25Z",
+  "lastUpdated": "2026-11-26T10:55:11Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -238,11 +238,11 @@
     "ubuntu:24.04": {
       "source": "ubuntu:24.04",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/ubuntu:24.04",
-      "syncedAt": "2026-11-21T09:41:46Z",
+      "syncedAt": "2026-11-26T10:55:11Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:9c7f200c07e3d4a03e7249d2c16bf66a51120fb876aa2242cf31451412543289"
+      "sourceDigest": "sha256:562111b88caa79c71391c0c4d3c2114a7d5c35915c20561fd893cb1e07929e6b"
     },
     "docker:dind": {
       "source": "docker:dind",
