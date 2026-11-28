@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-28T09:57:36Z",
+  "lastUpdated": "2026-11-28T09:58:59Z",
   "mappings": {
     "jenkins/inbound-agent:3355.v388858a_47b_33-9": {
       "source": "jenkins/inbound-agent:3355.v388858a_47b_33-9",
@@ -58,11 +58,11 @@
     "goacme/lego:latest": {
       "source": "goacme/lego:latest",
       "target": "swr.cn-north-1.myhuaweicloud.com/shanyou/goacme-lego:latest",
-      "syncedAt": "2026-11-24T14:09:07Z",
+      "syncedAt": "2026-11-28T09:58:59Z",
       "status": "success",
       "is_public": "true",
       "error_msg": "",
-      "sourceDigest": "sha256:9fe6151508c0e1ddc51a6d3e474353520f4b008782bf0c6d31676da72e6d4766"
+      "sourceDigest": "sha256:ea530fdc1c7de21b4eebe91b033c0b0af29898b841d206d0f19ca565068469db"
     },
     "forgejo.ellis.link/continuwuation/continuwuity:latest": {
       "source": "forgejo.ellis.link/continuwuation/continuwuity:latest",
